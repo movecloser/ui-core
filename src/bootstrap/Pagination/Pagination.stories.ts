@@ -2,9 +2,10 @@
 
 import { Meta, Story } from '@storybook/vue'
 
-// import { getTemplateBase } from '../../../modules/_helpers/template-base'
+import { getTemplateBase } from '../_storybook/template-base'
 
 import { BootstrapPagination } from './Pagination'
+// noinspection ES6PreferShortImport
 import { BootstrapPaginationProps } from './Pagination.contracts'
 
 /**
@@ -17,15 +18,17 @@ const meta: Meta = {
 export default meta
 
 const Template: Story<BootstrapPaginationProps> = (args, { argTypes }) => ({
-  // ...getTemplateBase(argTypes),
+  ...getTemplateBase(argTypes),
+
   data () {
     return {
       currentPage: 1
     }
   },
+
   template: `
     <div>
-      <D24Pagination v-bind="{ ...$props, currentPage }" @change="currentPage = $event" />
+      <UiPagination v-bind="{ ...$props, currentPage }" @change="currentPage = $event" />
       <hr>
       <small>Current page: <code>{{ currentPage }}</code></small>
     </div>

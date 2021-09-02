@@ -42,7 +42,7 @@ export default meta
 
 const Template: Story<BootstrapIconProps> = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<D24Icon :name="name" :size="size" :style="{ color }" />'
+  template: '<UiIcon :name="name" :size="size" :style="{ color }" />'
 })
 export const Icon = Template.bind({})
 Icon.args = {

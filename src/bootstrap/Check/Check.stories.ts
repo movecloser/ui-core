@@ -54,7 +54,7 @@ const TCheckbox: Story<BootstrapCheckProps> = (args, { argTypes }) => ({
   },
   template: `
     <form :class="{ 'was-validated': wasValidated }">
-      <D24Check :model.sync="model" v-bind="{ disabled, valid, label, options, readonly, required, size, errors }"
+      <UiCheck :model.sync="model" v-bind="{ disabled, valid, label, options, readonly, required, size, errors }"
                     name="example_name" :multiple="true" />
       <hr class="mt-5">
       <code class="small">Current value: "{{ model }}"</code>
@@ -75,7 +75,7 @@ const TRadio: Story<BootstrapCheckProps> = (args, { argTypes }) => ({
   },
   template: `
     <form :class="{ 'was-validated': wasValidated }">
-      <D24Check :model.sync="model" v-bind="{ disabled, valid, label, options, readonly, required, size, errors }"
+      <UiCheck :model.sync="model" v-bind="{ disabled, valid, label, options, readonly, required, size, errors }"
                    name="example_name" :multiple="false" />
       <hr class="mt-5">
       <code class="small">Current value: "{{ model }}"</code>

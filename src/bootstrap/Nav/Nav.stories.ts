@@ -31,7 +31,7 @@ const Template: Story<AbstractNavProps> = (args, { argTypes }) => ({
       activeItem
     }
   },
-  template: '<D24Nav v-bind="$props" :activeItem.sync="activeItem" />'
+  template: '<UiNav v-bind="$props" :activeItem.sync="activeItem" />'
 })
 
 export const Nav = Template.bind({})

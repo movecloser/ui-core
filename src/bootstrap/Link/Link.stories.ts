@@ -20,7 +20,7 @@ const defaultArgs = {
     isExternal: false,
     label: 'Lorem label',
     newTab: false,
-    target: ''
+    target: '/'
   }
 }
 
@@ -31,7 +31,7 @@ const TDefault: Story<BootstrapLinkProps> = (args, { argTypes }) => ({
   router: new VueRouter(),
   props: Object.keys(argTypes),
   template: `
-    <D24Link v-bind="{ link }" />
+    <UiLink v-bind="{ link }" />
   `
 })
 export const Default = TDefault.bind({})
@@ -44,7 +44,7 @@ const TExternal: Story<BootstrapLinkProps> = (args, { argTypes }) => ({
   router: new VueRouter(),
   props: Object.keys(argTypes),
   template: `
-    <D24Link v-bind="{ link }" />
+    <UiLink v-bind="{ link }" />
   `
 })
 export const External = TExternal.bind({})
@@ -64,10 +64,10 @@ const TCustomSlot: Story<BootstrapLinkProps> = (args, { argTypes }) => ({
   router: new VueRouter(),
   props: Object.keys(argTypes),
   template: `
-    <D24Link v-bind="{ link }">
+    <UiLink v-bind="{ link }">
       <span class="position-absolute bg-white p-2">This image works as a link!</span>
       <img src="https://images.unsplash.com/photo-1619143921821-61e111505f3e?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="" style="max-width: 400px">
-    </D24Link>
+    </UiLink>
   `
 })
 export const CustomSlot = TCustomSlot.bind({})

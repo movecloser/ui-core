@@ -30,22 +30,22 @@ const Template: Story<BootstrapModalProps> = (args, { argTypes }) => ({
   },
   template: `
     <div>
-      <D24Modal v-bind="{ closable, open }" @close="open = !open">
-        <D24ModalInner v-bind="{ closable, open }" @close="open = !open">
+      <UiModal v-bind="{ closable, open }" @close="open = !open">
+        <UiModalInner v-bind="{ closable, open }" @close="open = !open">
           <template slot="title">{{ title }}</template>
           <template slot="body">{{ body }}</template>
           <template v-slot:footer="{ close }">
             <div class="d-flex justify-content-around">
-              <D24Button class="btn-link text-uppercase" @click="close">Lorem</D24Button>
-              <D24Button class="btn-primary text-uppercase" @click="close">Ipsum</D24Button>
+              <UiButton class="btn-link text-uppercase" @click="close">Lorem</UiButton>
+              <UiButton class="btn-primary text-uppercase" @click="close">Ipsum</UiButton>
             </div>
           </template>
-        </D24ModalInner>
-      </D24Modal>
+        </UiModalInner>
+      </UiModal>
 
-      <D24Button v-if="!open" size="small" @click="open = true">
+      <UiButton v-if="!open" size="small" @click="open = true">
         Reopen modal
-      </D24Button>
+      </UiButton>
     </div>
   `
 })

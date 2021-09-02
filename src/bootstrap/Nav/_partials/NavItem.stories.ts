@@ -35,7 +35,7 @@ export default meta
 
 const Template: Story<AbstractNavItemProps> = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  template: '<D24NavItem v-bind="$props" />'
+  template: '<UiNavItem v-bind="$props" />'
 })
 
 export const NavItem = Template.bind({})

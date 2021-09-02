@@ -52,7 +52,7 @@ const Template: Story<BootstrapInputProps> = (args, { argTypes }) => ({
   },
   template: `
     <form :class="{ 'was-validated': wasValidated }">
-      <D24Input :model.sync="model" v-bind="{ disabled, icon, valid, label, readonly, required, size, type, errors }"
+      <UiInput :model.sync="model" v-bind="{ disabled, icon, valid, label, readonly, required, size, type, errors }"
                    name="example_name" />
       <hr class="mt-5">
       <code class="small">Current value: "{{ model }}"</code>

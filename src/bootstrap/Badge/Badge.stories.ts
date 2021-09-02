@@ -35,7 +35,7 @@ const defaultArgs = {
 const TDefault: Story<BootstrapBadgeProps> = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
-    <D24Badge v-bind="{ tag, theme }">{{ content }}</D24Badge>
+    <UiBadge v-bind="{ tag, theme }">{{ content }}</UiBadge>
   `
 })
 export const Default = TDefault.bind({})
@@ -47,9 +47,9 @@ Default.args = defaultArgs
 const TCustomSlot: Story<BootstrapBadgeProps> = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   template: `
-    <D24Badge v-bind="$props">
-      <D24Button class="btn-secondary btn-sm text-uppercase">{{ content }}</D24Button>
-    </D24Badge>
+    <UiBadge v-bind="$props">
+      <UiButton class="btn-secondary btn-sm text-uppercase">{{ content }}</UiButton>
+    </UiBadge>
   `
 })
 export const CustomSlot = TCustomSlot.bind({})

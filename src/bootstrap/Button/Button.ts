@@ -4,6 +4,7 @@ import { defineComponent, toRefs } from '@vue/composition-api'
 
 import { useButton } from '../../_abstract'
 
+// noinspection ES6PreferShortImport
 import { BootstrapButtonProps } from './Button.contracts'
 import { bootstrapButtonProps } from './Button.hooks'
 import { bootstrapButtonSizeRegistry, bootstrapButtonThemeRegistry } from './Button.config'

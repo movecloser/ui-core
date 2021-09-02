@@ -37,7 +37,7 @@ const Template: Story<BootstrapTextAreaProps> = (args, { argTypes }) => ({
   },
   template: `
     <form :class="{ 'was-validated': wasValidated }">
-      <D24Text :model.sync="model" v-bind="{ disabled, valid, label, readonly, required, rows, size, errors }"
+      <UiText :model.sync="model" v-bind="{ disabled, valid, label, readonly, required, rows, size, errors }"
                   name="example_name" />
       <hr class="mt-5">
       <code class="small">Current value: "{{ model }}"</code>

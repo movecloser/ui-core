@@ -2,8 +2,8 @@
 
 import { Meta, Story } from '@storybook/vue'
 
-import { SizeMap } from '../../_composables'
 import { getSizeControlOptions } from '../../_helpers'
+import { SizeMap } from '../../_composables'
 
 import { BootstrapButton } from './Button'
 import { BootstrapButtonProps } from './Button.contracts'
@@ -37,10 +37,10 @@ const Template: Story<BootstrapButtonProps> = (args, { argTypes }) => ({
     }
   },
   template: `
-    <D24Button v-bind="{ disabled, size }" @click="onClick"
-               :class="[className, square ? 'btn-square' : '']">
+    <UiButton v-bind="{ disabled, size }" @click="onClick"
+              :class="[className, square ? 'btn-square' : '']">
       {{ content }}
-    </D24Button>`
+    </UiButton>`
 })
 
 const defaultArgs = {

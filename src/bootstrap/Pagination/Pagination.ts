@@ -6,6 +6,7 @@ import { usePagination } from '../../_abstract'
 
 import { BootstrapButton } from '../Button'
 
+// noinspection ES6PreferShortImport
 import { BootstrapPaginationProps } from './Pagination.contracts'
 import { bootstrapPaginationProps } from './Pagination.hooks'
 

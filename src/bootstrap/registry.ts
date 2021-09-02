@@ -3,6 +3,7 @@
 import UniqueId from 'vue-unique-id'
 import Vue, { VueConstructor } from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
+import VueI18n from 'vue-i18n'
 import VueRouter from 'vue-router'
 
 import { registerComponent } from '../_abstract'
@@ -59,6 +60,7 @@ export const registerBootstrapDSL = (prefix: string = 'Bs'): void => {
 
   // Next, register additional plugins required for the Bootstrap DSL to work.
   Vue.use(UniqueId)
+  Vue.use(VueI18n)
   Vue.use(VueRouter)
 
   // Finally, register the components.

@@ -35,13 +35,13 @@ const Template: Story<BootstrapImageProps> = (args, { argTypes }) => ({
 
   template: `
     <div>
-      <D24Image v-if="show" v-bind="$props" />
+      <UiImage v-if="show" v-bind="$props" />
       <br />
-      <D24Button class="btn-link ps-0" @click="refresh">Apply changes</D24Button>
+      <UiButton class="btn-link ps-0" @click="refresh">Apply changes</UiButton>
       <br />
       <small><code>(another image below)</code></small>
       <div style="height: 200vh;" />
-      <D24Image v-if="show" v-bind="$props" />
+      <UiImage v-if="show" v-bind="$props" />
     </div>
   `
 } as ThisTypedComponentOptionsWithArrayProps<
