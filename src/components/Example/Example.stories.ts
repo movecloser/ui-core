@@ -8,7 +8,7 @@ import { Example as _Example } from './Example'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Example'
+  title: 'UI Core / Example'
 }
 export default meta
 
