@@ -5,7 +5,6 @@ import { Meta, Story } from '@storybook/vue'
 import { getTemplateBase } from '../../storybook'
 
 import { BootstrapPagination } from './Pagination'
-// noinspection ES6PreferShortImport
 import { BootstrapPaginationProps } from './Pagination.contracts'
 
 /**

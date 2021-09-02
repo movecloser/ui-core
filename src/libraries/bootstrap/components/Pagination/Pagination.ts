@@ -6,7 +6,6 @@ import { usePagination } from '../../../../abstract'
 
 import { BootstrapButton } from '../Button'
 
-// noinspection ES6PreferShortImport
 import { BootstrapPaginationProps } from './Pagination.contracts'
 import { bootstrapPaginationProps } from './Pagination.hooks'
 
@@ -42,11 +41,11 @@ export const BootstrapPagination = defineComponent({
   },
 
   template: `
-    <nav :aria-label="$t('_.pagination')">
+    <nav :aria-label="$t('pagination.pagination')">
       <ul class="pagination list-unstyled">
         <li v-if="showDirectionButtons" class="page-item" :class="{ 'disabled': !canGoBack }">
           <BootstrapButton class="btn-link page-link" @click="onPrevPageClick"
-                           :aria-label="$t('_.previous-page')"
+                           :aria-label="$t('pagination.previous-page')"
                            :aria-disabled="canGoBack ? 'false' : 'true'">
             <span aria-hidden="true">&laquo;</span>
           </BootstrapButton>
@@ -63,7 +62,7 @@ export const BootstrapPagination = defineComponent({
 
         <li v-if="showDirectionButtons" class="page-item" :class="{ 'disabled': !canGoNext }">
           <BootstrapButton class="btn-link page-link" @click="onNextPageClick"
-                           :aria-label="$t('_.next-page')"
+                           :aria-label="$t('pagination.next-page')"
                            :aria-disabled="canGoNext ? 'false' : 'true'">
             <span aria-hidden="true">&raquo;</span>
           </BootstrapButton>
