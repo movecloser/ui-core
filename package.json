@@ -1,0 +1,63 @@
+{
+    "name": "@movecloser/ui-core",
+    "version": "0.1.0",
+    "private": true,
+    "description": "Move Closer's UI components library.",
+    "repository": {
+        "type": "git",
+        "url": "git@lab.movecloser.pl/movecloser/ui-core.git"
+    },
+    "license": "UNLICENSED",
+    "author": {
+        "name": "Move Closer sp. z o.o.",
+        "email": "office@movecloser.co",
+        "url": "https://movecloser.co"
+    },
+    "maintainers": [
+        {
+            "name": "Stanisław Gregor",
+            "email": "stanislaw.gregor@movecloser.pl",
+            "role": "Front-end Developer"
+        },
+        {
+            "name": "Łukasz Sitnicki",
+            "email": "lukasz.sitnicki@movecloser.pl",
+            "role": "Software Architect"
+        }
+    ],
+    "contributors": [
+        {
+            "name": "Paweł Korzeniewski",
+            "email": "pawel.korzeniewski@movecloser.pl",
+            "role": "Product Designer"
+        },
+        {
+            "name": "Olga Milczek",
+            "email": "olga.milczek@movecloser.pl",
+            "role": "Junior Front-end Developer"
+        },
+        {
+            "name": "Michał Rossian",
+            "email": "michal.rossian@movecloser.pl",
+            "role": "Junior Front-end Developer"
+        },
+        {
+            "name": "Agnieszka Zawadzka",
+            "email": "agnieszka.zawadzka@movecloser.pl",
+            "role": "Senior Front-end Developer"
+        }
+    ],
+    "packageManager": "yarn@3.0.1",
+    "dependencies": {
+        "@vue/composition-api": "^1.1.4",
+        "faker": "^5.5.3",
+        "vue": "^2.6.14",
+        "vue-fragment": "^1.5.2",
+        "vue-lazyload": "^1.3.3",
+        "vue-router": "^3.5.2",
+        "vue-unique-id": "^3.2.1"
+    },
+    "devDependencies": {
+        "@types/faker": "^5.5.8"
+    }
+}
