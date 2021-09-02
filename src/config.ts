@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { registerBootstrapDSL } from './bootstrap'
+import { registerBootstrapDSL } from './libraries/bootstrap'
 
 /**
  * Available DSL components libraries.

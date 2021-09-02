@@ -2,12 +2,12 @@
 
 import { DSLLibrary, libraryRegisterFnRegistry } from './config'
 
-export * from './_abstract'
-export * from './_composables'
-export * from './_contracts'
+export * from './abstract'
+export * from './composables'
+export * from './contracts'
 export * from './config'
 
-export * from './bootstrap'
+export * from './libraries/bootstrap'
 
 /**
  * Registers the DSL components library in the app.
