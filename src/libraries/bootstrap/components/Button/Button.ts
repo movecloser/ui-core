@@ -1,6 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import { defineComponent } from '@vue/composition-api'
+import { BIconHourglassBottom } from 'bootstrap-vue'
 
 import './Button.scss'
 import { BootstrapButtonProps } from './Button.contract'
@@ -13,6 +14,7 @@ import { bootstrapButtonProps, useBootstrapButton } from './Button.hooks'
  */
 export const BootstrapButton = defineComponent({
   name: 'BootstrapButton',
+  components: { BIconHourglassBottom },
   props: bootstrapButtonProps,
   emits: ['click'],
 
@@ -25,7 +27,7 @@ export const BootstrapButton = defineComponent({
     <b-button :class="loadingClass" v-bind="{ size }" :disabled="disabled || loading"
               :variant="theme" @click="$emit('click')">
       <slot />
-      <b-icon v-if="loading" class="btn__icon" icon="hourglass-bottom" animation="fade" />
+      <b-icon-hourglass-bottom v-if="loading" class="btn__icon" animation="fade" />
     </b-button>
   `
 })

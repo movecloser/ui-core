@@ -1,10 +1,12 @@
 // Copyright © 2021 Move Closer
 
-import Vue, { VueConstructor } from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
-import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
+import { BootstrapVue } from 'bootstrap-vue'
+import { PluginObject, VueConstructor } from 'vue'
 
 import { registerComponent } from '../../abstract'
+
+import { BootstrapDSLConfiguration } from './contracts'
 
 /**
  * List of all available DSL components.
@@ -16,24 +18,34 @@ const componentsRegistry: Record<string, VueConstructor> = {}
 /**
  * Registers the Bootstrap DSL in the app.
  *
- * @param [prefix="Bs"] - The string that should be used to prefix each component's name.
- *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export const registerBootstrapDSL = (prefix: string = 'Bs'): void => {
-  // Firstly, register the Composition API.
-  // This line HAS TO come first, before any other plugins.
-  Vue.use(VueCompositionAPI)
+export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
+  install (_Vue, configuration?: BootstrapDSLConfiguration) {
+    if (typeof configuration === 'undefined') {
+      configuration = {}
+    }
 
-  // Next, register additional plugins required for the Bootstrap DSL to work.
-  Vue.use(BootstrapVue)
-  Vue.use(BootstrapVueIcons)
-  // Vue.use(UniqueId)
-  // Vue.use(VueI18n)
-  // Vue.use(VueRouter)
+    if (typeof configuration.prefix !== 'string' || configuration.prefix.length === 0) {
+      configuration.prefix = 'Bs'
+    }
 
-  // Finally, register the components.
-  for (const [name, component] of Object.entries(componentsRegistry)) {
-    registerComponent(component, `${prefix}${name}`)
+    // Firstly, register the Composition API.
+    // This line HAS TO come first, before any other plugins.
+    _Vue.use(VueCompositionAPI)
+
+    // Next, register additional plugins required for the Bootstrap DSL to work.
+    _Vue.use(BootstrapVue)
+    // _Vue.use(BootstrapVueIcons)
+    // _Vue.use(UniqueId)
+    // _Vue.use(VueI18n)
+    // _Vue.use(VueRouter)
+
+    _Vue.prototype.$dsl = configuration
+
+    // Finally, register the components.
+    for (const [name, component] of Object.entries(componentsRegistry)) {
+      registerComponent(component, `${configuration.prefix}${name}`)
+    }
   }
 }
