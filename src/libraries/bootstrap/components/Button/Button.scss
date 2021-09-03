@@ -1,0 +1,56 @@
+// Copyright © 2021 Move Closer
+
+////
+/// This file contains the styles for the `<BootstrapButton>` DSL component.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+////
+
+@use "../../scss/variables";
+
+.btn {
+  position: relative;
+
+  &::before, &__icon {
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
+  }
+
+  &.--loading::before, &.--loading &__icon {
+    opacity: 1;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
+    height: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
+    transform: translate(calc(-1 * var(--btn-box-shadow-width, 1px)), calc(-1 * var(--btn-box-shadow-width, 1px)));
+
+    background: rgba(white, 0.9);
+    border-radius: var(--btn-border-radius, .25rem);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.btn-sm::before {
+    border-radius: var(--btn-border-radius-sm, var(--btn-border-radius, .25rem));
+  }
+
+  &.btn-lg::before {
+    border-radius: var(--btn-border-radius-lg, var(--btn-border-radius, .25rem));
+  }
+
+  @each $theme in variables.$themes {
+    &.btn-#{$theme} &__icon {
+      color: var(--#{$theme});
+    }
+  }
+}

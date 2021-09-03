@@ -2,7 +2,7 @@
 
 import { Data } from '@vue/composition-api'
 
-import { AbstractTheme, HasSize, UseSizeClassProvides, UseThemeClassProvides } from '../../../composables'
+import { AbstractTheme, HasSize, UseSizeClassProvides, UseThemeClassProvides } from '../../_composables'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

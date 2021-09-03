@@ -2,7 +2,7 @@
 
 import { Data } from '@vue/composition-api'
 
-import { CanBeDisabled, HasErrors, HasSize } from '../composables'
+import { CanBeDisabled, HasErrors, HasSize } from '../_composables'
 
 /**
  * Registry that binds the passed-in `T` type with the applicable CSS class.

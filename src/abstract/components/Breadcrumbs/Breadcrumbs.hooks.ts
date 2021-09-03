@@ -3,7 +3,7 @@
 import { PropType } from '@vue/composition-api'
 import { RawLocation } from 'vue-router'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { BreadcrumbsItem, BreadcrumbsItemProps, BreadcrumbsProps } from './Breadcrumbs.contracts'
 

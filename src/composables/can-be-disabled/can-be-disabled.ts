@@ -2,7 +2,7 @@
 
 import { PropType } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { CanBeDisabled } from './can-be-disabled.contracts'
 
@@ -11,7 +11,7 @@ import { CanBeDisabled } from './can-be-disabled.contracts'
  *
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const canBeDisabledProp: ComponentObjectPropsOptions<CanBeDisabled> = {
+export const canBeDisabledProps: ComponentObjectPropsOptions<CanBeDisabled> = {
   disabled: {
     type: Boolean as PropType<boolean>,
     required: false,

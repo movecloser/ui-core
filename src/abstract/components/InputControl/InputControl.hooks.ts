@@ -2,7 +2,7 @@
 
 import { PropType, SetupContext, toRefs } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions, FormControlBaseProps } from '../../../contracts'
+import { ComponentObjectPropsOptions, FormControlBaseProps } from '../../_contracts'
 import {
   defaultValidationClassMap,
   SizeRegistry,
@@ -12,7 +12,7 @@ import {
   useSizeClass,
   useSyncModel,
   useValidMarkerClass, canBeDisabledProp, hasSizeProp, hasErrorsProp
-} from '../../../composables'
+} from '../../_composables'
 
 import { AbstractInputControlProps, UseInputControlProvides } from './InputControl.contracts'
 

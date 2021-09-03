@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { computed, PropType, Ref } from '@vue/composition-api'
+import { computed, PropOptions, PropType, Ref } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../contracts'
 
@@ -9,11 +9,7 @@ import { HasSize, Size, SizeMap, SizeRegistry, UseSizeClassProvides } from './ha
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getSizePropDefinition = (defaultSize = SizeMap.Medium): {
-  type: PropType<SizeMap>;
-  required: boolean;
-  default: SizeMap;
-} => {
+export const getSizePropDefinition = (defaultSize = SizeMap.Medium): PropOptions => {
   return {
     type: String as PropType<Size>,
     required: false,
@@ -22,11 +18,9 @@ export const getSizePropDefinition = (defaultSize = SizeMap.Medium): {
 }
 
 /**
- * Props partial.
- *
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const hasSizeProp: ComponentObjectPropsOptions<HasSize> = {
+export const hasSizeProps: ComponentObjectPropsOptions<HasSize> = {
   size: getSizePropDefinition()
 }
 
@@ -42,19 +36,19 @@ export const useSizeClass = (size: Ref<Size>, sizeClassRegistry: SizeRegistry): 
   /**
    * The CSS class specifying the input's sizing variant.
    */
-  return computed<string>(() => {
+  const sizeClass = computed<string>(() => {
     if (typeof sizeClassRegistry[size.value] !== 'string') {
       if (!Object.keys(sizeClassRegistry).length) {
         console.warn('useSizeClass(): Provided registry does NOT contain any definition. Used no class.')
       }
 
-      console.warn(
-        `useSizeClass(): Provided registry does NOT contain the given key.\nFalling back to the first key in the set, which is [${Object.keys(sizeClassRegistry)[0]}].`
-      )
+      console.warn(`useSizeClass(): Provided registry does NOT contain the given key.\nFalling back to the first key in the set, which is [${Object.keys(sizeClassRegistry)[0]}].`)
 
       return Object.values(sizeClassRegistry)[0] as string
     }
 
     return sizeClassRegistry[size.value] as string
   })
+
+  return { sizeClass }
 }

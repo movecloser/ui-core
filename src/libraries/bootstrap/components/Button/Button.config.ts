@@ -1,24 +1,23 @@
 // Copyright © 2021 Move Closer
 
-import { SizeRegistry, SizeMap, ThemeRegistry } from '../../../../composables'
-import { BootstrapTheme } from '../../common'
+import { SizeMap, SizeRegistry, ThemeRegistry } from '../../../../composables'
+
+import { BootstrapTheme } from '../../contracts'
 
 /**
+ * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export const bootstrapButtonSizeRegistry: SizeRegistry = {
-  [SizeMap.Small]: 'btn-sm',
+export const BootstrapButtonSizeMapClassRegistry: SizeRegistry = {
+  [SizeMap.Large]: 'btn-lg',
   [SizeMap.Medium]: '',
-  [SizeMap.Large]: 'btn-lg'
+  [SizeMap.Small]: 'btn-sm'
 }
 
-export const bootstrapButtonThemeRegistry: ThemeRegistry<BootstrapTheme> = {
-  [BootstrapTheme.Default]: '',
-  [BootstrapTheme.Danger]: 'btn-danger',
-  [BootstrapTheme.Dark]: 'btn-dark',
-  [BootstrapTheme.Info]: 'btn-info',
-  [BootstrapTheme.Light]: 'btn-light',
+/**
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ */
+export const BootstrapButtonThemeClassRegistry: ThemeRegistry<BootstrapTheme> = {
   [BootstrapTheme.Primary]: 'btn-primary',
-  [BootstrapTheme.Success]: 'btn-success',
-  [BootstrapTheme.Warning]: 'btn-warning'
+  [BootstrapTheme.Secondary]: 'btn-secondary'
 }

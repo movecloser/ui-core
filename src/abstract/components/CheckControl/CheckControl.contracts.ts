@@ -1,7 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import { ComputedRef, Ref, WritableComputedRef } from '@vue/composition-api'
-import { FormControlBaseProps } from '../../../contracts'
+import { FormControlBaseProps } from '../../_contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

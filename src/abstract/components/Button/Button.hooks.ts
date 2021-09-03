@@ -10,8 +10,8 @@ import {
   ThemeRegistry,
   useSizeClass,
   useThemeClass
-} from '../../../composables'
-import { ComponentObjectPropsOptions, Emit } from '../../../contracts'
+} from '../../_composables'
+import { ComponentObjectPropsOptions, Emit } from '../../_contracts'
 
 import { AbstractButtonProps, UseButtonProvides } from './Button.contracts'
 

@@ -2,7 +2,7 @@
 
 import { computed, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { AbstractPaginationProps, UsePaginationProvides } from './Pagination.contracts'
 

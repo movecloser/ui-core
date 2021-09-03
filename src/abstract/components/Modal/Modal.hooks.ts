@@ -2,7 +2,7 @@
 
 import { SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { AbstractModalProps, UseModalProvides } from './Modal.contracts'
 

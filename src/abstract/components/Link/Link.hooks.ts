@@ -2,8 +2,8 @@
 
 import { computed, PropType } from '@vue/composition-api'
 
-import { canBeDisabledProp } from '../../../composables'
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { canBeDisabledProp } from '../../_composables'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { AbstractLinkProps, Link, UseLinkProvides } from './Link.contracts'
 

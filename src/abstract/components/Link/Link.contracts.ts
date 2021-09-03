@@ -4,7 +4,7 @@ import { ComputedRef, Data } from '@vue/composition-api'
 import { RawLocation } from 'vue-router'
 import { TranslateResult } from 'vue-i18n'
 
-import { CanBeDisabled } from '../../../composables'
+import { CanBeDisabled } from '../../_composables'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

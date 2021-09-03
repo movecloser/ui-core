@@ -2,9 +2,9 @@
 
 import { computed, PropType, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
-import { AbstractNavProps, UseNavProvides } from './Nav.contracts'
+import { AbstractNavProps } from './Nav.contracts'
 
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
@@ -33,7 +33,7 @@ export const abstractNavProps: ComponentObjectPropsOptions<AbstractNavProps> = {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useNav = (props: AbstractNavProps, ctx: SetupContext): UseNavProvides => {
+export const useNav = (props: AbstractNavProps, ctx: SetupContext) => {
   // Extract the `emit()` function.
   const { emit } = ctx
 

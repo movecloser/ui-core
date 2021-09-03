@@ -2,7 +2,7 @@
 
 import { computed, PropType, ref, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { DropdownItem, DropdownItemProps, UseDropdownItemProvides } from './Dropdown.contracts'
 
@@ -25,7 +25,11 @@ export function useDropdownItem (props: DropdownItemProps, ctx: SetupContext): U
 
   const onClick = () => {
     if (isClickable.value) {
-      const result = (props.item.onClick as () => unknown)()
+      if (typeof props.item.onClick !== 'function') {
+        return
+      }
+
+      const result = props.item.onClick()
       if (result instanceof Promise) {
         isLoading.value = true
 

@@ -1,34 +1,30 @@
 // Copyright © 2021 Move Closer
 
-import { defineComponent, toRefs } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
-import { useButton } from '../../../../abstract'
-
-import { BootstrapButtonProps } from './Button.contracts'
-import { bootstrapButtonProps } from './Button.hooks'
-import { bootstrapButtonSizeRegistry, bootstrapButtonThemeRegistry } from './Button.config'
+import './Button.scss'
+import { BootstrapButtonProps } from './Button.contract'
+import { bootstrapButtonProps, useBootstrapButton } from './Button.hooks'
 
 /**
+ * @emits click - When the button gets clicked.
+ *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
- * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export const BootstrapButton = defineComponent({
   name: 'BootstrapButton',
   props: bootstrapButtonProps,
+  emits: ['click'],
 
-  setup (props: BootstrapButtonProps, { emit }) {
-    const { size, theme } = toRefs(props)
-
-    const { onClick, sizeClass, themeClass } = useButton(
-      emit, size, bootstrapButtonSizeRegistry, theme, bootstrapButtonThemeRegistry
-    )
-
-    return { onClick, sizeClass, themeClass }
+  setup (props: BootstrapButtonProps) {
+    const { loadingClass } = useBootstrapButton(props)
+    return { loadingClass }
   },
 
   template: `
-    <button v-bind="{ disabled }" :class="['btn', sizeClass, themeClass]" @click="onClick">
+    <b-button :class="loadingClass" v-bind="{ size }" :disabled="disabled || loading" :variant="theme">
       <slot />
-    </button>
+      <b-icon v-if="loading" class="btn__icon" icon="hourglass-bottom" animation="fade" />
+    </b-button>
   `
 })

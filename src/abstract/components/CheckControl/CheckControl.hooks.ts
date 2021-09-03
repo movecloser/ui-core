@@ -2,7 +2,7 @@
 
 import { computed, PropType, SetupContext, toRefs } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 import {
   defaultValidationClassMap,
   SizeRegistry,
@@ -12,7 +12,7 @@ import {
   useSyncModel,
   useValidMarkerClass,
   ValidationClassMap
-} from '../../../composables'
+} from '../../_composables'
 
 import { abstractBaseControlProps } from '../InputControl'
 import {

@@ -4,13 +4,17 @@ import { ComputedRef } from '@vue/composition-api'
 
 import { ClassRegistry } from '../../contracts'
 
-export enum AbstractTheme {
-  Default = 'default'
-}
-
 /**
  * Registry binding the element's theme with the applicable CSS class.
+ *
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export type ThemeRegistry<Theme extends string|number|symbol = AbstractTheme> = Partial<ClassRegistry<Theme>>;
+export type ThemeRegistry<Theme extends string | number | symbol> = Partial<ClassRegistry<Theme>>;
 
-export type UseThemeClassProvides = ComputedRef<string>;
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ */
+export interface UseThemeClassProvides {
+  themeClass: ComputedRef<string>;
+}

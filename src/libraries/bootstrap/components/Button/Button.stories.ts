@@ -2,110 +2,44 @@
 
 import { Meta, Story } from '@storybook/vue'
 
-import { getSizeControlOptions } from '../../../../helpers'
-import { SizeMap } from '../../../../composables'
+import { BootstrapSize, BootstrapTheme } from '../../contracts'
+import { getTemplateBase } from '../../storybook'
 
 import { BootstrapButton } from './Button'
-import { BootstrapButtonProps } from './Button.contracts'
-import { bootstrapButtonSizeRegistry } from './Button.config'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'DSL/Bootstrap/Button',
+  title: 'Ui Core/Bootstrap/Button',
   component: BootstrapButton,
-
   argTypes: {
-    className: { table: { disable: true } },
-
     size: {
       control: {
         type: 'select',
-        options: getSizeControlOptions(bootstrapButtonSizeRegistry)
+        options: BootstrapSize
+      }
+    },
+    theme: {
+      control: {
+        type: 'select',
+        options: BootstrapTheme
       }
     }
   }
 }
 export default meta
 
-const Template: Story<BootstrapButtonProps> = (args, { argTypes }) => ({
-  props: Object.keys(argTypes),
-  methods: {
-    onClick () {
-      console.debug('onClick()')
-    }
-  },
-  template: `
-    <UiButton v-bind="{ disabled, size }" @click="onClick"
-              :class="[className, square ? 'btn-square' : '']">
-      {{ content }}
-    </UiButton>`
+const Template: Story = (args, { argTypes }) => ({
+  ...getTemplateBase(argTypes),
+  components: { BootstrapButton },
+  template: '<BootstrapButton v-bind="$props">Lorem ipsum</BootstrapButton>'
 })
 
-const defaultArgs = {
-  content: 'BUTTON',
+export const Button = Template.bind({})
+Button.args = {
   disabled: false,
-  size: SizeMap.Medium,
-  square: false
-}
-
-/**
- * Primary.
- */
-export const Primary = Template.bind({})
-Primary.args = {
-  ...defaultArgs,
-  className: 'btn-primary'
-}
-
-/**
- * Secondary.
- */
-export const Secondary = Template.bind({})
-Secondary.args = {
-  ...defaultArgs,
-  className: 'btn-secondary'
-}
-
-/**
- * Secondary Dark.
- */
-export const SecondaryDark = Template.bind({})
-SecondaryDark.args = {
-  ...defaultArgs,
-  className: 'btn-secondary-dark'
-}
-SecondaryDark.parameters = {
-  backgrounds: { default: 'black' }
-}
-
-/**
- * CTA.
- */
-export const CTA = Template.bind({})
-CTA.args = {
-  ...defaultArgs,
-  className: 'btn-cta'
-}
-
-/**
- * Link.
- */
-export const Link = Template.bind({})
-Link.args = {
-  ...defaultArgs,
-  className: 'btn-link'
-}
-
-/**
- * Link Dark.
- */
-export const LinkDark = Template.bind({})
-LinkDark.args = {
-  ...defaultArgs,
-  className: 'btn-link-dark'
-}
-LinkDark.parameters = {
-  backgrounds: { default: 'black' }
+  loading: false,
+  size: BootstrapSize.Normal,
+  theme: BootstrapTheme.Primary
 }

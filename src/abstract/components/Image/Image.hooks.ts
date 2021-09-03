@@ -2,9 +2,9 @@
 
 import { ref, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
-import { AbstractImageProps, UseImageProvides } from './Image.contracts'
+import { AbstractImageProps } from './Image.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -55,7 +55,7 @@ export const useImage = (
   fallbackImage: string,
   loadCb?: () => unknown,
   errorCb?: () => unknown
-): UseImageProvides => {
+) => {
   const { emit } = ctx
 
   /**

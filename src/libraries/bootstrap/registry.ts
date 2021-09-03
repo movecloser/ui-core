@@ -1,50 +1,17 @@
 // Copyright © 2021 Move Closer
 
-import UniqueId from 'vue-unique-id'
 import Vue, { VueConstructor } from 'vue'
 import VueCompositionAPI from '@vue/composition-api'
-import VueI18n from 'vue-i18n'
-import VueRouter from 'vue-router'
+import { BootstrapVue, BootstrapVueIcons } from 'bootstrap-vue'
 
 import { registerComponent } from '../../abstract'
-
-import { BootstrapAccordion, BootstrapAccordionItem } from './components/Accordion'
-import { BootstrapBadge } from './components/Badge'
-import { BootstrapButton } from './components/Button'
-import { BootstrapCheck } from './components/Check'
-import { BootstrapFormError } from './components/FormError'
-import { BootstrapIcon } from './components/Icon'
-import { BootstrapImage } from './components/Image'
-import { BootstrapInput } from './components/Input'
-import { BootstrapLink } from './components/Link'
-import { BootstrapModal, BootstrapModalInner } from './components/Modal'
-import { BootstrapNav, BootstrapNavItem } from './components/Nav'
-import { BootstrapPagination } from './components/Pagination'
-import { BootstrapTextArea } from './components/TextArea'
 
 /**
  * List of all available DSL components.
  *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-const componentsRegistry: Record<string, VueConstructor> = {
-  Accordion: BootstrapAccordion,
-  AccordionItem: BootstrapAccordionItem,
-  Badge: BootstrapBadge,
-  Button: BootstrapButton,
-  Check: BootstrapCheck,
-  FormError: BootstrapFormError,
-  Icon: BootstrapIcon,
-  Image: BootstrapImage,
-  Input: BootstrapInput,
-  Link: BootstrapLink,
-  Modal: BootstrapModal,
-  ModalInner: BootstrapModalInner,
-  Nav: BootstrapNav,
-  NavItem: BootstrapNavItem,
-  Pagination: BootstrapPagination,
-  Text: BootstrapTextArea
-}
+const componentsRegistry: Record<string, VueConstructor> = {}
 
 /**
  * Registers the Bootstrap DSL in the app.
@@ -59,9 +26,11 @@ export const registerBootstrapDSL = (prefix: string = 'Bs'): void => {
   Vue.use(VueCompositionAPI)
 
   // Next, register additional plugins required for the Bootstrap DSL to work.
-  Vue.use(UniqueId)
-  Vue.use(VueI18n)
-  Vue.use(VueRouter)
+  Vue.use(BootstrapVue)
+  Vue.use(BootstrapVueIcons)
+  // Vue.use(UniqueId)
+  // Vue.use(VueI18n)
+  // Vue.use(VueRouter)
 
   // Finally, register the components.
   for (const [name, component] of Object.entries(componentsRegistry)) {

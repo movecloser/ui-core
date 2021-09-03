@@ -2,7 +2,7 @@
 
 import { computed, ComputedRef, PropType, Ref } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { HasErrors } from './has-errors.contracts'
 

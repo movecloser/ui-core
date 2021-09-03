@@ -1,8 +1,8 @@
 // Copyright © 2021 Move Closer
 
-import { Data, WritableComputedRef } from '@vue/composition-api'
+import { Data } from '@vue/composition-api'
 
-import { AbstractNavItem } from './partials'
+import { AbstractNavItem } from './_partials'
 
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
@@ -19,13 +19,4 @@ export interface AbstractNavProps extends Data {
    * Items to render.
    */
   items: AbstractNavItem[];
-}
-
-/**
- * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
- */
-export interface UseNavProvides {
-  _activeItem: WritableComputedRef<string>;
-  activateItem: (id: string) => void;
-  isItemActive: (id: string) => boolean;
 }

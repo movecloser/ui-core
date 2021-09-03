@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import { AbstractBadgeProps } from './Badge.contracts'
 

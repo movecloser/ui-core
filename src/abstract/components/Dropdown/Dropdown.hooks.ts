@@ -1,8 +1,8 @@
 // Copyright © 2021 Move Closer
 
-import { computed, PropType, ref, Ref } from '@vue/composition-api'
+import { computed, PropType, ref, Ref, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../../contracts'
+import { ComponentObjectPropsOptions } from '../../_contracts'
 
 import {
   DropdownAlignment,
@@ -52,7 +52,7 @@ export const dropdownProps: ComponentObjectPropsOptions<DropdownProps> = {
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export function useDropdown (props: DropdownProps): UseDropdownProvides {
+export function useDropdown (props: DropdownProps, ctx: SetupContext): UseDropdownProvides {
   const isOpen: Ref<boolean> = ref(props.openOnMount || false)
 
   const hasCustomTrigger = computed<boolean>(() => props.trigger !== null)

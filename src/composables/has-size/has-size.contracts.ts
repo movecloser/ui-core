@@ -5,12 +5,11 @@ import { ComputedRef } from '@vue/composition-api'
 import { ClassRegistry } from '../../contracts'
 
 /**
- * Props contract.
- *
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export interface HasSize {
-  size: Size;
+export interface HasSize<S = Size> {
+  size: S;
 }
 
 /**
@@ -37,4 +36,10 @@ export enum SizeMap {
  */
 export type SizeRegistry = Partial<ClassRegistry<SizeMap>>
 
-export type UseSizeClassProvides = ComputedRef<string>;
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ */
+export interface UseSizeClassProvides {
+  sizeClass: ComputedRef<string>
+}
