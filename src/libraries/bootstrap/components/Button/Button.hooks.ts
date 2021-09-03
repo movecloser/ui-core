@@ -3,9 +3,10 @@
 import { computed, ComputedRef, PropType } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../../../contracts'
-import { canBeDisabledProps } from '../../../../composables'
+import { canBeDisabledProp } from '../../../../composables'
 
-import { BootstrapSize, BootstrapTheme } from '../../contracts'
+import { BootstrapSize } from '../../contracts'
+import { getThemePropDefinition } from '../../composables'
 
 import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contract'
 
@@ -15,7 +16,7 @@ import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contr
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonProps> = {
-  ...canBeDisabledProps,
+  ...canBeDisabledProp,
 
   loading: {
     type: Boolean,
@@ -29,11 +30,7 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
     default: BootstrapSize.Normal
   },
 
-  theme: {
-    type: String as PropType<BootstrapTheme>,
-    required: false,
-    default: BootstrapTheme.Primary
-  }
+  theme: getThemePropDefinition()
 }
 
 /**

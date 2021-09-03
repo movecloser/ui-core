@@ -33,7 +33,18 @@ export default meta
 const Template: Story = (args, { argTypes }) => ({
   ...getTemplateBase(argTypes),
   components: { BootstrapButton },
-  template: '<BootstrapButton v-bind="$props">Lorem ipsum</BootstrapButton>'
+
+  methods: {
+    onClick () {
+      console.debug('🏷 onClick()')
+    }
+  },
+
+  template: `
+    <BootstrapButton v-bind="$props" @click="onClick">
+      Lorem ipsum
+    </BootstrapButton>
+  `
 })
 
 export const Button = Template.bind({})

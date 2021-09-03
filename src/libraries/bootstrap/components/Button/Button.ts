@@ -22,7 +22,8 @@ export const BootstrapButton = defineComponent({
   },
 
   template: `
-    <b-button :class="loadingClass" v-bind="{ size }" :disabled="disabled || loading" :variant="theme">
+    <b-button :class="loadingClass" v-bind="{ size }" :disabled="disabled || loading"
+              :variant="theme" @click="$emit('click')">
       <slot />
       <b-icon v-if="loading" class="btn__icon" icon="hourglass-bottom" animation="fade" />
     </b-button>

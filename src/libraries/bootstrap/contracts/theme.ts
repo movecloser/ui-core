@@ -22,3 +22,10 @@ export enum BootstrapTheme {
   Success = 'success',
   Warning = 'warning',
 }
+
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export interface HasBootstrapTheme {
+  theme: BootstrapTheme;
+}
