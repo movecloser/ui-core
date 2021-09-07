@@ -1,0 +1,8 @@
+// Copyright © 2021 Move Closer
+
+/// Thick border for the `<input>`.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+@mixin thick-border($border-color: var(--form-input-border-color)) {
+  box-shadow: 0 0 0 var(--form-input-border-width-thicker) $border-color;
+}
