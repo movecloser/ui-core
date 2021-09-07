@@ -1,0 +1,21 @@
+// Copyright © 2021 Move Closer
+
+@use "sass:math";
+
+/// Returns the calculated `rem` value from the passed-in `px` value.
+///
+/// @param {Length} $pxSize - The `px` value to be calculated.
+///
+/// @returns {Length} - The converted 'remmy' value.
+@function rem($pxSize) {
+  @return math.div($pxSize, 18px) * 1rem;
+}
+
+/// Returns the calculated `px` value from the passed-in `rem` value.
+///
+/// @param {Length} $remSize - The `rem` value to be calculated.
+///
+/// @returns {Length} - The converted value in `px`.
+@function px($remSize) {
+  @return math.div($remSize * 18, 1rem) * 1px;
+}

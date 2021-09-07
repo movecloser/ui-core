@@ -2,7 +2,7 @@
 
 import { ComputedRef, WritableComputedRef } from '@vue/composition-api'
 
-import { FormControlBaseProps } from '../../_contracts'
+import { FormControlBaseProps } from '../../../contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

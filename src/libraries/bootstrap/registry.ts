@@ -1,6 +1,9 @@
 // Copyright © 2021 Move Closer
 
 import VueCompositionAPI from '@vue/composition-api'
+import VueI18n from 'vue-i18n'
+import VueRouter from 'vue-router'
+import VueUniqueId from 'vue-unique-id'
 import { BootstrapVue } from 'bootstrap-vue'
 import { PluginObject, VueConstructor } from 'vue'
 
@@ -30,18 +33,17 @@ export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
       configuration.prefix = 'Bs'
     }
 
+    _Vue.prototype.$dsl = configuration
+
     // Firstly, register the Composition API.
     // This line HAS TO come first, before any other plugins.
     _Vue.use(VueCompositionAPI)
 
     // Next, register additional plugins required for the Bootstrap DSL to work.
     _Vue.use(BootstrapVue)
-    // _Vue.use(BootstrapVueIcons)
-    // _Vue.use(UniqueId)
-    // _Vue.use(VueI18n)
-    // _Vue.use(VueRouter)
-
-    _Vue.prototype.$dsl = configuration
+    _Vue.use(VueI18n)
+    _Vue.use(VueRouter)
+    _Vue.use(VueUniqueId)
 
     // Finally, register the components.
     for (const [name, component] of Object.entries(componentsRegistry)) {

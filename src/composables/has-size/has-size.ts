@@ -20,7 +20,7 @@ export const getSizePropDefinition = (defaultSize = SizeMap.Medium): PropOptions
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const hasSizeProps: ComponentObjectPropsOptions<HasSize> = {
+export const hasSizeProp: ComponentObjectPropsOptions<HasSize> = {
   size: getSizePropDefinition()
 }
 
@@ -33,10 +33,7 @@ export const hasSizeProps: ComponentObjectPropsOptions<HasSize> = {
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export const useSizeClass = (size: Ref<Size>, sizeClassRegistry: SizeRegistry): UseSizeClassProvides => {
-  /**
-   * The CSS class specifying the input's sizing variant.
-   */
-  const sizeClass = computed<string>(() => {
+  return computed<string>(() => {
     if (typeof sizeClassRegistry[size.value] !== 'string') {
       if (!Object.keys(sizeClassRegistry).length) {
         console.warn('useSizeClass(): Provided registry does NOT contain any definition. Used no class.')
@@ -49,6 +46,4 @@ export const useSizeClass = (size: Ref<Size>, sizeClassRegistry: SizeRegistry): 
 
     return sizeClassRegistry[size.value] as string
   })
-
-  return { sizeClass }
 }

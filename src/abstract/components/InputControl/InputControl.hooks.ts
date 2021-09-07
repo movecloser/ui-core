@@ -2,17 +2,20 @@
 
 import { PropType, SetupContext, toRefs } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions, FormControlBaseProps } from '../../_contracts'
+import { ComponentObjectPropsOptions, FormControlBaseProps } from '../../../contracts'
 import {
+  canBeDisabledProp,
   defaultValidationClassMap,
+  hasErrorsProp,
+  hasSizeProp,
   SizeRegistry,
-  ValidationClassMap,
   useHasErrors,
   useIsValid,
   useSizeClass,
   useSyncModel,
-  useValidMarkerClass, canBeDisabledProp, hasSizeProp, hasErrorsProp
-} from '../../_composables'
+  useValidMarkerClass,
+  ValidationClassMap
+} from '../../../composables'
 
 import { AbstractInputControlProps, UseInputControlProvides } from './InputControl.contracts'
 
@@ -117,9 +120,12 @@ export const useInputControl = <ValueType>(
   const { errors, valid, model, size } = toRefs(props)
 
   const hasErrors = useHasErrors(errors)
-  const isValid = useIsValid(hasErrors, valid)
+
   const sizeClass = useSizeClass(size, sizeRegistry)
+
+  const isValid = useIsValid(hasErrors, valid)
   const validationClass = useValidMarkerClass(isValid, validClassMap)
+
   const value = useSyncModel<ValueType>(model, ctx)
 
   return { hasErrors, sizeClass, validationClass, value }

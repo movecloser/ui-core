@@ -40,6 +40,4 @@ export type SizeRegistry = Partial<ClassRegistry<SizeMap>>
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export interface UseSizeClassProvides {
-  sizeClass: ComputedRef<string>
-}
+export type UseSizeClassProvides = ComputedRef<string>

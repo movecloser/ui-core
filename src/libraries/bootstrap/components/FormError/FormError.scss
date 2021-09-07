@@ -1,0 +1,45 @@
+// Copyright © 2021 Move Closer
+
+////
+/// This file contains the styles for the `<BootstrapFormError>` DSL component.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+////
+
+@use "../../scss/helpers/animate" as *;
+
+.form-error {
+  color: var(--form-input-helper-color);
+  max-height: 0;
+  overflow: hidden;
+  font-size: var(--form-helper-font-size);
+  margin: var(--form-helper-margin-top) 0 0 0;
+  @include animate((color, max-height));
+}
+
+input[disabled],
+input[readonly],
+textarea[disabled],
+textarea[readonly] {
+  ~ .form-error {
+    color: var(--form-input-disabled-helper-color);
+  }
+}
+
+input.--valid,
+textarea.--valid,
+.form-check.--valid {
+  ~ .form-error {
+    max-height: 2rem;
+    color: var(--form-feedback-valid-color);
+  }
+}
+
+input.--invalid,
+textarea.--invalid,
+.form-check.--invalid {
+  ~ .form-error {
+    max-height: 2rem;
+    color: var(--form-feedback-invalid-color);
+  }
+}

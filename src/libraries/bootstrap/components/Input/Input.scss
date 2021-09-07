@@ -1,0 +1,240 @@
+// Copyright © 2021 Move Closer
+
+////
+/// This file contains the styles for the `<BootstrapInput>` DSL component.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+////
+
+@use "../../scss/helpers/animate" as *;
+
+/// Base state of the <label>.
+@mixin label-base-state() {
+  font-size: var(--form-input-label-font-size);
+  transform: var(--form-input-label-transform);
+}
+
+.form-input {
+  // Be relative for the <label>.
+  position: relative;
+
+  color: var(--form-input-color);
+  font-size: var(--form-input-font-size);
+
+  &.--large {
+    font-size: var(--form-input-font-size-lg);
+  }
+
+
+  /*******************************************************************************
+   * Input.
+   */
+
+  &__control {
+    appearance: none;
+    outline: none;
+
+    // Fill the parent. This way we allow to control the size of the input
+    // by changing the size of its parent.
+    width: 100%;
+    min-height: 100%;
+
+    padding: var(--form-input-padding-y) var(--form-input-padding-x);
+
+    background: var(--form-input-bg);
+    border: var(--form-input-border-width) var(--form-input-border-style) var(--form-input-border-color);
+    border-radius: var(--border-radius);
+
+    @include animate((color, background, box-shadow));
+
+    // Hide the placeholder.
+    &::placeholder {
+      color: transparent;
+    }
+  }
+
+  // With icon:
+  &.--with-icon &__control {
+    padding-left: var(--form-input-with-icon-padding-left);
+  }
+
+  // Large & with icon:
+  &.--large.--with-icon &__control {
+    padding-left: var(--form-input-with-icon-padding-left-lg);
+  }
+
+
+  /*******************************************************************************
+   * Label.
+   */
+
+  &__control:not(:focus) ~ label,
+  &__control:placeholder-shown ~ label {
+    @include label-base-state();
+  }
+
+  &__control:-webkit-autofill {
+    @include label-base-state();
+  }
+
+
+  &__label,
+  &__control:focus ~ label,
+  &__control:not(:placeholder-shown) ~ label {
+    position: absolute;
+    top: 0;
+    left: calc(var(--form-input-padding-x) - var(--form-input-label-bg-offset));
+
+    transform: translateY(-50%);
+    transform-origin: 0 0;
+
+    @include animate((font-size, color, transform, background));
+
+    pointer-events: none;
+
+    padding: 0 var(--form-input-label-bg-offset);
+
+    color: var(--form-input-label-color);
+    font-size: var(--form-input-label-floating-font-size);
+    background: var(--form-input-bg);
+
+    // Required for aligning label's text with the input as it affects the inner box model.
+    border: var(--form-input-border-width) solid transparent;
+
+    border-radius: var(--border-radius);
+  }
+
+  // With icon:
+  &.--with-icon &__label {
+    left: calc(var(--form-input-with-icon-padding-left) - var(--form-input-label-bg-offset));
+  }
+
+  // Large & with icon:
+  &.--large.--with-icon &__label {
+    left: calc(var(--form-input-with-icon-padding-left-lg) - var(--form-input-label-bg-offset));
+  }
+
+
+  //  /*******************************************************************************
+  //   * TODO: Icon.
+  //   */
+  //
+  //  &__icon {
+  //    position: absolute;
+  //    top: 0;
+  //    left: 0;
+  //    transform: translate(20%, 25%);
+  //
+  //    pointer-events: none;
+  //
+  //    color: $form-input-icon-color;
+  //  }
+  //
+  //  &.--large &__icon {
+  //    transform: translate(15%, 15%);
+  //  }
+  //
+  //
+  //  /*******************************************************************************
+  //   * TODO: :hover state.
+  //   */
+  //
+  //  &__control:hover {
+  //    color: $form-input-hover-color;
+  //    background: $form-input-hover-bg;
+  //    border-color: $form-input-hover-border-color;
+  //  }
+  //
+  //  &__control:hover ~ label {
+  //    color: $form-input-hover-label-color;
+  //    background: $form-input-hover-bg;
+  //  }
+  //
+  //
+  //  /*******************************************************************************
+  //   * TODO: :focus state.
+  //   */
+  //
+  //  &__control:focus:not([readonly]) {
+  //    color: $form-input-focus-color;
+  //    background: $form-input-focus-bg;
+  //    border-color: $form-input-focus-border-color;
+  //    @include thick-border($form-input-focus-border-color);
+  //  }
+  //
+  //  &__control:focus:not([readonly]) ~ label {
+  //    color: $form-input-focus-label-color;
+  //    background: $form-input-focus-bg;
+  //  }
+  //
+  //
+  //  /*******************************************************************************
+  //   * TODO: [disabled] & [readonly] states.
+  //   */
+  //
+  //  &__control[disabled],
+  //  &__control[readonly] {
+  //    color: $form-input-disabled-color;
+  //    background: $form-input-disabled-bg;
+  //    border-color: $form-input-disabled-border-color;
+  //  }
+  //
+  //  &__control[disabled] ~ label,
+  //  &__control[readonly] ~ label {
+  //    color: $form-input-disabled-label-color;
+  //    background: $form-input-disabled-bg;
+  //
+  //    pointer-events: auto;
+  //  }
+  //
+  //  &__control[disabled] ~ &__icon,
+  //  &__control[readonly] ~ &__icon {
+  //    color: $form-input-disabled-icon-color;
+  //  }
+  //}
+  //
+  //
+  ///*******************************************************************************
+  // * TODO: Validations states.
+  // */
+  //
+  //form .form-input {
+  //
+  //  /// Generates the style definitions for the :valid/:invalid state.
+  //  /// @param {Color} $background-color - <input>'s & <label>'s background color.
+  //  /// @param {Color} $input-border-color - <input>'s border color.
+  //  /// @param {Color} $label-color - <label>'s text color.
+  //  @mixin validation-state($background-color, $input-border-color, $label-color) {
+  //    background: $background-color;
+  //    border-color: $input-border-color;
+  //    @include thick-border($input-border-color);
+  //
+  //    ~ label {
+  //      color: $label-color;
+  //      background: $background-color;
+  //    }
+  //  }
+  //
+  //  // :valid state.
+  //  &__control.--valid {
+  //    @include validation-state($form-input-valid-bg, $form-input-valid-border-color, $form-input-valid-label-color);
+  //  }
+  //
+  //  @if $enable-native-validation {
+  //    &__control:valid {
+  //      @include validation-state($form-input-valid-bg, $form-input-valid-border-color, $form-input-valid-label-color);
+  //    }
+  //  }
+  //
+  //
+  //  // :invalid state.
+  //  &__control.--invalid {
+  //    @include validation-state($form-input-invalid-bg, $form-input-invalid-border-color, $form-input-invalid-label-color);
+  //  }
+  //
+  //  @if $enable-native-validation {
+  //    &__control:invalid {
+  //      @include validation-state($form-input-invalid-bg, $form-input-invalid-border-color, $form-input-invalid-label-color);
+  //    }
+  //  }
+}
