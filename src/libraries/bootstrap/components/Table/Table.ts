@@ -12,9 +12,8 @@ export const BootstrapTable = defineComponent({
   name: 'BootstrapTable',
   props: bootstrapTableProps,
 
-  setup (props: TableProps, ctx: SetupContext) {
+  setup (props: BootstrapTableProps, ctx: SetupContext) {
     return {
-
     }
   },
 

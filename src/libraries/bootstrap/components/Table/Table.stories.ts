@@ -4,7 +4,7 @@ import { Meta, Story } from '@storybook/vue'
 
 import { BootstrapTable } from './Table'
 import { TableProps } from './Table.contracts'
-import { getTemplateBase } from '@/shared/dsl/src/libraries/bootstrap/storybook'
+import { getTemplateBase } from '../../storybook'
 
 const meta: Meta = {
   title: 'Ui Core/Bootstrap/Table',
@@ -13,11 +13,10 @@ const meta: Meta = {
 export default meta
 
 const Template: Story<TableProps> = (args, { argsTypes }) => ({
-  ...getTemplateBase(argsTypes),
-
   props: Object.keys(argsTypes),
+
   component: { BootstrapTable },
-  template: '<BootstrapTable v-bind="$props"></BootstrapTable>'
+  template: '<BootstrapTable v-bind="$props" />'
 })
 
 export const Table = Template.bind({})

@@ -1,8 +1,9 @@
 // Copyright © 2021 Move Closer
 
-import { ComponentObjectPropsOptions } from '@/shared/dsl/src'
-import { TableHead, TableProps } from './Table.contracts'
 import { PropType } from '@vue/composition-api'
+
+import { ComponentObjectPropsOptions } from '../../../../contracts'
+import { TableHead, TableProps } from './Table.contracts'
 
 export const bootstrapTableProps: ComponentObjectPropsOptions<TableProps> = {
   head: {
