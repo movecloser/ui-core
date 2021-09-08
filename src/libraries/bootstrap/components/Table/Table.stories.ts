@@ -12,27 +12,25 @@ const meta: Meta = {
 }
 export default meta
 
-const Template: Story<TableProps> = (args, { argsTypes }) => ({
-  ...getTemplateBase(argsTypes),
+const Template: Story<TableProps> = (args, { argTypes }) => ({
+  ...getTemplateBase(argTypes),
 
-  component: { BootstrapTable },
-  template: '<BootstrapTable v-bind="$props" />'
+  components: { BootstrapTable },
+  template: '<BootstrapTable :head="head"/>'
 })
 
 export const Table = Template.bind({})
 Table.args = {
-  items: [
-    { name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
-    { name: { first: 'Jane', last: 'Doe' }, sex: 'Female', age: 36 },
-    { name: { first: 'Rubin', last: 'Kincade' }, sex: 'Male', age: 73 },
-    { name: { first: 'Shirley', last: 'Partridge' }, sex: 'Female', age: 62 }
+  titles: [
+    { key: 'position', label: 'Stanowisko' },
+    { key: 'department', label: 'Dział' },
+    { key: 'place', label: 'Miejsce pracy' }
   ],
-  fields: [
-    'index',
-    { key: 'name', label: 'Full Name' },
-    'age',
-    'sex',
-    { key: 'nameage', label: 'First name and age' }
+  items: [
+    { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
+    { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' },
+    { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
+    { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' }
   ],
   head: [
     {

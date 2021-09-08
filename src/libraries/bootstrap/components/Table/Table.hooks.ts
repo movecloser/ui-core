@@ -5,6 +5,9 @@ import { PropType } from '@vue/composition-api'
 import { ComponentObjectPropsOptions } from '../../../../contracts'
 import { TableHead, TableProps } from './Table.contracts'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export const bootstrapTableProps: ComponentObjectPropsOptions<TableProps> = {
   head: {
     type: Array as PropType<TableHead>,
