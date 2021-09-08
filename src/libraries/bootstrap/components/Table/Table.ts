@@ -1,9 +1,8 @@
 // Copyright © 2021 Move Closer
 
-import { defineComponent, SetupContext } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 import { bootstrapTableProps } from './Table.hooks'
-import { TableProps } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
@@ -12,8 +11,26 @@ export const BootstrapTable = defineComponent({
   name: 'BootstrapTable',
   props: bootstrapTableProps,
 
-  setup (props: BootstrapTableProps, ctx: SetupContext) {
+  data () {
     return {
+      fields: [
+        // A virtual column that doesn't exist in items
+        'index',
+        // A column that needs custom formatting
+        { key: 'name', label: 'Full Name' },
+        // A regular column
+        'age',
+        // A regular column
+        'sex',
+        // A virtual column made up from two fields
+        { key: 'nameage', label: 'First name and age' }
+      ],
+      items: [
+        { name: { first: 'John', last: 'Doe' }, sex: 'Male', age: 42 },
+        { name: { first: 'Jane', last: 'Doe' }, sex: 'Female', age: 36 },
+        { name: { first: 'Rubin', last: 'Kincade' }, sex: 'Male', age: 73 },
+        { name: { first: 'Shirley', last: 'Partridge' }, sex: 'Female', age: 62 }
+      ]
     }
   },
 
