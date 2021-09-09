@@ -5,6 +5,9 @@ import { BvTableField } from 'bootstrap-vue/src/components/table'
 import { Data } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export interface TableCell {
   component?: VueConstructor;
   key: string;

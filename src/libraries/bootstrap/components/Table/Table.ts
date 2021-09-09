@@ -2,8 +2,8 @@
 
 import { defineComponent } from '@vue/composition-api'
 
-import { bootstrapTableProps } from './Table.hooks'
 import { BootstrapButton } from '../Button'
+import { bootstrapTableProps } from './Table.hooks'
 import { TableCell, TableHeadElement } from './Table.contracts'
 
 /**

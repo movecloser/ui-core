@@ -3,7 +3,7 @@
 import { PropType } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../../../contracts'
-import { TableCell, TableHead, TableProps } from './Table.contracts'
+import { TableHead, TableItem, TableProps } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
@@ -19,7 +19,7 @@ export const bootstrapTableProps: ComponentObjectPropsOptions<TableProps> = {
     default: false
   },
   items: {
-    type: Array as PropType<TableCell[]>,
+    type: Array as PropType<TableItem[]>,
     required: true,
     default: () => []
   }

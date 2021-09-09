@@ -5,7 +5,11 @@ import { Meta, Story } from '@storybook/vue'
 import { BootstrapTable } from './Table'
 import { TableProps } from './Table.contracts'
 import { getTemplateBase } from '../../storybook'
+import { BootstrapButton } from '@/shared/dsl/src'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 const meta: Meta = {
   title: 'Ui Core/Bootstrap/Table',
   component: BootstrapTable
@@ -23,22 +27,10 @@ export const Table = Template.bind({})
 Table.args = {
   tempRow: {},
   head: [
-    {
-      key: 'position',
-      label: 'Stanowisko'
-    },
-    {
-      key: 'department',
-      label: 'Dział'
-    },
-    {
-      key: 'place',
-      label: 'Miejsce pracy'
-    },
-    {
-      key: 'seeMore',
-      label: '---'
-    }
+    { key: 'position', label: 'Stanowisko' },
+    { key: 'department', label: 'Dział' },
+    { key: 'place', label: 'Miejsce pracy' },
+    { key: 'seeMore', label: '---' }
   ],
   items: [
     [
