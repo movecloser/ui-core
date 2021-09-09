@@ -3,6 +3,8 @@
 import { defineComponent } from '@vue/composition-api'
 
 import { bootstrapTableProps } from './Table.hooks'
+import { BootstrapButton } from '../Button'
+import { TableCell, TableHeadElement } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
@@ -10,44 +12,39 @@ import { bootstrapTableProps } from './Table.hooks'
 export const BootstrapTable = defineComponent({
   name: 'BootstrapTable',
   props: bootstrapTableProps,
+  components: { BootstrapButton },
 
-  data () {
-    return {
-      titles: [
-        { key: 'position', label: 'Stanowisko' },
-        { key: 'department', label: 'Dział' },
-        { key: 'place', label: 'Miejsce pracy' }
-      ],
-      items: [
-        { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
-        { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' },
-        { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
-        { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' }
-      ]
+  methods: {
+    composeSlotName (filed: TableHeadElement): string {
+      return `cell(${filed.key})`
+    },
+    findCell (row: any): TableCell {
+      const found: TableCell | undefined = row.item.find((r: TableCell) => r.key === row.field.key)
+
+      if (!found) {
+        return {
+          key: row.field.key,
+          value: ''
+        }
+      }
+
+      return found
+    },
+    shouldRenderComponent (row: any): boolean {
+      const found = this.findCell(row)
+      // TODO: Throw when value is an object and there's no component defined.
+      return typeof row.item.component !== 'undefined'
     }
   },
 
   template: `
     <div>
-      <b-table small :fields="titles" :items="items" responsive="sm">
-
-        <h1> {{ head }}</h1>
-
-        <template #cell(position)="data">
-          <div class="font-weight-bold border-dark">
-          {{ data.item.name }}
-          </div>
-        </template>
-
-        <template #cell(department)="data">
-          {{ data.item.departmentName }}
-        </template>
-
-        <template #cell(place)="data">
-          {{ data.item.placeName }}
-        </template>
-
-      </b-table>
+    <b-table small :fields="head" :items="items" responsive="sm">
+      <template v-for="field in head" v-slot:[composeSlotName(field)]="data">
+        <span v-if="!shouldRenderComponent(data)">{{ findCell(data).value }}</span>
+        <component v-else :is="findCell(data).component" :item="findCell(data).value" />
+      </template>
+    </b-table>
     </div>
   `
 })

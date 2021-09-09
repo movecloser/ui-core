@@ -16,28 +16,47 @@ const Template: Story<TableProps> = (args, { argTypes }) => ({
   ...getTemplateBase(argTypes),
 
   components: { BootstrapTable },
-  template: '<BootstrapTable :head="head"/>'
+  template: '<BootstrapTable v-bind="$props" />'
 })
 
 export const Table = Template.bind({})
 Table.args = {
-  titles: [
-    { key: 'position', label: 'Stanowisko' },
-    { key: 'department', label: 'Dział' },
-    { key: 'place', label: 'Miejsce pracy' }
-  ],
-  items: [
-    { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
-    { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' },
-    { name: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej', departmentName: 'IT / Security', placeName: 'Warszawa' },
-    { name: 'Ekspert ds. Zrównoważonego Rozwoju', departmentName: 'Finanse', placeName: 'Kraków' }
-  ],
+  tempRow: {},
   head: [
     {
-      column: 'title',
-      label: 'Tytuł',
-      width: '1.5fr'
+      key: 'position',
+      label: 'Stanowisko'
+    },
+    {
+      key: 'department',
+      label: 'Dział'
+    },
+    {
+      key: 'place',
+      label: 'Miejsce pracy'
+    },
+    {
+      key: 'seeMore',
+      label: '---'
     }
   ],
-  isLoading: false
+  items: [
+    [
+      { key: 'position', value: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej' },
+      { key: 'department', value: 'IT / Security' },
+      { key: 'place', value: ' Warszawa' }
+    ], [
+      { key: 'position', value: 'Ekspert ds. Zrównoważonego Rozwoju' },
+      { key: 'department', value: 'Finanse' },
+      { key: 'place', value: ' Kraków' }
+    ], [
+      { key: 'position', value: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej' },
+      { key: 'department', value: 'IT / Security' },
+      { key: 'place', value: ' Warszawa' }
+    ], [
+      { key: 'position', value: 'Ekspert ds. Zrównoważonego Rozwoju' },
+      { key: 'department', value: 'Finanse' },
+      { key: 'place', value: ' Kraków' }
+    ]
+  ]
 }
