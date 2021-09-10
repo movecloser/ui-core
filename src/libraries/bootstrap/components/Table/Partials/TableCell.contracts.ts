@@ -3,6 +3,9 @@
 import { AnyObject } from '@movecloser/front-core'
 import { VueConstructor } from 'vue'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export interface TableCell {
   component?: VueConstructor;
   key: string;

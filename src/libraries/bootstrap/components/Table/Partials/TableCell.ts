@@ -1,7 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import { defineComponent } from '@vue/composition-api'
-import { TableCell } from '@/shared/dsl/src/libraries/bootstrap/components/Table'
+import { TableCell } from './TableCell.contracts'
 
 export const BootstrapTableCell = defineComponent({
   name: 'BootstrapTableCell',
@@ -27,9 +27,7 @@ export const BootstrapTableCell = defineComponent({
   },
 
   template: `
-  <div>
     <span v-if="!shouldRenderComponent(data)">{{ findCell(data).value }}</span>
     <component v-else :is="findCell(data).component" :item="findCell(data).value" />
-  </div>
   `
 })
