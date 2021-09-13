@@ -13,6 +13,14 @@ import { BootstrapSize, BootstrapTheme } from '../../contracts'
  */
 export interface BootstrapButtonProps extends Data, CanBeDisabled {
   /**
+   * Determines whether the button should be rendered with the appearance of a link
+   * while maintaining the default padding and size of a button.
+   *
+   * @default false
+   */
+  link: boolean;
+
+  /**
    * Determines whether the component should display a loading indicator.
    *
    * @default false

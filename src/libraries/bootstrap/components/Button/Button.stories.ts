@@ -51,6 +51,7 @@ const Template: Story<BootstrapButtonProps> = (args, { argTypes }) => ({
 export const Button = Template.bind({})
 Button.args = {
   disabled: false,
+  link: false,
   loading: false,
   outline: false,
   size: BootstrapSize.Normal,

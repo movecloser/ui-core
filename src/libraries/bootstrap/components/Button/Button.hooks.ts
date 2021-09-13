@@ -18,6 +18,12 @@ import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contr
 export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonProps> = {
   ...canBeDisabledProp,
 
+  link: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
   loading: {
     type: Boolean,
     required: false,
@@ -45,7 +51,17 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
 export const useBootstrapButton = (props: BootstrapButtonProps): UseBootstrapButtonProvides => {
   const loadingClass: ComputedRef<string> = computed(() => props.loading ? '--loading' : '')
 
-  const variant: ComputedRef<string> = computed(() => props.outline ? `outline-${props.theme}` : props.theme)
+  const variant: ComputedRef<string> = computed(() => {
+    if (props.link) {
+      return 'link'
+    }
+
+    if (props.outline) {
+      return `outline-${props.theme}`
+    }
+
+    return props.theme
+  })
 
   return { loadingClass, variant }
 }
