@@ -17,13 +17,13 @@ export const BootstrapButton = defineComponent({
   emits: ['click'],
 
   setup (props: BootstrapButtonProps) {
-    const { loadingClass } = useBootstrapButton(props)
-    return { loadingClass }
+    const { loadingClass, variant } = useBootstrapButton(props)
+    return { loadingClass, variant }
   },
 
   template: `
-    <b-button :class="loadingClass" v-bind="{ size }" :disabled="disabled || loading"
-              :variant="theme" @click="$emit('click')">
+    <b-button :class="loadingClass" v-bind="{ size, variant }"
+              :disabled="disabled || loading" @click="$emit('click')">
 
       <!-- Button's content -->
       <slot />

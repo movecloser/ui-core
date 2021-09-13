@@ -20,6 +20,14 @@ export interface BootstrapButtonProps extends Data, CanBeDisabled {
   loading: boolean;
 
   /**
+   * Determines whether the button's theme color should be applied
+   * to the outline (border), instead of the background (fill).
+   *
+   * @default false
+   */
+  outline: boolean;
+
+  /**
    * Button's size.
    *
    * @default BootstrapSize.Normal
@@ -38,5 +46,13 @@ export interface BootstrapButtonProps extends Data, CanBeDisabled {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export interface UseBootstrapButtonProvides {
+  /**
+   * CSS class that - if present - determines that the button is currently in the "loading" state.
+   */
   loadingClass: ComputedRef<string>
+
+  /**
+   * Computed value for the `variant` prop of the `<b-button>` component.
+   */
+  variant: ComputedRef<string>
 }

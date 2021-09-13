@@ -24,6 +24,12 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
     default: false
   },
 
+  outline: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
   size: {
     type: String as PropType<BootstrapSize>,
     required: false,
@@ -37,6 +43,9 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export const useBootstrapButton = (props: BootstrapButtonProps): UseBootstrapButtonProvides => {
-  const loadingClass: ComputedRef<string> = computed<string>(() => props.loading ? '--loading' : '')
-  return { loadingClass }
+  const loadingClass: ComputedRef<string> = computed(() => props.loading ? '--loading' : '')
+
+  const variant: ComputedRef<string> = computed(() => props.outline ? `outline-${props.theme}` : props.theme)
+
+  return { loadingClass, variant }
 }
