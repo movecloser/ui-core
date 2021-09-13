@@ -5,7 +5,7 @@
 // export * from './Button'
 export * from './CheckControl'
 // export * from './Dropdown'
-// export * from './Icon'
+export * from './Icon'
 // export * from './Image'
 export * from './InputControl'
 // export * from './Link'

@@ -1,6 +1,25 @@
 // Copyright © 2021 Move Closer
 
 import Vue, { VueConstructor } from 'vue'
+import { AnyObject } from '@movecloser/front-core'
+import { inject } from '@vue/composition-api'
+
+import { DSL_CONFIG_INJECTION_KEY } from './config'
+
+/**
+ * Resolves the provided DSL configuration object.
+ *
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export const getDSLConfig = <Config extends AnyObject>(): Config => {
+  const config = inject<Config>(DSL_CONFIG_INJECTION_KEY)
+
+  if (typeof config === 'undefined') {
+    throw new Error(`getDSLConfig(): FATAL ERROR! Failed to inject the DSL configuration! Did you provide the configuration object under the [${DSL_CONFIG_INJECTION_KEY.toString()}] InjectionKey?`)
+  }
+
+  return config
+}
 
 /**
  * Registers the passed-in Vue component in the app.

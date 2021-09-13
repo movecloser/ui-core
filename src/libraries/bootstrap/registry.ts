@@ -7,7 +7,8 @@ import VueUniqueId from 'vue-unique-id'
 import { BootstrapVue } from 'bootstrap-vue'
 import { PluginObject, VueConstructor } from 'vue'
 
-import { registerComponent } from '../../abstract'
+import { DSL_CONFIG_INJECTION_KEY } from '../../config'
+import { registerComponent } from '../../helpers'
 
 import { BootstrapDSLConfiguration } from './contracts'
 
@@ -33,7 +34,11 @@ export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
       configuration.prefix = 'Bs'
     }
 
-    _Vue.prototype.$dsl = configuration
+    _Vue.mixin({
+      provide: { [DSL_CONFIG_INJECTION_KEY]: configuration }
+    })
+
+    // _Vue.prototype.$dsl = configuration
 
     // Firstly, register the Composition API.
     // This line HAS TO come first, before any other plugins.
