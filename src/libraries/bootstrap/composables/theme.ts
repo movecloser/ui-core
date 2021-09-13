@@ -8,7 +8,7 @@ import { BootstrapTheme } from '../contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getThemePropDefinition = (defaultTheme = BootstrapTheme): PropOptions => {
+export const getThemePropDefinition = (defaultTheme = BootstrapTheme.Primary): PropOptions => {
   return {
     type: String as PropType<BootstrapTheme>,
     required: false,
