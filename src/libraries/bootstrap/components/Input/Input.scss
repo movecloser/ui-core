@@ -49,8 +49,12 @@
 
     @include animate((color, background, box-shadow, border-color));
 
-    // Hide the placeholder.
     &::placeholder {
+      @include animate((color));
+    }
+
+    // Prevent the placeholder from overlapping with the floating label.
+    &:empty:not(:focus)::placeholder {
       color: transparent;
     }
   }
@@ -78,7 +82,6 @@
   &__control:-webkit-autofill {
     @include label-base-state();
   }
-
 
   &__label,
   &__control:focus ~ label,
@@ -116,6 +119,11 @@
     left: calc(var(--form-input-with-icon-padding-left-lg) - var(--form-input-label-bg-offset));
   }
 
+  // Required field indicator.
+  &__control[required] ~ label::after {
+    content: "*";
+    color: var(--danger);
+  }
 
   /*******************************************************************************
    * Icon.

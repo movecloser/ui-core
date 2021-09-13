@@ -44,7 +44,7 @@ const Template: Story<BootstrapInputProps> = (args, { argTypes }) => ({
     }
   },
   template: `
-    <form :class="{ 'was-validated': wasValidated }">
+    <form>
       <BootstrapInput :model.sync="model" name="example_name"
                       v-bind="$props" />
       <hr class="mt-5">
@@ -55,7 +55,6 @@ const Template: Story<BootstrapInputProps> = (args, { argTypes }) => ({
 export const Input = Template.bind({})
 Input.args = {
   disabled: false,
-  errors: [faker.lorem.sentence()],
   icon: '',
   label: 'Lorem label',
   placeholder: 'Lorem placeholder',

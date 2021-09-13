@@ -2,6 +2,7 @@
 
 export * from './Badge'
 export * from './Button'
+export * from './Check'
 export * from './FormError'
 export * from './Icon'
-// export * from './Input'
+export * from './Input'

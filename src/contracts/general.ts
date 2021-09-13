@@ -16,6 +16,11 @@ export type ClassRegistry<T extends string|number|symbol, CSSClass = string> = R
  */
 export interface FormControlBaseProps extends CanBeDisabled, HasErrors, HasSize, Data {
   /**
+   * Text for the `<label>` element.
+   */
+  label: string;
+
+  /**
    * Value for the `[name]` attribute.
    */
   name: string;

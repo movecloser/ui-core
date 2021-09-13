@@ -42,15 +42,15 @@ export const BootstrapInput = defineComponent({
 
       <!-- Main <input> element -->
       <input v-model="_model" v-bind="{ disabled, name, readonly, required, type }" :id="$id()"
-             class="form-input__control form-control" :class="validationClass"
+             class="form-input__control" :class="validationClass"
              :placeholder="placeholder || ' '">
 
       <!-- Icon -->
       <BootstrapIcon v-if="icon" :name="icon" :size="iconSize" class="form-input__icon" />
 
       <!-- Label -->
-      <label :for="$id()" class="form-input__label form-label">
-        {{ label }}<span v-if="required" class="form-label__asterisk">&nbsp;*</span>
+      <label :for="$id()" class="form-input__label">
+        {{ label }}
       </label>
 
       <!-- Validation errors -->

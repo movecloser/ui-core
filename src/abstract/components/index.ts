@@ -3,7 +3,7 @@
 // export * from './Badge'
 // export * from './Breadcrumbs'
 // export * from './Button'
-// export * from './CheckControl'
+export * from './CheckControl'
 // export * from './Dropdown'
 // export * from './Icon'
 // export * from './Image'
