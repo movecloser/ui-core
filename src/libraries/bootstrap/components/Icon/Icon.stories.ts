@@ -13,7 +13,7 @@ import { BootstrapIconProps } from './Icon.contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Icon',
+  title: 'Ui Core / Bootstrap / Icon',
   component: BootstrapIcon
 }
 export default meta

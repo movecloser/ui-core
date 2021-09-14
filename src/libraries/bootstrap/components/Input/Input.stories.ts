@@ -15,7 +15,7 @@ import { bootstrapInputSizeRegistry } from './Input.config'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Forms/Input',
+  title: 'Ui Core / Bootstrap / Forms / Input',
   component: BootstrapInput,
 
   argTypes: {

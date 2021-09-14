@@ -12,7 +12,7 @@ import { BootstrapButtonProps } from './Button.contract'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Button',
+  title: 'Ui Core / Bootstrap / Button',
   component: BootstrapButton,
   argTypes: {
     size: {

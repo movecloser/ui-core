@@ -11,7 +11,7 @@ import { BootstrapBreadcrumbsProps } from './Breadcrumbs.contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Breadcrumbs',
+  title: 'Ui Core / Bootstrap / Breadcrumbs',
   component: BootstrapBreadcrumbs
 }
 export default meta

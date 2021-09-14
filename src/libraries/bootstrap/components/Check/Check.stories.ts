@@ -12,7 +12,7 @@ import { BootstrapCheckProps } from './Check.contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Forms/Check',
+  title: 'Ui Core / Bootstrap / Forms / Check',
   component: BootstrapCheck,
   argTypes: {
     multiple: { table: { disable: true } }
