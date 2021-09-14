@@ -4,9 +4,8 @@ import { defineComponent } from '@vue/composition-api'
 
 import { BootstrapButton } from '../Button'
 
-import { bootstrapTableProps } from './Table.hooks'
-import { TableCell } from '../Table/partials'
-import { TableHeadElement } from './Table.contracts'
+import { BootstrapTableCell } from '../Table/partials'
+import { bootstrapTableProps, useBootstrapTable } from './Table.hooks'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
@@ -14,36 +13,18 @@ import { TableHeadElement } from './Table.contracts'
 export const BootstrapTable = defineComponent({
   name: 'BootstrapTable',
   props: bootstrapTableProps,
-  components: { BootstrapButton },
+  components: { BootstrapButton, BootstrapTableCell },
 
-  methods: {
-    composeSlotName (filed: TableHeadElement): string {
-      return `cell(${filed.key})`
-    },
-    findCell (row: any): TableCell {
-      const found: TableCell | undefined = row.item.find((r: TableCell) => r.key === row.field.key)
-
-      if (!found) {
-        return {
-          key: row.field.key,
-          value: ''
-        }
-      }
-
-      return found
-    },
-    shouldRenderComponent (row: any): boolean {
-      const found = this.findCell(row)
-      // TODO: Throw when value is an object and there's no component defined.
-      return typeof row.item.component !== 'undefined'
-    }
+  setup () {
+    const { composeSlotName } = useBootstrapTable()
+    return { composeSlotName }
   },
 
   template: `
-    <b-table small :fields="head" :items="items" responsive="sm">
+    <b-table v-bind="{ items }" :fields="head">
       <template v-for="field in head" v-slot:[composeSlotName(field)]="data">
-        <span v-if="!shouldRenderComponent(data)">{{ findCell(data).value }}</span>
-        <component v-else :is="findCell(data).component" :item="findCell(data).value" />
+        {{ data.value }}
+        <BootstrapTableCell v-bind="{ index, value, item }"/>
       </template>
     </b-table>
   `

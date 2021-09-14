@@ -1,18 +1,28 @@
 // Copyright © 2021 Move Closer
 
-import { AnyObject } from '@movecloser/front-core'
+import { ComputedRef } from '@vue/composition-api'
+import { TableItem } from '@/shared/dsl/src/libraries/bootstrap/components/Table'
 import { VueConstructor } from 'vue'
 
-/**
- * @author Michał Rossian <michal.rossian@movecloser.pl>
- */
-export interface TableCell {
-  component?: VueConstructor;
-  key: string;
-  value: string | AnyObject
+// TODO: documentation
+export interface TableCellProps {
+  /**
+   * table element index
+   */
+  index: number
+  /**
+   * table item key
+   */
+  item: TableItem
+  /**
+   * value for the item key
+   */
+  value: string | VueConstructor
 }
 
 export interface UseBootstrapTableCellProvides {
-  findCell: (row: any) => void
-  shouldRenderComponent: (row: any) => void
+  /**
+   * method that checks if should render component or string in table cell
+   */
+  shouldRenderComponent: ComputedRef<boolean>
 }

@@ -26,28 +26,28 @@ export const Table = Template.bind({})
 Table.args = {
   tempRow: {},
   head: [
-    { key: 'position', label: 'Stanowisko' },
-    { key: 'department', label: 'Dział' },
-    { key: 'place', label: 'Miejsce pracy' },
-    { key: 'seeMore', label: '---' }
+    {
+      key: 'position',
+      label: 'Stanowisko'
+    },
+    {
+      key: 'department',
+      label: 'Dział'
+    },
+    {
+      key: 'place',
+      label: 'Miejsce pracy'
+    },
+    {
+      key: 'seeMore',
+      label: '---'
+    }
   ],
   items: [
-    [
-      { key: 'position', value: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej' },
-      { key: 'department', value: 'IT / Security' },
-      { key: 'place', value: ' Warszawa' }
-    ], [
-      { key: 'position', value: 'Ekspert ds. Zrównoważonego Rozwoju' },
-      { key: 'department', value: 'Finanse' },
-      { key: 'place', value: ' Kraków' }
-    ], [
-      { key: 'position', value: 'Ekspert ds. Rynku OZE i Transformacji Energetycznej' },
-      { key: 'department', value: 'IT / Security' },
-      { key: 'place', value: ' Warszawa' }
-    ], [
-      { key: 'position', value: 'Ekspert ds. Zrównoważonego Rozwoju' },
-      { key: 'department', value: 'Finanse' },
-      { key: 'place', value: ' Kraków' }
-    ]
+    {
+      position: 'Ekspert',
+      department: '12321',
+      place: 'WWa'
+    }
   ]
 }
