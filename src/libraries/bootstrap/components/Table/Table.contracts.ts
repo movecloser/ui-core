@@ -1,18 +1,9 @@
 // Copyright © 2021 Move Closer
 
-import { AnyObject } from '@movecloser/front-core'
 import { BvTableField } from 'bootstrap-vue/src/components/table'
 import { Data } from '@vue/composition-api'
-import { VueConstructor } from 'vue'
 
-/**
- * @author Michał Rossian <michal.rossian@movecloser.pl>
- */
-export interface TableCell {
-  component?: VueConstructor;
-  key: string;
-  value: string | AnyObject
-}
+import { TableCell } from '../Table/partials'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>

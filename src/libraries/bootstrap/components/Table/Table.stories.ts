@@ -1,10 +1,10 @@
 // Copyright © 2021 Move Closer
 
 import { Meta, Story } from '@storybook/vue'
+import { getTemplateBase } from '../../storybook'
 
 import { BootstrapTable } from './Table'
 import { TableProps } from './Table.contracts'
-import { getTemplateBase } from '../../storybook'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>

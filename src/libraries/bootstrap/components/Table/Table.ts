@@ -3,8 +3,10 @@
 import { defineComponent } from '@vue/composition-api'
 
 import { BootstrapButton } from '../Button'
+
 import { bootstrapTableProps } from './Table.hooks'
-import { TableCell, TableHeadElement } from './Table.contracts'
+import { TableCell } from '../Table/partials'
+import { TableHeadElement } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
