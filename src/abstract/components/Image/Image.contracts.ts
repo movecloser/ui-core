@@ -14,7 +14,7 @@ export interface AbstractImageProps extends Data {
   /**
    * Determines whether the image should be lazy loaded.
    */
-  isLazy: boolean;
+  lazy: boolean;
 
   /**
    * Value for the `<img>'s` `[sizes]` attribute.
