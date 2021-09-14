@@ -38,13 +38,11 @@ export const BootstrapTable = defineComponent({
   },
 
   template: `
-    <div>
     <b-table small :fields="head" :items="items" responsive="sm">
       <template v-for="field in head" v-slot:[composeSlotName(field)]="data">
         <span v-if="!shouldRenderComponent(data)">{{ findCell(data).value }}</span>
         <component v-else :is="findCell(data).component" :item="findCell(data).value" />
       </template>
     </b-table>
-    </div>
   `
 })

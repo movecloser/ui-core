@@ -5,7 +5,6 @@ import { Meta, Story } from '@storybook/vue'
 import { BootstrapTable } from './Table'
 import { TableProps } from './Table.contracts'
 import { getTemplateBase } from '../../storybook'
-import { BootstrapButton } from '@/shared/dsl/src'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>

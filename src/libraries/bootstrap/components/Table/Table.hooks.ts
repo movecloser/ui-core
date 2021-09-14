@@ -3,7 +3,7 @@
 import { PropType } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../../../contracts'
-import { TableHead, TableItem, TableProps } from './Table.contracts'
+import { TableHead, TableItem, TableProps, UseBootstrapTableProvides } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
