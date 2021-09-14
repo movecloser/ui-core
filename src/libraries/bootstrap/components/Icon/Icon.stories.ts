@@ -24,6 +24,7 @@ const Template: Story<BootstrapIconProps> = (args, { argTypes }) => ({
   inject: { $dsl: DSL_CONFIG_INJECTION_KEY },
   computed: {
     icons () {
+      // @ts-expect-error - Correct TS annotation would require too much effort.
       return Object.keys(this.$dsl.icons)
     }
   },
