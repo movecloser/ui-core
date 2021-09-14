@@ -1,0 +1,14 @@
+// Copyright © 2021 Move Closer
+
+////
+/// This file contains the styles for the `<BootstrapBreadcrumbs>` DSL component.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+////
+
+.breadcrumb-item > * {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 0.25em;
+}

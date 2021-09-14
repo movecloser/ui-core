@@ -18,7 +18,7 @@ export const BootstrapIcon = defineComponent({
   },
 
   template: `
-    <svg xmlns="http://www.w3.org/2000/svg" role="img" v-bind="{ height, width }">
+    <svg class="icon" xmlns="http://www.w3.org/2000/svg" role="img" v-bind="{ height, width }">
       <g :fill="color">
         <slot v-if="$slots.default" />
         <component v-else-if="component" :is="component" />

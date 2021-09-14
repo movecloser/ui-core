@@ -1,7 +1,7 @@
 // Copyright © 2021 Move Closer
 
 // export * from './Badge'
-// export * from './Breadcrumbs'
+export * from './Breadcrumbs'
 // export * from './Button'
 export * from './CheckControl'
 // export * from './Dropdown'
