@@ -6,6 +6,7 @@ import { BootstrapSize, BootstrapTheme } from '../../contracts'
 import { getTemplateBase } from '../../storybook'
 
 import { BootstrapButton } from './Button'
+import { BootstrapButtonProps } from './Button.contract'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -30,7 +31,7 @@ const meta: Meta = {
 }
 export default meta
 
-const Template: Story = (args, { argTypes }) => ({
+const Template: Story<BootstrapButtonProps> = (args, { argTypes }) => ({
   ...getTemplateBase(argTypes),
   components: { BootstrapButton },
 
@@ -50,7 +51,9 @@ const Template: Story = (args, { argTypes }) => ({
 export const Button = Template.bind({})
 Button.args = {
   disabled: false,
+  link: false,
   loading: false,
+  outline: false,
   size: BootstrapSize.Normal,
   theme: BootstrapTheme.Primary
 }

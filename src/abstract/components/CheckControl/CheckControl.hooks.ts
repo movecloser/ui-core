@@ -2,7 +2,7 @@
 
 import { computed, PropType, SetupContext, toRefs } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../../contracts'
 import {
   defaultValidationClassMap,
   SizeRegistry,
@@ -12,16 +12,16 @@ import {
   useSyncModel,
   useValidMarkerClass,
   ValidationClassMap
-} from '../../_composables'
+} from '../../../composables'
 
 import { abstractBaseControlProps } from '../InputControl'
 import {
-  AbstractCheckControlType,
-  AbstractCheckControlProps,
   AbstractCheckControlOption,
+  AbstractCheckControlProps,
+  AbstractCheckControlType,
   AbstractCheckControlValueType,
-  UseCheckControlProvides,
-  AbstractCheckListProps
+  AbstractCheckListProps,
+  UseCheckControlProvides
 } from './CheckControl.contracts'
 
 /**
@@ -109,18 +109,12 @@ export const getAbstractCheckListProps = <ValueType> ():
  */
 export const useCheckControl = <ValueType> (
   props: AbstractCheckControlProps<ValueType> | AbstractCheckListProps<ValueType>,
-  ctx: SetupContext,
-  sizeRegistry: SizeRegistry,
-  validClassMap: ValidationClassMap = defaultValidationClassMap
+  ctx: SetupContext
 ): UseCheckControlProvides<ValueType> => {
-  const { errors, valid, model, multiple, size } = toRefs(props)
+  const { model, multiple } = toRefs(props)
 
   const checked = useSyncModel<AbstractCheckControlValueType<ValueType>>(model, ctx)
   const checkType = computed<AbstractCheckControlType>(() => multiple.value ? 'checkbox' : 'radio')
-  const hasErrors = useHasErrors(errors)
-  const isValid = useIsValid(hasErrors, valid)
-  const sizeClass = useSizeClass(size, sizeRegistry)
-  const validationClass = useValidMarkerClass(isValid, validClassMap)
 
-  return { checked, hasErrors, sizeClass, checkType, validationClass }
+  return { checked, checkType }
 }

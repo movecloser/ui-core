@@ -18,7 +18,19 @@ import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contr
 export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonProps> = {
   ...canBeDisabledProp,
 
+  link: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
   loading: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
+  outline: {
     type: Boolean,
     required: false,
     default: false
@@ -37,6 +49,19 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export const useBootstrapButton = (props: BootstrapButtonProps): UseBootstrapButtonProvides => {
-  const loadingClass: ComputedRef<string> = computed<string>(() => props.loading ? '--loading' : '')
-  return { loadingClass }
+  const loadingClass: ComputedRef<string> = computed(() => props.loading ? '--loading' : '')
+
+  const variant: ComputedRef<string> = computed(() => {
+    if (props.link) {
+      return 'link'
+    }
+
+    if (props.outline) {
+      return `outline-${props.theme}`
+    }
+
+    return props.theme
+  })
+
+  return { loadingClass, variant }
 }

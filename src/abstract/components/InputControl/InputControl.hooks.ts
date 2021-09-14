@@ -27,45 +27,35 @@ export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBa
   ...hasSizeProp,
   ...hasErrorsProp,
 
-  /**
-   * Value for the `[name]` attribute.
-   */
-  name: {
-    type: String as PropType<string>,
-    required: true
-  },
-
-  /**
-   * Value for the `[placeholder]` attribute.
-   */
-  placeholder: {
-    type: String as PropType<string>,
+  label: {
+    type: String,
     required: false
   },
 
-  /**
-   * Determines whether the element should be mutable.
-   */
+  name: {
+    type: String,
+    required: true
+  },
+
+  placeholder: {
+    type: String,
+    required: false
+  },
+
   readonly: {
-    type: Boolean as PropType<boolean>,
+    type: Boolean,
     required: false,
     default: false
   },
 
-  /**
-   * Determines whether the control should be marked as required.
-   */
   required: {
-    type: Boolean as PropType<boolean>,
+    type: Boolean,
     required: false,
     default: false
   },
 
-  /**
-   * Determines whether the control should be marked as valid.
-   */
   valid: {
-    type: Boolean as PropType<boolean>,
+    type: Boolean,
     required: false,
     default: null
   }

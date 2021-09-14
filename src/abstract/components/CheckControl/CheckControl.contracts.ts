@@ -1,7 +1,8 @@
 // Copyright © 2021 Move Closer
 
 import { ComputedRef, Ref, WritableComputedRef } from '@vue/composition-api'
-import { FormControlBaseProps } from '../../_contracts'
+
+import { FormControlBaseProps } from '../../../contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -20,11 +21,6 @@ export interface AbstractCheckControlProps<ValueType> extends FormControlBasePro
    * Id of check control.
    */
   id: string|null;
-
-  /**
-   * Label to display next to control.
-   */
-  label: string|null;
 
   /**
    * Control's value, synced via `v-model`.
@@ -78,7 +74,4 @@ export type AbstractCheckControlValueType<ValueType> = ValueType|ValueType[]
 export interface UseCheckControlProvides<ValueType> {
   checked: WritableComputedRef<AbstractCheckControlValueType<ValueType>>;
   checkType: Ref<AbstractCheckControlType>;
-  hasErrors: ComputedRef<boolean>;
-  sizeClass: ComputedRef<string>;
-  validationClass: ComputedRef<string>;
 }

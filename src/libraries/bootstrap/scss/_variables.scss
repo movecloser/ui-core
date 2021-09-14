@@ -1,5 +1,8 @@
 // Copyright © 2021 Move Closer
 
+
+// Color system.
+
 $themes: (
   "primary",
   "secondary",
@@ -10,3 +13,8 @@ $themes: (
   "light",
   "dark",
 );
+
+
+// Forms.
+
+$enable-native-validation: false;

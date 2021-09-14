@@ -6,7 +6,9 @@
 /// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
 ////
 
+@use "../../scss/variables";
 @use "../../scss/helpers/animate" as *;
+@use "../../scss/helpers/thick-border" as *;
 
 /// Base state of the <label>.
 @mixin label-base-state() {
@@ -45,10 +47,14 @@
     border: var(--form-input-border-width) var(--form-input-border-style) var(--form-input-border-color);
     border-radius: var(--border-radius);
 
-    @include animate((color, background, box-shadow));
+    @include animate((color, background, box-shadow, border-color));
 
-    // Hide the placeholder.
     &::placeholder {
+      @include animate((color));
+    }
+
+    // Prevent the placeholder from overlapping with the floating label.
+    &:empty:not(:focus)::placeholder {
       color: transparent;
     }
   }
@@ -76,7 +82,6 @@
   &__control:-webkit-autofill {
     @include label-base-state();
   }
-
 
   &__label,
   &__control:focus ~ label,
@@ -114,127 +119,148 @@
     left: calc(var(--form-input-with-icon-padding-left-lg) - var(--form-input-label-bg-offset));
   }
 
+  // Required field indicator.
+  &__control[required] ~ label::after {
+    content: "*";
+    color: var(--danger);
+  }
 
-  //  /*******************************************************************************
-  //   * TODO: Icon.
-  //   */
-  //
-  //  &__icon {
-  //    position: absolute;
-  //    top: 0;
-  //    left: 0;
-  //    transform: translate(20%, 25%);
-  //
-  //    pointer-events: none;
-  //
-  //    color: $form-input-icon-color;
-  //  }
-  //
-  //  &.--large &__icon {
-  //    transform: translate(15%, 15%);
-  //  }
-  //
-  //
-  //  /*******************************************************************************
-  //   * TODO: :hover state.
-  //   */
-  //
-  //  &__control:hover {
-  //    color: $form-input-hover-color;
-  //    background: $form-input-hover-bg;
-  //    border-color: $form-input-hover-border-color;
-  //  }
-  //
-  //  &__control:hover ~ label {
-  //    color: $form-input-hover-label-color;
-  //    background: $form-input-hover-bg;
-  //  }
-  //
-  //
-  //  /*******************************************************************************
-  //   * TODO: :focus state.
-  //   */
-  //
-  //  &__control:focus:not([readonly]) {
-  //    color: $form-input-focus-color;
-  //    background: $form-input-focus-bg;
-  //    border-color: $form-input-focus-border-color;
-  //    @include thick-border($form-input-focus-border-color);
-  //  }
-  //
-  //  &__control:focus:not([readonly]) ~ label {
-  //    color: $form-input-focus-label-color;
-  //    background: $form-input-focus-bg;
-  //  }
-  //
-  //
-  //  /*******************************************************************************
-  //   * TODO: [disabled] & [readonly] states.
-  //   */
-  //
-  //  &__control[disabled],
-  //  &__control[readonly] {
-  //    color: $form-input-disabled-color;
-  //    background: $form-input-disabled-bg;
-  //    border-color: $form-input-disabled-border-color;
-  //  }
-  //
-  //  &__control[disabled] ~ label,
-  //  &__control[readonly] ~ label {
-  //    color: $form-input-disabled-label-color;
-  //    background: $form-input-disabled-bg;
-  //
-  //    pointer-events: auto;
-  //  }
-  //
-  //  &__control[disabled] ~ &__icon,
-  //  &__control[readonly] ~ &__icon {
-  //    color: $form-input-disabled-icon-color;
-  //  }
-  //}
-  //
-  //
-  ///*******************************************************************************
-  // * TODO: Validations states.
-  // */
-  //
-  //form .form-input {
-  //
-  //  /// Generates the style definitions for the :valid/:invalid state.
-  //  /// @param {Color} $background-color - <input>'s & <label>'s background color.
-  //  /// @param {Color} $input-border-color - <input>'s border color.
-  //  /// @param {Color} $label-color - <label>'s text color.
-  //  @mixin validation-state($background-color, $input-border-color, $label-color) {
-  //    background: $background-color;
-  //    border-color: $input-border-color;
-  //    @include thick-border($input-border-color);
-  //
-  //    ~ label {
-  //      color: $label-color;
-  //      background: $background-color;
-  //    }
-  //  }
-  //
-  //  // :valid state.
-  //  &__control.--valid {
-  //    @include validation-state($form-input-valid-bg, $form-input-valid-border-color, $form-input-valid-label-color);
-  //  }
-  //
-  //  @if $enable-native-validation {
-  //    &__control:valid {
-  //      @include validation-state($form-input-valid-bg, $form-input-valid-border-color, $form-input-valid-label-color);
-  //    }
-  //  }
-  //
-  //
-  //  // :invalid state.
-  //  &__control.--invalid {
-  //    @include validation-state($form-input-invalid-bg, $form-input-invalid-border-color, $form-input-invalid-label-color);
-  //  }
-  //
-  //  @if $enable-native-validation {
-  //    &__control:invalid {
-  //      @include validation-state($form-input-invalid-bg, $form-input-invalid-border-color, $form-input-invalid-label-color);
-  //    }
-  //  }
+  /*******************************************************************************
+   * Icon.
+   */
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(20%, 25%);
+
+    pointer-events: none;
+
+    color: var(--form-input-icon-color);
+  }
+
+  &.--large &__icon {
+    transform: translate(15%, 15%);
+  }
+
+
+  /*******************************************************************************
+   * :hover state.
+   */
+
+  &__control:hover {
+    color: var(--form-input-hover-color);
+    background: var(--form-input-hover-bg);
+    border-color: var(--form-input-hover-border-color);
+  }
+
+  &__control:hover ~ label {
+    color: var(--form-input-hover-label-color);
+    background: var(--form-input-hover-bg);
+  }
+
+
+  /*******************************************************************************
+   * :focus state.
+   */
+
+  &__control:focus:not([readonly]) {
+    color: var(--form-input-focus-color);
+    background: var(--form-input-focus-bg);
+    border-color: var(--form-input-focus-border-color);
+    @include thick-border(var(--form-input-focus-border-color));
+  }
+
+  &__control:focus:not([readonly]) ~ label {
+    color: var(--form-input-focus-label-color);
+    background: var(--form-input-focus-bg);
+  }
+
+
+  /*******************************************************************************
+   * [disabled] & [readonly] states.
+   */
+
+  &__control[disabled],
+  &__control[readonly] {
+    color: var(--form-input-disabled-color);
+    background: var(--form-input-disabled-bg);
+    border-color: var(--form-input-disabled-border-color);
+  }
+
+  &__control[disabled] ~ label,
+  &__control[readonly] ~ label {
+    color: var(--form-input-disabled-label-color);
+    background: var(--form-input-disabled-bg);
+
+    pointer-events: auto;
+  }
+
+  &__control[disabled] ~ &__icon,
+  &__control[readonly] ~ &__icon {
+    color: var(--form-input-disabled-icon-color);
+  }
+}
+
+
+/*******************************************************************************
+ * Validations states.
+ */
+
+form .form-input {
+
+  /// Generates the style definitions for the :valid/:invalid state.
+  /// @param {Color} $background-color - <input>'s & <label>'s background color.
+  /// @param {Color} $input-border-color - <input>'s border color.
+  /// @param {Color} $label-color - <label>'s text color.
+  @mixin validation-state($background-color, $input-border-color, $label-color) {
+    background: $background-color;
+    border-color: $input-border-color;
+    @include thick-border($input-border-color);
+
+    ~ label {
+      color: $label-color;
+      background: $background-color;
+    }
+  }
+
+  // :valid state.
+  &__control.--valid {
+    @include validation-state(
+        var(--form-input-valid-bg),
+        var(--form-input-valid-border-color),
+        var(--form-input-valid-label-color)
+    );
+  }
+
+  @if variables.$enable-native-validation {
+    &__control:valid {
+      @include validation-state(
+          var(--form-input-valid-bg),
+          var(--form-input-valid-border-color),
+          var(--form-input-valid-label-color)
+      );
+    }
+  }
+
+
+  // :invalid state.
+  &__control.--invalid {
+    @include validation-state(
+        var(--form-input-invalid-bg),
+        var(--form-input-invalid-border-color),
+        var(--form-input-invalid-label-color)
+    );
+  }
+
+  @if variables.$enable-native-validation {
+    &__control:invalid {
+      @include validation-state(
+          var(--form-input-invalid-bg),
+          var(--form-input-invalid-border-color),
+          var(--form-input-invalid-label-color)
+      );
+    }
+  }
 }
