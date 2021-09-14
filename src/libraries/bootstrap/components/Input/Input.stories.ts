@@ -52,14 +52,23 @@ const Template: Story<BootstrapInputProps> = (args, { argTypes }) => ({
     </form>`
 })
 
-export const Input = Template.bind({})
-Input.args = {
+const defaultArgs: Partial<BootstrapInputProps> = {
   disabled: false,
+  errors: [],
   icon: '',
-  label: 'Lorem label',
-  placeholder: 'Lorem placeholder',
+  label: faker.lorem.words(),
+  placeholder: faker.lorem.words(),
   readonly: false,
   required: false,
   size: SizeMap.Medium,
   type: BootstrapInputType.Text
+}
+
+export const Basic = Template.bind({})
+Basic.args = defaultArgs
+
+export const WithError = Template.bind({})
+WithError.args = {
+  ...defaultArgs,
+  errors: [faker.lorem.sentence()]
 }

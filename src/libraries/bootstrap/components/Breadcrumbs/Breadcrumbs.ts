@@ -1,6 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import { defineComponent } from '@vue/composition-api'
+import { BBreadcrumb, BBreadcrumbItem } from 'bootstrap-vue'
 
 import { BootstrapIcon } from '../Icon'
 
@@ -13,7 +14,7 @@ import { bootstrapBreadcrumbsProps, useBootstrapBreadcrumbs } from './Breadcrumb
  */
 export const BootstrapBreadcrumbs = defineComponent({
   name: 'BootstrapBreadcrumbs',
-  components: { BootstrapIcon },
+  components: { BBreadcrumb, BBreadcrumbItem, BootstrapIcon },
   props: bootstrapBreadcrumbsProps,
 
   setup (props: BootstrapBreadcrumbsProps) {
@@ -22,12 +23,12 @@ export const BootstrapBreadcrumbs = defineComponent({
   },
 
   template: `
-    <b-breadcrumb>
-      <b-breadcrumb-item v-for="item in items" :key="item.label"
-                         :active="isLast(item)" :to="item.target">
+    <BBreadcrumb>
+      <BBreadcrumbItem v-for="item in items" :key="item.label"
+                       :active="isLast(item)" :to="item.target">
         <BootstrapIcon v-if="item.icon" :name="item.icon" />
         {{ item.label }}
-      </b-breadcrumb-item>
-    </b-breadcrumb>
+      </BBreadcrumbItem>
+    </BBreadcrumb>
   `
 })

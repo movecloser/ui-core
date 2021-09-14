@@ -1,5 +1,6 @@
 // Copyright © 2021 Move Closer
 
+import { BBadge } from 'bootstrap-vue'
 import { defineComponent } from '@vue/composition-api'
 
 import { bootstrapBadgeProps } from './Badge.hooks'
@@ -9,11 +10,12 @@ import { bootstrapBadgeProps } from './Badge.hooks'
  */
 export const BootstrapBadge = defineComponent({
   name: 'BootstrapBadge',
+  components: { BBadge },
   props: bootstrapBadgeProps,
 
   template: `
-    <b-badge :variant="theme">
+    <BBadge :variant="theme">
       <slot />
-    </b-badge>
+    </BBadge>
   `
 })
