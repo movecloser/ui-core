@@ -12,7 +12,7 @@ import { BootstrapCheckProps } from './Check.contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Forms/Check',
+  title: 'Ui Core / Bootstrap / Forms / Check',
   component: BootstrapCheck,
   argTypes: {
     multiple: { table: { disable: true } }
@@ -52,8 +52,22 @@ Single.args = {
   multiple: false
 }
 
+export const SingleWithError = Template.bind({})
+SingleWithError.args = {
+  ...defaultArgs,
+  multiple: false,
+  errors: [faker.lorem.sentence()]
+}
+
 export const Multiple = Template.bind({})
 Multiple.args = {
   ...defaultArgs,
   multiple: true
+}
+
+export const MultipleWithError = Template.bind({})
+MultipleWithError.args = {
+  ...defaultArgs,
+  multiple: true,
+  errors: [faker.lorem.sentence()]
 }

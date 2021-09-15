@@ -1,10 +1,10 @@
 // Copyright © 2021 Move Closer
 
-import { ref, SetupContext } from '@vue/composition-api'
+import { computed, PropType } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../../contracts'
 
-import { AbstractImageProps } from './Image.contracts'
+import { AbstractImageProps, SrcSet, UseSrcSetProvides } from './Image.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -16,15 +16,10 @@ export const abstractImageProps: ComponentObjectPropsOptions<AbstractImageProps>
     default: ''
   },
 
-  isLazy: {
+  lazy: {
     type: Boolean,
     required: false,
     default: true
-  },
-
-  sizes: {
-    type: String,
-    required: false
   },
 
   src: {
@@ -33,85 +28,42 @@ export const abstractImageProps: ComponentObjectPropsOptions<AbstractImageProps>
   },
 
   srcset: {
-    type: String,
+    type: Object as PropType<SrcSet>,
     required: false
   }
 }
 
 /**
- * @param props
- * @param ctx
- * @param fallbackImage - The URL for the fallback image.
- * @param [loadCb?] - Callback function that will be called
- *  when the image file has been successfully loaded.
- * @param [errorCb?] - Callback function that will be called
- *  when the image file fails to load.
- *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export const useImage = (
-  props: AbstractImageProps,
-  ctx: SetupContext,
-  fallbackImage: string,
-  loadCb?: () => unknown,
-  errorCb?: () => unknown
-) => {
-  const { emit } = ctx
-
-  /**
-   * Determines whether the `<img>` element has been successfully loaded.
-   */
-  const isLoaded = ref(false)
-
-  /**
-   * The value for the `[alt]` attribute.
-   */
-  const imgAlt = ref(props.alt)
-
-  /**
-   * The value for the `[src]` attribute.
-   */
-  const imgSrc = ref(props.src)
-
-  /**
-   * Renders the fallback image (in case of the load error).
-   */
-  const showFallbackImage = () => {
-    imgAlt.value = ''
-    imgSrc.value = fallbackImage
+export const useSrcSet = (props: AbstractImageProps): UseSrcSetProvides => {
+  if (typeof props.srcset === 'undefined') {
+    return { _srcset: undefined, sizes: undefined }
   }
 
   /**
-   * Handles the @error event on the `<img>` element.
+   * @see UseSrcSetProvides.sizes
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-sizes
    */
-  const onError = () => {
-    emit('error')
-
-    if (!props.isLazy) {
-      showFallbackImage()
-    }
-
-    if (typeof errorCb === 'function') {
-      errorCb()
-    }
-  }
+  const sizes: UseSrcSetProvides['sizes'] = computed<string>(() => {
+    return Object.keys(props.srcset as SrcSet)
+      .map<string>((width, index, arr) => {
+        return index < arr.length - 1
+          ? `(max-width: ${+width * 1.4}px) ${width}px`
+          : `${width}px`
+      })
+      .join(', ')
+  })
 
   /**
-   * Handles the @load event on the `<img>` element.
+   * @see UseSrcSetProvides._srcset
+   * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img#attr-srcset
    */
-  const onLoad = () => {
-    if (isLoaded.value === true) {
-      return
-    }
+  const _srcset: UseSrcSetProvides['_srcset'] = computed<string>(() => {
+    return Object.entries(props.srcset as SrcSet)
+      .map<string>(([width, src]) => `${src} ${width}w`)
+      .join(', ')
+  })
 
-    emit('load')
-
-    isLoaded.value = true
-
-    if (typeof loadCb === 'function') {
-      loadCb()
-    }
-  }
-
-  return { imgAlt, imgSrc, isLoaded, onError, onLoad }
+  return { sizes, _srcset }
 }

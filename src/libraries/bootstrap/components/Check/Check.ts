@@ -1,6 +1,9 @@
 // Copyright © 2021 Move Closer
 
+import { BFormGroup } from 'bootstrap-vue'
 import { defineComponent, SetupContext } from '@vue/composition-api'
+
+import { BootstrapFormError } from '../FormError'
 
 import { BootstrapCheckProps } from './Check.contracts'
 import { bootstrapCheckProps, useBootstrapCheck } from './Check.hooks'
@@ -11,6 +14,7 @@ import { bootstrapCheckProps, useBootstrapCheck } from './Check.hooks'
  */
 export const BootstrapCheck = defineComponent({
   name: 'BootstrapCheck',
+  components: { BFormGroup, BootstrapFormError },
   props: bootstrapCheckProps,
   emits: ['update:model'],
 
@@ -20,9 +24,14 @@ export const BootstrapCheck = defineComponent({
   },
 
   template: `
-    <b-form-group v-bind="{ disabled, label, readonly }" v-slot="{ ariaDescribedby }">
+    <BFormGroup v-bind="{ disabled, label, readonly }" v-slot="{ ariaDescribedby }">
       <component :is="component" v-model="checked" v-bind="{ name, options }"
                  text-field="label" :id="name" :aria-describedby="ariaDescribedby" />
-    </b-form-group>
+
+      <!-- Validation errors -->
+      <BootstrapFormError v-for="error in errors" :key="error">
+        {{ error }}
+      </BootstrapFormError>
+    </BFormGroup>
   `
 })

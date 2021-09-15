@@ -11,7 +11,7 @@ import { BootstrapBadge } from './Badge'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Badge',
+  title: 'Ui Core / Bootstrap / Badge',
   component: BootstrapBadge,
   argTypes: {
     theme: {

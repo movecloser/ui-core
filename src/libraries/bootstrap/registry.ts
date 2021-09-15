@@ -4,7 +4,6 @@ import VueCompositionAPI from '@vue/composition-api'
 import VueI18n from 'vue-i18n'
 import VueRouter from 'vue-router'
 import VueUniqueId from 'vue-unique-id'
-import { BootstrapVue } from 'bootstrap-vue'
 import { PluginObject, VueConstructor } from 'vue'
 
 import { DSL_CONFIG_INJECTION_KEY } from '../../config'
@@ -45,7 +44,6 @@ export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
     _Vue.use(VueCompositionAPI)
 
     // Next, register additional plugins required for the Bootstrap DSL to work.
-    _Vue.use(BootstrapVue)
     _Vue.use(VueI18n)
     _Vue.use(VueRouter)
     _Vue.use(VueUniqueId)

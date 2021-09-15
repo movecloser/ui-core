@@ -1,5 +1,6 @@
 // Copyright © 2021 Move Closer
 
+import { BButton } from 'bootstrap-vue'
 import { defineComponent } from '@vue/composition-api'
 
 import './Button.scss'
@@ -13,6 +14,7 @@ import { bootstrapButtonProps, useBootstrapButton } from './Button.hooks'
  */
 export const BootstrapButton = defineComponent({
   name: 'BootstrapButton',
+  components: { BButton },
   props: bootstrapButtonProps,
   emits: ['click'],
 
@@ -22,9 +24,8 @@ export const BootstrapButton = defineComponent({
   },
 
   template: `
-    <b-button :class="loadingClass" v-bind="{ size, variant }"
-              :disabled="disabled || loading" @click="$emit('click')">
-
+    <BButton :class="loadingClass" v-bind="{ size, variant }"
+             :disabled="disabled || loading" @click="$emit('click')">
       <!-- Button's content -->
       <slot />
 
@@ -34,7 +35,6 @@ export const BootstrapButton = defineComponent({
           <span class="sr-only">{{ $t('_.please-wait') }}</span>
         </div>
       </div>
-
-    </b-button>
+    </BButton>
   `
 })

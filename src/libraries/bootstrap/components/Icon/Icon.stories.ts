@@ -13,7 +13,7 @@ import { BootstrapIconProps } from './Icon.contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Icon',
+  title: 'Ui Core / Bootstrap / Icon',
   component: BootstrapIcon
 }
 export default meta
@@ -24,6 +24,7 @@ const Template: Story<BootstrapIconProps> = (args, { argTypes }) => ({
   inject: { $dsl: DSL_CONFIG_INJECTION_KEY },
   computed: {
     icons () {
+      // @ts-expect-error - Correct TS annotation would require too much effort.
       return Object.keys(this.$dsl.icons)
     }
   },

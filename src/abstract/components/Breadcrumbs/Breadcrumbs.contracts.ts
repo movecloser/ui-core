@@ -6,16 +6,9 @@ import { RawLocation } from 'vue-router'
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export interface BreadcrumbsItem extends Data {
+export interface AbstractBreadcrumbsItem extends Data {
   label: string;
   target: RawLocation;
-}
-
-/**
- * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
- */
-export interface BreadcrumbsItemProps extends BreadcrumbsItem {
-  active: boolean;
 }
 
 /**
@@ -23,19 +16,14 @@ export interface BreadcrumbsItemProps extends BreadcrumbsItem {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Olga Milczek <olga.milczek@movecloser.pl>
  */
-export interface BreadcrumbsProps extends Data {
+export interface AbstractBreadcrumbsProps extends Data {
   /**
-   * Breadcrumbs list.
+   * Array of breadcrumbs to render.
    */
-  items: BreadcrumbsItem[];
+  items: AbstractBreadcrumbsItem[];
 
   /**
-   * Root breadcrumb.
+   * Determines whether the breadcrumbs should be rendered on mobile devices, too.
    */
-  root: BreadcrumbsItem;
-
-  /**
-   * Show breadcrumb on mobile screen
-   */
-  showOnMobile?: boolean;
+  showOnMobile: boolean;
 }
