@@ -25,6 +25,7 @@ const Template: Story = (args, { argTypes }) => ({
   },
   methods: {
     onChange (currentPage) {
+      // @ts-expect-error - Correct TS annotation would require too much effort.
       this.currentPage = currentPage
     }
   },
