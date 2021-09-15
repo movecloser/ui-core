@@ -16,14 +16,14 @@ export const bootstrapTableCellProps: ComponentObjectPropsOptions<TableCellProps
     required: true
   },
   value: {
-    type: [String, Function] as PropType<string | VueConstructor>,
+    type: [String, Function, Object] as PropType<string | VueConstructor>,
     required: true
   }
 }
 
 export const useBootstrapTableCell = (props: TableCellProps): UseBootstrapTableCellProvides => {
   const shouldRenderComponent:UseBootstrapTableCellProvides['shouldRenderComponent'] =
-    computed<boolean>(() => typeof props.value === 'function')
+    computed<boolean>(() => typeof props.value !== 'string')
 
   return { shouldRenderComponent }
 }

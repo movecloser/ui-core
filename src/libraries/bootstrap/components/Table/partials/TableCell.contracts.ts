@@ -1,19 +1,24 @@
 // Copyright © 2021 Move Closer
 
 import { ComputedRef } from '@vue/composition-api'
-import { TableItem } from '@/shared/dsl/src/libraries/bootstrap/components/Table'
 import { VueConstructor } from 'vue'
 
-// TODO: documentation
+import { TableItem } from '../Table.contracts'
+
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export interface TableCellProps {
   /**
    * table element index
    */
   index: number
+
   /**
    * table item key
    */
   item: TableItem
+
   /**
    * value for the item key
    */

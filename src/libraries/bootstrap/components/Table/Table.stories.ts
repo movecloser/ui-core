@@ -1,10 +1,12 @@
 // Copyright © 2021 Move Closer
 
+import * as faker from 'faker'
 import { Meta, Story } from '@storybook/vue'
+
 import { getTemplateBase } from '../../storybook'
 
 import { BootstrapTable } from './Table'
-import { TableProps } from './Table.contracts'
+import { TableItem, TableProps } from './Table.contracts'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
@@ -22,9 +24,26 @@ const Template: Story<TableProps> = (args, { argTypes }) => ({
   template: '<BootstrapTable v-bind="$props" />'
 })
 
+const items: TableItem[] = Array.from(Array(10)).map(() => ({
+  position: faker.name.jobTitle(),
+  department: faker.name.jobType(),
+  place: faker.address.cityName(),
+  seeMore: {
+    props: ['item'],
+    methods: {
+      onClick () {
+        alert('Hello World')
+      }
+    },
+    template: `
+    <button class="border-0 bg-primary text-white" @click="onClick()">Zobacz więcej</button>
+    `
+  }
+}))
+
+
 export const Table = Template.bind({})
 Table.args = {
-  tempRow: {},
   head: [
     {
       key: 'position',
@@ -43,11 +62,5 @@ Table.args = {
       label: '---'
     }
   ],
-  items: [
-    {
-      position: 'Ekspert',
-      department: '12321',
-      place: 'WWa'
-    }
-  ]
+  items
 }

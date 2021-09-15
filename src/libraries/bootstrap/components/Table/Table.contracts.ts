@@ -2,14 +2,13 @@
 
 import { BvTableField } from 'bootstrap-vue/src/components/table'
 import { Data } from '@vue/composition-api'
-
 import { VueConstructor } from 'vue'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 export interface TableItem {
-  [key: string]: string | VueConstructor
+  [key: string]: string | VueConstructor | any
 }
 
 /**

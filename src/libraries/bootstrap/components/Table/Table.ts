@@ -2,8 +2,6 @@
 
 import { defineComponent } from '@vue/composition-api'
 
-import { BootstrapButton } from '../Button'
-
 import { BootstrapTableCell } from '../Table/partials'
 import { bootstrapTableProps, useBootstrapTable } from './Table.hooks'
 
@@ -13,7 +11,7 @@ import { bootstrapTableProps, useBootstrapTable } from './Table.hooks'
 export const BootstrapTable = defineComponent({
   name: 'BootstrapTable',
   props: bootstrapTableProps,
-  components: { BootstrapButton, BootstrapTableCell },
+  components: { BootstrapTableCell },
 
   setup () {
     const { composeSlotName } = useBootstrapTable()
@@ -22,9 +20,8 @@ export const BootstrapTable = defineComponent({
 
   template: `
     <b-table v-bind="{ items }" :fields="head">
-      <template v-for="field in head" v-slot:[composeSlotName(field)]="data">
-        {{ data.value }}
-        <BootstrapTableCell v-bind="{ index, value, item }"/>
+      <template v-for="field in head" v-slot:[composeSlotName(field)]="{ index, item, value }">
+        <BootstrapTableCell v-bind="{ index, item, value }" />
       </template>
     </b-table>
   `
