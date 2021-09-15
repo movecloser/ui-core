@@ -3,6 +3,6 @@
 /// Thick border for the `<input>`.
 ///
 /// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
-@mixin thick-border($border-color: var(--form-input-border-color)) {
-  box-shadow: 0 0 0 var(--form-input-border-width-thicker) $border-color;
+@mixin thick-border($border-color: var(--form-control-border-color)) {
+  box-shadow: 0 0 0 var(--form-control-border-width-thicker) $border-color;
 }

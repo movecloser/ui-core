@@ -19,7 +19,7 @@ import {
   AbstractCheckControlOption,
   AbstractCheckControlProps,
   AbstractCheckControlType,
-  AbstractCheckControlValueType,
+  AbstractCheckControlModelType,
   AbstractCheckListProps,
   UseCheckControlProvides
 } from './CheckControl.contracts'
@@ -28,9 +28,10 @@ import {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractCheckControlProps = <ValueType> ():
-  ComponentObjectPropsOptions<AbstractCheckControlProps<ValueType>> => ({
+export const getAbstractCheckControlProps = <ModelType>():
+  ComponentObjectPropsOptions<AbstractCheckControlProps<ModelType>> => ({
     ...abstractBaseControlProps,
+
     /**
      * Id of check control.
      */
@@ -76,8 +77,8 @@ export const getAbstractCheckControlProps = <ValueType> ():
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractCheckListProps = <ValueType> ():
-  ComponentObjectPropsOptions<AbstractCheckListProps<ValueType>> => ({
+export const getAbstractCheckListProps = <ModelType> ():
+  ComponentObjectPropsOptions<AbstractCheckListProps<ModelType>> => ({
     ...abstractBaseControlProps,
 
     /**
@@ -98,7 +99,7 @@ export const getAbstractCheckListProps = <ValueType> ():
      * Array of the options available to select.
      */
     options: {
-      type: Array as PropType<AbstractCheckControlOption<ValueType>[]>,
+      type: Array as PropType<AbstractCheckControlOption<ModelType>[]>,
       required: true
     }
   })
@@ -107,13 +108,13 @@ export const getAbstractCheckListProps = <ValueType> ():
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useCheckControl = <ValueType> (
-  props: AbstractCheckControlProps<ValueType> | AbstractCheckListProps<ValueType>,
+export const useCheckControl = <ModelType> (
+  props: AbstractCheckControlProps<ModelType> | AbstractCheckListProps<ModelType>,
   ctx: SetupContext
-): UseCheckControlProvides<ValueType> => {
+): UseCheckControlProvides<ModelType> => {
   const { model, multiple } = toRefs(props)
 
-  const checked = useSyncModel<AbstractCheckControlValueType<ValueType>>(model, ctx)
+  const checked = useSyncModel<AbstractCheckControlModelType<ModelType>>(model, ctx)
   const checkType = computed<AbstractCheckControlType>(() => multiple.value ? 'checkbox' : 'radio')
 
   return { checked, checkType }

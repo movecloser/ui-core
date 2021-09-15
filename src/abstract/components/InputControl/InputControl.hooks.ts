@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { PropType, SetupContext, toRefs } from '@vue/composition-api'
+import { SetupContext, toRefs } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions, FormControlBaseProps } from '../../../contracts'
 import {
@@ -27,10 +27,32 @@ export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBa
   ...hasSizeProp,
   ...hasErrorsProp,
 
+  /**
+   * Value for the `[autocomplete]` attribute.
+   */
+  autocomplete: {
+    type: String,
+    required: false
+  },
+
+  /**
+   * Determines whether the control should be automatically focused.
+   */
+  autofocus: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
+
   label: {
     type: String,
     required: false
   },
+
+  /**
+   * Control's value, synced via PropSync.
+   */
+  model: { required: true },
 
   name: {
     type: String,
@@ -65,8 +87,8 @@ export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBa
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractInputControlProps = <ValueType>():
-  ComponentObjectPropsOptions<AbstractInputControlProps<ValueType>> => ({
+export const getAbstractInputControlProps = <ModelType>():
+  ComponentObjectPropsOptions<AbstractInputControlProps<ModelType>> => ({
     ...abstractBaseControlProps,
 
     /**
@@ -101,12 +123,12 @@ export const getAbstractInputControlProps = <ValueType>():
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useInputControl = <ValueType>(
-  props: AbstractInputControlProps<ValueType>,
+export const useInputControl = <ModelType>(
+  props: AbstractInputControlProps<ModelType>,
   ctx: SetupContext,
   sizeRegistry: SizeRegistry,
   validClassMap: ValidationClassMap = defaultValidationClassMap
-): UseInputControlProvides<ValueType> => {
+): UseInputControlProvides<ModelType> => {
   const { errors, valid, model, size } = toRefs(props)
 
   const hasErrors = useHasErrors(errors)
@@ -116,7 +138,7 @@ export const useInputControl = <ValueType>(
   const isValid = useIsValid(hasErrors, valid)
   const validationClass = useValidMarkerClass(isValid, validClassMap)
 
-  const value = useSyncModel<ValueType>(model, ctx)
+  const value = useSyncModel<ModelType>(model, ctx)
 
   return { hasErrors, sizeClass, validationClass, value }
 }

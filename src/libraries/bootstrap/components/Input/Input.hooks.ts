@@ -5,13 +5,13 @@ import { PropType } from '@vue/composition-api'
 import { ComponentObjectPropsOptions } from '../../../../contracts'
 import { getAbstractInputControlProps } from '../../../../abstract'
 
-import { BootstrapInputProps, BootstrapInputType, BootstrapInputValueType } from './Input.contracts'
+import { BootstrapInputProps, BootstrapInputType, BootstrapInputModelType } from './Input.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export const bootstrapInputProps: ComponentObjectPropsOptions<BootstrapInputProps> = {
-  ...getAbstractInputControlProps<BootstrapInputValueType>(),
+  ...getAbstractInputControlProps<BootstrapInputModelType>(),
 
   /**
    * The name of the icon that is to be prepended to the `<input>`.

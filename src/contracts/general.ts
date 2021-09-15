@@ -14,11 +14,26 @@ export type ClassRegistry<T extends string|number|symbol, CSSClass = string> = R
 /**
  * Base FormControl props.
  */
-export interface FormControlBaseProps extends CanBeDisabled, HasErrors, HasSize, Data {
+export interface FormControlBaseProps<ModelType> extends CanBeDisabled, HasErrors, HasSize, Data {
+  /**
+   * Value for the `[autocomplete]` attribute.
+   */
+  autocomplete: string;
+
+  /**
+   * Determines whether the control should be automatically focused.
+   */
+  autofocus: boolean;
+
   /**
    * Text for the `<label>` element.
    */
   label: string;
+
+  /**
+   * Control's value, synced via PropSync.
+   */
+  model: ModelType;
 
   /**
    * Value for the `[name]` attribute.
@@ -54,4 +69,4 @@ export type FormControlType = 'email' | 'checkbox' | 'number' | 'password' | 'ra
 /**
  * Available form control's value type.
  */
-export type FormControlValue = string | number | boolean
+export type FormControlModelType = string | number | boolean

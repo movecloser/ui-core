@@ -16,7 +16,7 @@ export enum BootstrapInputType {
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export interface BootstrapInputProps extends AbstractInputControlProps<BootstrapInputValueType> {
+export interface BootstrapInputProps extends AbstractInputControlProps<BootstrapInputModelType> {
   /**
    * The name of the icon that is to be prepended to the `<input>`.
    */
@@ -36,4 +36,4 @@ export interface BootstrapInputProps extends AbstractInputControlProps<Bootstrap
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export type BootstrapInputValueType = string|number
+export type BootstrapInputModelType = string|number

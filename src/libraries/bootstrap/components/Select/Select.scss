@@ -1,7 +1,7 @@
 // Copyright © 2021 Move Closer
 
 ////
-/// This file contains the styles for the `<BootstrapInput>` DSL component.
+/// This file contains the styles for the `<BootstrapSelect>` DSL component.
 ///
 /// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
 ////
@@ -16,20 +16,15 @@
   transform: var(--form-control-label-transform);
 }
 
-.form-input {
+.form-select {
   // Be relative for the <label>.
   position: relative;
 
   color: var(--form-control-color);
   font-size: var(--form-control-font-size);
 
-  &.--large {
-    font-size: var(--form-control-font-size-lg);
-  }
-
-
   /*******************************************************************************
-   * Input.
+   * Select.
    */
 
   &__control {
@@ -48,25 +43,6 @@
     border-radius: var(--border-radius);
 
     @include animate((color, background, box-shadow, border-color));
-
-    &::placeholder {
-      @include animate((color));
-    }
-
-    // Prevent the placeholder from overlapping with the floating label.
-    &:empty:not(:focus)::placeholder {
-      color: transparent;
-    }
-  }
-
-  // With icon:
-  &.--with-icon &__control {
-    padding-left: var(--form-control-with-icon-padding-left);
-  }
-
-  // Large & with icon:
-  &.--large.--with-icon &__control {
-    padding-left: var(--form-control-with-icon-padding-left-lg);
   }
 
 
@@ -75,7 +51,7 @@
    */
 
   &__control:not(:focus) ~ label,
-  &__control:placeholder-shown ~ label {
+  &__control:empty ~ label {
     @include label-base-state();
   }
 
@@ -103,45 +79,16 @@
     font-size: var(--form-control-label-floating-font-size);
     background: var(--form-control-bg);
 
-    // Required for aligning label's text with the input as it affects the inner box model.
+    // Required for aligning label's text with the select as it affects the inner box model.
     border: var(--form-control-border-width) solid transparent;
 
     border-radius: var(--border-radius);
-  }
-
-  // With icon:
-  &.--with-icon &__label {
-    left: calc(var(--form-control-with-icon-padding-left) - var(--form-control-label-bg-offset));
-  }
-
-  // Large & with icon:
-  &.--large.--with-icon &__label {
-    left: calc(var(--form-control-with-icon-padding-left-lg) - var(--form-control-label-bg-offset));
   }
 
   // Required field indicator.
   &__control[required] ~ label::after {
     content: "*";
     color: var(--danger);
-  }
-
-  /*******************************************************************************
-   * Icon.
-   */
-
-  &__icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: translate(20%, 25%);
-
-    pointer-events: none;
-
-    color: var(--form-control-icon-color);
-  }
-
-  &.--large &__icon {
-    transform: translate(15%, 15%);
   }
 
 
@@ -208,16 +155,16 @@
  * Validations states.
  */
 
-form .form-input {
+form .form-select {
 
   /// Generates the style definitions for the :valid/:invalid state.
-  /// @param {Color} $background-color - <input>'s & <label>'s background color.
-  /// @param {Color} $input-border-color - <input>'s border color.
+  /// @param {Color} $background-color - <select>'s & <label>'s background color.
+  /// @param {Color} $select-border-color - <select>'s border color.
   /// @param {Color} $label-color - <label>'s text color.
-  @mixin validation-state($background-color, $input-border-color, $label-color) {
+  @mixin validation-state($background-color, $select-border-color, $label-color) {
     background: $background-color;
-    border-color: $input-border-color;
-    @include thick-border($input-border-color);
+    border-color: $select-border-color;
+    @include thick-border($select-border-color);
 
     ~ label {
       color: $label-color;

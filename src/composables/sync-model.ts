@@ -15,16 +15,16 @@ import { computed, Ref, SetupContext, WritableComputedRef } from '@vue/compositi
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useSyncModel = <ValueType>(
-  model: Ref<ValueType>,
+export const useSyncModel = <ModelType>(
+  model: Ref<ModelType>,
   ctx: SetupContext,
   propName: string = 'model'
-): WritableComputedRef<ValueType> => {
-  return computed<ValueType>({
-    get (): ValueType {
+): WritableComputedRef<ModelType> => {
+  return computed<ModelType>({
+    get (): ModelType {
       return model.value
     },
-    set (value: ValueType) {
+    set (value: ModelType) {
       ctx.emit(`update:${propName}`, value)
     }
   })

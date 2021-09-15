@@ -4,7 +4,7 @@ import { BFormCheckboxGroup, BFormRadioGroup } from 'bootstrap-vue'
 import { computed, SetupContext, toRefs } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
 
-import { ComponentObjectPropsOptions, FormControlValue } from '../../../../contracts'
+import { ComponentObjectPropsOptions, FormControlModelType } from '../../../../contracts'
 import { getAbstractCheckListProps, useCheckControl } from '../../../../abstract'
 
 import { BootstrapCheckProps, UseBootstrapCheckProvides } from './Check.contracts'
@@ -13,7 +13,7 @@ import { BootstrapCheckProps, UseBootstrapCheckProvides } from './Check.contract
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const bootstrapCheckProps: ComponentObjectPropsOptions<BootstrapCheckProps> = getAbstractCheckListProps<FormControlValue>()
+export const bootstrapCheckProps: ComponentObjectPropsOptions<BootstrapCheckProps> = getAbstractCheckListProps<FormControlModelType>()
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
