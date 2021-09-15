@@ -3,6 +3,8 @@
 import * as faker from 'faker'
 import { Meta, Story } from '@storybook/vue'
 
+import { SrcSet } from '../../../../abstract'
+
 import { getTemplateBase } from '../../storybook'
 
 import { BootstrapImage } from './Image'
@@ -29,13 +31,35 @@ const defaultArgs: BootstrapImageProps = {
   src: faker.image.image()
 }
 
+const responsiveArgs: Pick<BootstrapImageProps, 'srcset'> = {
+  srcset: Array.from(Array(10)).reduce<SrcSet>((acc, curr, index) => {
+    const imgWidth: number = (index + 1) * 100
+    const imgSrc: string = faker.image.imageUrl(imgWidth)
+
+    return { ...acc, [imgWidth]: imgSrc }
+  }, {})
+}
+
 export const Normal = Template.bind({})
 Normal.args = {
   ...defaultArgs
 }
 
+export const NormalResponsive = Template.bind({})
+NormalResponsive.args = {
+  ...defaultArgs,
+  ...responsiveArgs
+}
+
 export const Lazy = Template.bind({})
 Lazy.args = {
   ...defaultArgs,
+  lazy: true
+}
+
+export const LazyResponsive = Template.bind({})
+LazyResponsive.args = {
+  ...defaultArgs,
+  ...responsiveArgs,
   lazy: true
 }

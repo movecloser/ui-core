@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { Data } from '@vue/composition-api'
+import { ComputedRef, Data } from '@vue/composition-api'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -17,17 +17,33 @@ export interface AbstractImageProps extends Data {
   lazy: boolean;
 
   /**
-   * Value for the `<img>'s` `[sizes]` attribute.
-   */
-  sizes?: string;
-
-  /**
    * Value for the `<img>'s` `[src]` attribute.
    */
   src: string;
 
   /**
+   * Registry that binds the different images with their URL address,
+   * where the object's keys represent the images' intrinsic width.
+   */
+  srcset?: SrcSet;
+}
+
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export type SrcSet = { [key: number]: string }
+
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export interface UseSrcSetProvides {
+  /**
+   * Value for the `<img>'s` `[sizes]` attribute.
+   */
+  sizes: ComputedRef<string> | undefined;
+
+  /**
    * Value for the `<img>'s` `[srcset]` attribute.
    */
-  srcset?: string;
+  _srcset: ComputedRef<string> | undefined;
 }
