@@ -2,13 +2,16 @@
 
 import { BvTableField } from 'bootstrap-vue/src/components/table'
 import { Data } from '@vue/composition-api'
-import { VueConstructor } from 'vue'
+import Vue, { ComponentOptions, VueConstructor } from 'vue'
 
 /**
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 export interface TableItem {
-  [key: string]: string | VueConstructor | any
+  /**
+   * Single table item that is a key and it's result can be string or component
+   */
+  [key: string]: string | VueConstructor | ComponentOptions<Vue>
 }
 
 /**
@@ -20,6 +23,9 @@ export type TableHead = TableHeadElement[]
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 export interface TableHeadElement extends BvTableField {
+  /**
+   * table head key
+   */
   key: string;
 }
 
@@ -32,5 +38,9 @@ export interface TableProps extends Data {
 }
 
 export interface UseBootstrapTableProvides {
+  /**
+   * Method which is composing name for table columns slots
+   * @param field
+   */
   composeSlotName: (field: TableHeadElement) => string;
 }

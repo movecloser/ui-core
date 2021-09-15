@@ -6,6 +6,9 @@ import { TableCellProps, UseBootstrapTableCellProvides } from './TableCell.contr
 import { TableItem } from '@/shared/dsl/src/libraries/bootstrap/components/Table'
 import { VueConstructor } from 'vue'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export const bootstrapTableCellProps: ComponentObjectPropsOptions<TableCellProps> = {
   index: {
     type: Number,

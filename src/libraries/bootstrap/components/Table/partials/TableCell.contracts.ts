@@ -10,17 +10,17 @@ import { TableItem } from '../Table.contracts'
  */
 export interface TableCellProps {
   /**
-   * table element index
+   * Table element index
    */
   index: number
 
   /**
-   * table item key
+   * Table item key
    */
   item: TableItem
 
   /**
-   * value for the item key
+   * Value for the table item key
    */
   value: string | VueConstructor
 }

@@ -32,15 +32,14 @@ const items: TableItem[] = Array.from(Array(10)).map(() => ({
     props: ['item'],
     methods: {
       onClick () {
-        alert('Hello World')
+        alert(this.item.position)
       }
     },
     template: `
-    <button class="border-0 bg-primary text-white" @click="onClick()">Zobacz więcej</button>
+      <button class="border-0 bg-primary text-white" @click="onClick()">Zobacz więcej</button>
     `
   }
 }))
-
 
 export const Table = Template.bind({})
 Table.args = {

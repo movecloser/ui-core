@@ -5,6 +5,9 @@ import { defineComponent } from '@vue/composition-api'
 import { bootstrapTableCellProps, useBootstrapTableCell } from './TableCell.hooks'
 import { TableCellProps } from './TableCell.contracts'
 
+/**
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export const BootstrapTableCell = defineComponent({
   name: 'BootstrapTableCell',
   props: bootstrapTableCellProps,
