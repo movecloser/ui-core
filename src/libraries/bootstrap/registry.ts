@@ -10,13 +10,36 @@ import { DSL_CONFIG_INJECTION_KEY } from '../../config'
 import { registerComponent } from '../../helpers'
 
 import { BootstrapDSLConfiguration } from './contracts'
+import {
+  BootstrapBadge,
+  BootstrapBreadcrumbs,
+  BootstrapButton,
+  BootstrapCheck,
+  BootstrapFormError,
+  BootstrapIcon,
+  BootstrapImage,
+  BootstrapInput,
+  BootstrapPagination,
+  BootstrapTable
+} from './components'
 
 /**
  * List of all available DSL components.
  *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-const componentsRegistry: Record<string, VueConstructor> = {}
+const componentsRegistry: Record<string, VueConstructor> = {
+  Badge: BootstrapBadge,
+  Breadcrumbs: BootstrapBreadcrumbs,
+  Button: BootstrapButton,
+  Check: BootstrapCheck,
+  FormError: BootstrapFormError,
+  Icon: BootstrapIcon,
+  Image: BootstrapImage,
+  Input: BootstrapInput,
+  Pagination: BootstrapPagination,
+  Table: BootstrapTable
+}
 
 /**
  * Registers the Bootstrap DSL in the app.
