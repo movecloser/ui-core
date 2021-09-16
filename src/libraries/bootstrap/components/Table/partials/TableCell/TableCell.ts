@@ -6,6 +6,7 @@ import { bootstrapTableCellProps, useBootstrapTableCell } from './TableCell.hook
 import { TableCellProps } from './TableCell.contracts'
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 export const BootstrapTableCell = defineComponent({
@@ -18,7 +19,7 @@ export const BootstrapTableCell = defineComponent({
   },
 
   template: `
-    <component v-if="shouldRenderComponent" :is="value" v-bind="{ item }" />
+    <component v-if="shouldRenderComponent" :is="value" v-bind="{ index, item, value }" />
     <span v-else>{{ value }}</span>
   `
 })

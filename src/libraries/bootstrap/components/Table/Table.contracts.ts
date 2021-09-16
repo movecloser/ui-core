@@ -2,45 +2,45 @@
 
 import { BvTableField } from 'bootstrap-vue/src/components/table'
 import { Data } from '@vue/composition-api'
-import Vue, { ComponentOptions, VueConstructor } from 'vue'
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
-export interface TableItem {
-  /**
-   * Single table item that is a key and it's result can be string or component
-   */
-  [key: string]: string | VueConstructor | ComponentOptions<Vue>
-}
+export type TableField = { key: string } & BvTableField
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
-export type TableHead = TableHeadElement[]
+export type TableItem = { [key: string]: unknown }
 
 /**
- * @author Michał Rossian <michal.rossian@movecloser.pl>
- */
-export interface TableHeadElement extends BvTableField {
-  /**
-   * table head key
-   */
-  key: string;
-}
-
-/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 export interface TableProps extends Data {
-  head: TableHead;
+  /**
+   * Table fields (header configuration).
+   */
+  fields: TableField[];
+
+  /**
+   * Data to be rendered inside the table.
+   */
   items: TableItem[];
 }
 
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Michał Rossian <michal.rossian@movecloser.pl>
+ */
 export interface UseBootstrapTableProvides {
   /**
-   * Method which is composing name for table columns slots
-   * @param field
+   * Composes the name (identifier) of the template slot for the passed-in field.
+   *
+   * @param field - Currently-processed table field
+   *   that the template slot is going to be generated for.
    */
-  composeSlotName: (field: TableHeadElement) => string;
+  composeSlotName: (field: TableField) => string;
 }

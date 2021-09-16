@@ -9,17 +9,17 @@ import { BootstrapTable } from './Table'
 import { TableItem, TableProps } from './Table.contracts'
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Michał Rossian <michal.rossian@movecloser.pl>
  */
 const meta: Meta = {
-  title: 'Ui Core/Bootstrap/Table',
+  title: 'Ui Core / Bootstrap / Table',
   component: BootstrapTable
 }
 export default meta
 
 const Template: Story<TableProps> = (args, { argTypes }) => ({
   ...getTemplateBase(argTypes),
-
   components: { BootstrapTable },
   template: '<BootstrapTable v-bind="$props" />'
 })
@@ -32,18 +32,17 @@ const items: TableItem[] = Array.from(Array(10)).map(() => ({
     props: ['item'],
     methods: {
       onClick () {
-        alert(this.item.position)
+        // @ts-expect-error - Correct TS annotation would require too much effort.
+        console.debug(this.item.position)
       }
     },
-    template: `
-      <button class="border-0 bg-primary text-white" @click="onClick()">Zobacz więcej</button>
-    `
+    template: '<button @click="onClick()">See more</button>'
   }
 }))
 
 export const Table = Template.bind({})
 Table.args = {
-  head: [
+  fields: [
     {
       key: 'position',
       label: 'Stanowisko'
