@@ -19,6 +19,7 @@ import {
   BootstrapIcon,
   BootstrapImage,
   BootstrapInput,
+  BootstrapLink,
   BootstrapPagination,
   BootstrapTable
 } from './components'
@@ -37,6 +38,7 @@ const componentsRegistry: Record<string, VueConstructor> = {
   Icon: BootstrapIcon,
   Image: BootstrapImage,
   Input: BootstrapInput,
+  Link: BootstrapLink,
   Pagination: BootstrapPagination,
   Table: BootstrapTable
 }

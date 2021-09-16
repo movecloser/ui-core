@@ -4,7 +4,7 @@ import { ComputedRef, Data } from '@vue/composition-api'
 import { RawLocation } from 'vue-router'
 import { TranslateResult } from 'vue-i18n'
 
-import { CanBeDisabled } from '../../_composables'
+import { CanBeDisabled } from '../../../composables'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -56,12 +56,32 @@ export interface Link {
 }
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export interface UseLinkProvides {
+  /**
+   * Value for the `[target]` attribute of the `<a>` element.
+   */
   aTarget: ComputedRef<string>;
+
+  /**
+   * Determines whether the passed-in `link` prop has a valid `target` property.
+   */
   hasCorrectTarget: ComputedRef<boolean>;
-  external: ComputedRef<boolean>;
-  label?: string|TranslateResult;
-  target: RawLocation;
+
+  /**
+   * @see Link.isExternal
+   */
+  isExternal: ComputedRef<boolean>;
+
+  /**
+   * @see Link.label
+   */
+  label?: Link['label'];
+
+  /**
+   * @see Link.target
+   */
+  target: Link['target'];
 }
