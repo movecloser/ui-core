@@ -2,7 +2,7 @@
 
 import { computed, ref, watch } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../contracts'
 
 import { DoubleClick, DoubleClickCallback, UseDoubleClickProvides } from './double-click.contracts'
 

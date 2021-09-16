@@ -2,7 +2,7 @@
 
 import { computed, PropType, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../../contracts'
 
 import { AbstractNavProps } from './Nav.contracts'
 

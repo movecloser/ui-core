@@ -2,7 +2,7 @@
 
 import { computed, PropType, ref, SetupContext } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../../contracts'
 
 import { DropdownItem, DropdownItemProps, UseDropdownItemProvides } from './Dropdown.contracts'
 

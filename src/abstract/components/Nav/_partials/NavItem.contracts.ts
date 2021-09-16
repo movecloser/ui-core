@@ -2,7 +2,7 @@
 
 import { Data } from '@vue/composition-api'
 
-import { CanBeDisabled } from '../../../_composables'
+import { CanBeDisabled } from '../../../../composables'
 
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>

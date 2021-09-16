@@ -2,7 +2,7 @@
 
 import { computed, PropType, ref, SetupContext, toRefs, watch } from '@vue/composition-api'
 
-import { ComponentObjectPropsOptions } from '../../_contracts'
+import { ComponentObjectPropsOptions } from '../../../contracts'
 
 import {
   CurrentSorting,
