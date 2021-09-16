@@ -43,7 +43,8 @@ const defaultArgs: Partial<BootstrapCheckProps> = {
     const label = faker.lorem.word()
     const value = `${index}-${label}`
     return { label, value }
-  })
+  }),
+  stacked: false
 }
 
 export const Single = Template.bind({})

@@ -19,13 +19,14 @@ export const BootstrapCheck = defineComponent({
   emits: ['update:model'],
 
   setup (props: BootstrapCheckProps, ctx: SetupContext) {
-    const { checked, checkType, component } = useBootstrapCheck(props, ctx)
-    return { checked, checkType, component }
+    const { checked, checkType, component, validationClass } = useBootstrapCheck(props, ctx)
+    return { checked, checkType, component, validationClass }
   },
 
   template: `
     <BFormGroup v-bind="{ disabled, label, readonly }" v-slot="{ ariaDescribedby }">
-      <component :is="component" v-model="checked" v-bind="{ name, options }"
+      <component :is="component" v-model="checked" v-bind="{ name, options, stacked }"
+                 class="form-check" :class="validationClass"
                  text-field="label" :id="name" :aria-describedby="ariaDescribedby" />
 
       <!-- Validation errors -->

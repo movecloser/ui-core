@@ -3,23 +3,14 @@
 import { computed, PropType, SetupContext, toRefs } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../../contracts'
-import {
-  defaultValidationClassMap,
-  SizeRegistry,
-  useHasErrors,
-  useIsValid,
-  useSizeClass,
-  useSyncModel,
-  useValidMarkerClass,
-  ValidationClassMap
-} from '../../../composables'
+import { useSyncModel } from '../../../composables'
 
-import { abstractBaseControlProps } from '../InputControl'
+import { getAbstractBaseControlProps } from '../InputControl'
 import {
+  AbstractCheckControlModelType,
   AbstractCheckControlOption,
   AbstractCheckControlProps,
   AbstractCheckControlType,
-  AbstractCheckControlModelType,
   AbstractCheckListProps,
   UseCheckControlProvides
 } from './CheckControl.contracts'
@@ -30,7 +21,7 @@ import {
  */
 export const getAbstractCheckControlProps = <ModelType>():
   ComponentObjectPropsOptions<AbstractCheckControlProps<ModelType>> => ({
-    ...abstractBaseControlProps,
+    ...getAbstractBaseControlProps<ModelType>(),
 
     /**
      * Id of check control.
@@ -79,7 +70,7 @@ export const getAbstractCheckControlProps = <ModelType>():
  */
 export const getAbstractCheckListProps = <ModelType> ():
   ComponentObjectPropsOptions<AbstractCheckListProps<ModelType>> => ({
-    ...abstractBaseControlProps,
+    ...getAbstractBaseControlProps<ModelType>(),
 
     /**
      * Control's value, synced via `v-model`.

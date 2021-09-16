@@ -10,40 +10,34 @@
 
 .form-error {
   color: var(--form-control-helper-color);
+  font-size: var(--form-helper-font-size);
+
+  margin: var(--form-helper-margin-top) 0 0 0;
+
   max-height: 0;
   overflow: hidden;
-  font-size: var(--form-helper-font-size);
-  margin: var(--form-helper-margin-top) 0 0 0;
+
   @include animate((color, max-height));
 }
 
-input[disabled],
-input[readonly],
-select[disabled],
-select[readonly],
-textarea[disabled],
-textarea[readonly] {
-  ~ .form-error {
-    color: var(--form-control-disabled-helper-color);
+.form-input__control, .form-check {
+  &[disabled], &[readonly] {
+    ~ .form-error {
+      color: var(--form-control-disabled-helper-color);
+    }
   }
-}
 
-input.--valid,
-select.--valid,
-textarea.--valid,
-.form-check.--valid {
-  ~ .form-error {
-    max-height: 2rem;
+  &.--valid, &.--invalid {
+    ~ .form-error {
+      max-height: 2rem;
+    }
+  }
+
+  &.--valid ~ .form-error {
     color: var(--form-feedback-valid-color);
   }
-}
 
-input.--invalid,
-select.--invalid,
-textarea.--invalid,
-.form-check.--invalid {
-  ~ .form-error {
-    max-height: 2rem;
+  &.--invalid ~ .form-error {
     color: var(--form-feedback-invalid-color);
   }
 }

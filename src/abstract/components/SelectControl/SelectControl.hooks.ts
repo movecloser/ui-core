@@ -14,7 +14,7 @@ import {
   ValidationClassMap
 } from '../../../composables'
 
-import { abstractBaseControlProps } from '../InputControl'
+import { getAbstractBaseControlProps } from '../InputControl'
 
 import {
   AbstractSelectControlOption,
@@ -28,7 +28,7 @@ import {
  */
 export const getAbstractSelectControlProps = <ModelType>():
   ComponentObjectPropsOptions<AbstractSelectControlProps<ModelType>> => ({
-    ...abstractBaseControlProps,
+    ...getAbstractBaseControlProps<ModelType>(),
 
     options: {
       type: Array as PropType<AbstractSelectControlOption[]>,

@@ -31,12 +31,15 @@
     appearance: none;
     outline: none;
 
+    font-size: inherit;
+    line-height: unset;
+
     // Fill the parent. This way we allow to control the size of the input
     // by changing the size of its parent.
     width: 100%;
     min-height: 100%;
 
-    padding: var(--form-control-padding-y) var(--form-control-padding-x);
+    padding: 0 var(--form-control-padding-x);
 
     background: var(--form-control-bg);
     border: var(--form-control-border-width) var(--form-control-border-style) var(--form-control-border-color);

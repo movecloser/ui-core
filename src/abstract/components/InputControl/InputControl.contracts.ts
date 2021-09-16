@@ -8,7 +8,7 @@ import { FormControlBaseProps } from '../../../contracts'
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export interface AbstractInputControlProps<ModelType> extends FormControlBaseProps {
+export interface AbstractInputControlProps<ModelType> extends FormControlBaseProps<ModelType> {
   /**
    * Value for the `[autocomplete]` attribute.
    */
@@ -18,11 +18,6 @@ export interface AbstractInputControlProps<ModelType> extends FormControlBasePro
    * Determines whether the control should be automatically focused.
    */
   autofocus: boolean;
-
-  /**
-   * Control's value, synced via `v-model`.
-   */
-  model: ModelType;
 }
 
 /**

@@ -5,11 +5,10 @@ import { Meta, Story } from '@storybook/vue'
 
 import { SizeMap } from '../../../../composables'
 
-import { getSizeControlOptions, getTemplateBase } from '../../storybook'
+import { getTemplateBase } from '../../storybook'
 
 import { BootstrapSelect } from './Select'
-import { BootstrapSelectProps, BootstrapSelectType } from './Select.contracts'
-import { bootstrapSelectSizeRegistry } from './Select.config'
+import { BootstrapSelectProps } from './Select.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

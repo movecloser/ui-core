@@ -22,7 +22,7 @@ import { AbstractInputControlProps, UseInputControlProvides } from './InputContr
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBaseProps> = {
+export const getAbstractBaseControlProps = <ModelType>(): ComponentObjectPropsOptions<FormControlBaseProps<ModelType>> => ({
   ...canBeDisabledProp,
   ...hasSizeProp,
   ...hasErrorsProp,
@@ -81,7 +81,7 @@ export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBa
     required: false,
     default: null
   }
-}
+})
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -89,7 +89,7 @@ export const abstractBaseControlProps: ComponentObjectPropsOptions<FormControlBa
  */
 export const getAbstractInputControlProps = <ModelType>():
   ComponentObjectPropsOptions<AbstractInputControlProps<ModelType>> => ({
-    ...abstractBaseControlProps,
+    ...getAbstractBaseControlProps<ModelType>(),
 
     /**
      * Value for the `[autocomplete]` attribute.

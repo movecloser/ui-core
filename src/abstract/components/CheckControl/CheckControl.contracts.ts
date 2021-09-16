@@ -36,12 +36,7 @@ export interface AbstractCheckControlProps<ModelType> extends FormControlBasePro
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export interface AbstractCheckListProps<ModelType> extends FormControlBaseProps {
-  /**
-   * Control's value, synced via `v-model`.
-   */
-  model: AbstractCheckControlModelType<ModelType>;
-
+export interface AbstractCheckListProps<ModelType> extends FormControlBaseProps<ModelType> {
   /**
    * Determines whether the control allows selection of more than one option.
    */
