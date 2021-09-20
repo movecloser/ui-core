@@ -23,7 +23,7 @@ export interface AbstractImageProps extends Data {
 
   /**
    * Registry that binds the different images with their URL address,
-   * where the object's keys represent the images' intrinsic width.
+   * where the object's keys represent the images' intrinsic WIDTH.
    */
   srcset?: SrcSet;
 }
