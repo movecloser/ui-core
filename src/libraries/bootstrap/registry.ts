@@ -62,8 +62,6 @@ export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
       provide: { [DSL_CONFIG_INJECTION_KEY]: configuration }
     })
 
-    // _Vue.prototype.$dsl = configuration
-
     // Firstly, register the Composition API.
     // This line HAS TO come first, before any other plugins.
     _Vue.use(VueCompositionAPI)
