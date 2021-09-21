@@ -9,61 +9,63 @@
 @use "../../scss/variables";
 
 .btn {
-  position: relative;
-
   &[disabled]:hover {
     cursor: not-allowed;
   }
 
-  &.--loading:hover {
-    cursor: wait;
-  }
+  &:not(.stretched-link) {
+    position: relative;
 
-  &::before, &__spinner {
-    opacity: 0;
-    transition: opacity 100ms ease-in-out;
-  }
-
-  &.--loading::before, &.--loading &__spinner {
-    opacity: 1;
-  }
-
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
-    height: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
-    transform: translate(calc(-1 * var(--btn-box-shadow-width, 1px)), calc(-1 * var(--btn-box-shadow-width, 1px)));
-
-    background: rgba(white, 0.9);
-    border-radius: var(--btn-border-radius, .25rem);
-  }
-
-  &__spinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    .spinner-border {
-      width: 1.5em;
-      height: 1.5em;
+    &.--loading:hover {
+      cursor: wait;
     }
-  }
 
-  &.btn-sm::before {
-    border-radius: var(--btn-border-radius-sm, var(--btn-border-radius, .25rem));
-  }
+    &::before, .btn__spinner {
+      opacity: 0;
+      transition: opacity 100ms ease-in-out;
+    }
 
-  &.btn-lg::before {
-    border-radius: var(--btn-border-radius-lg, var(--btn-border-radius, .25rem));
-  }
+    &.--loading::before, &.--loading .btn__spinner {
+      opacity: 1;
+    }
 
-  @each $theme in variables.$themes {
-    &.btn-#{$theme} &__spinner {
-      color: var(--#{$theme});
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
+      height: calc(100% + 2 * var(--btn-box-shadow-width, 1px));
+      transform: translate(calc(-1 * var(--btn-box-shadow-width, 1px)), calc(-1 * var(--btn-box-shadow-width, 1px)));
+
+      background: rgba(white, 0.9);
+      border-radius: var(--btn-border-radius, .25rem);
+    }
+
+    .btn__spinner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .spinner-border {
+        width: 1.5em;
+        height: 1.5em;
+      }
+    }
+
+    &.btn-sm::before {
+      border-radius: var(--btn-border-radius-sm, var(--btn-border-radius, .25rem));
+    }
+
+    &.btn-lg::before {
+      border-radius: var(--btn-border-radius-lg, var(--btn-border-radius, .25rem));
+    }
+
+    @each $theme in variables.$themes {
+      &.btn-#{$theme} .btn__spinner {
+        color: var(--#{$theme});
+      }
     }
   }
 }
