@@ -43,6 +43,13 @@ export interface BootstrapButtonProps extends Data, CanBeDisabled {
   size: BootstrapSize;
 
   /**
+   * HTML tag that should be used to render the component.
+   *
+   * @default "button"
+   */
+  tag: string;
+
+  /**
    * Button's theme (colour variant).
    *
    * @default BootstrapTheme.Primary

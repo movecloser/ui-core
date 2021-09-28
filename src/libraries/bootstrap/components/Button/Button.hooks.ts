@@ -42,6 +42,12 @@ export const bootstrapButtonProps: ComponentObjectPropsOptions<BootstrapButtonPr
     default: BootstrapSize.Normal
   },
 
+  tag: {
+    type: String,
+    required: false,
+    default: 'button'
+  },
+
   theme: getThemePropDefinition()
 }
 

@@ -24,7 +24,7 @@ export const BootstrapButton = defineComponent({
   },
 
   template: `
-    <BButton :class="loadingClass" v-bind="{ size, variant }"
+    <BButton :class="loadingClass" v-bind="{ size, tag, variant }"
              :disabled="disabled || loading" @click="$emit('click')">
       <!-- Button's content -->
       <slot />
