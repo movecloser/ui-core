@@ -1,6 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import { ComputedRef } from '@vue/composition-api'
+import { TranslateResult } from 'vue-i18n'
 import { VueConstructor } from 'vue'
 
 import { AbstractIconProps } from '../../../../abstract'
@@ -24,6 +25,11 @@ export interface BootstrapIconProps extends AbstractIconProps {
   height: number | string;
 
   /**
+   * Human-readable title of the icon (for the A11Y purposes).
+   */
+  title: string;
+
+  /**
    * Width of the icon.
    *
    * @default "1em"
@@ -39,4 +45,9 @@ export interface UseBootstrapIconProvides {
    * Vue component that will be used to render the icon.
    */
   component: ComputedRef<VueConstructor | undefined>
+
+  /**
+   * String to inject into the `<title>` element.
+   */
+  _title: ComputedRef<string | TranslateResult>
 }

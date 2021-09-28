@@ -30,7 +30,7 @@ const Template: Story<BootstrapIconProps> = (args, { argTypes }) => ({
   },
   template: `
     <div>
-      <BootstrapIcon v-bind="$props" />
+      <BootstrapIcon v-bind="$props" :title="name" />
       <hr>
       <p class="m-0">Available icons: <code>{{ icons.join(', ') }}</code></p>
     </div>
