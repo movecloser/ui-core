@@ -34,7 +34,7 @@ export const bootstrapIconProps: ComponentObjectPropsOptions<BootstrapIconProps>
 
   title: {
     type: String as PropType<BootstrapIconProps['title']>,
-    required: true
+    required: false
   },
 
   width: {
