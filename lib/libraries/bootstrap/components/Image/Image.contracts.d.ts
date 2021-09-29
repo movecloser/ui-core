@@ -1,0 +1,16 @@
+import { ComputedRef } from '@vue/composition-api';
+import { VueConstructor } from 'vue';
+import { AbstractImageProps, UseSrcSetProvides } from '../../../../abstract/components/Image';
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export declare type BootstrapImageProps = AbstractImageProps;
+/**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ */
+export interface UseBootstrapImageProvides extends UseSrcSetProvides {
+    /**
+     * Vue component that will be used to render the image.
+     */
+    component: ComputedRef<VueConstructor>;
+}

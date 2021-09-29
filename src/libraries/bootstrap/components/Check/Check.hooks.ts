@@ -5,10 +5,16 @@ import { computed, SetupContext, toRefs } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
 
 import { ComponentObjectPropsOptions, FormControlModelType } from '../../../../contracts'
+import {
+  defaultValidationClassMap,
+  useHasErrors,
+  useIsValid,
+  useValidMarkerClass,
+  ValidationClassMap
+} from '../../../../composables'
 import { getAbstractCheckListProps, useCheckControl } from '../../../../abstract'
 
 import { BootstrapCheckProps, UseBootstrapCheckProvides } from './Check.contracts'
-import { defaultValidationClassMap, useHasErrors, useIsValid, useValidMarkerClass, ValidationClassMap } from '@dsl'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -41,7 +47,8 @@ export const useBootstrapCheck = (
   const isValid = useIsValid(hasErrors, valid)
   const validationClass = useValidMarkerClass(isValid, validClassMap)
 
-  const component = computed<VueConstructor>(() => multiple.value ? BFormCheckboxGroup : BFormRadioGroup)
+  const component = computed<VueConstructor>(() => multiple.value ? BFormCheckboxGroup
+    : BFormRadioGroup)
 
   return { checked, checkType, component, hasErrors, validationClass }
 }

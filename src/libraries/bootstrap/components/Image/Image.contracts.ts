@@ -3,7 +3,7 @@
 import { ComputedRef } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
 
-import { AbstractImageProps, UseSrcSetProvides } from '@/shared/dsl/src/abstract/components/Image'
+import { AbstractImageProps, UseSrcSetProvides } from '../../../../abstract/components/Image'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
