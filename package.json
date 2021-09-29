@@ -5,7 +5,7 @@
     "description": "Move Closer's UI components library.",
     "repository": {
         "type": "git",
-        "url": "git@lab.movecloser.pl/movecloser/ui-core.git"
+        "url": "git@github.com:movecloser/ui-core.git"
     },
     "author": {
         "name": "Move Closer sp. z o.o.",
