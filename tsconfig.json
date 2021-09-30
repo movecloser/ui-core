@@ -3,8 +3,10 @@
       "experimentalDecorators": true,
       "target": "ES2019",
       "lib": [
+        "DOM",
+        "DOM.Iterable",
         "ES2019",
-        "dom",
+        "ScriptHost"
       ],
       "module": "commonjs",
       "declaration": true,
