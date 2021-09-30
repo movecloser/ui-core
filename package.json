@@ -52,7 +52,7 @@
         "lib/**/*"
     ],
     "scripts": {
-        "build": "tsc",
+        "build": "rm -rf lib && tsc",
         "coverage": "jest --config jestconfig.json --coverage",
         "lint": "tslint --project \"./tsconfig.json\"",
         "storybook": "start-storybook -p 6006 --ci",
