@@ -1,100 +1,105 @@
 {
-    "name": "@movecloser/ui-core",
-    "version": "1.0.0-alpha.1",
-    "description": "Move Closer's UI components library.",
-    "repository": {
-        "type": "git",
-        "url": "git@github.com:movecloser/ui-core.git"
+  "name": "@movecloser/ui-core",
+  "version": "1.0.0-alpha.1",
+  "description": "Move Closer's UI components library.",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:movecloser/ui-core.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Move Closer sp. z o.o.",
+    "email": "office@movecloser.co",
+    "url": "https://movecloser.co"
+  },
+  "maintainers": [
+    {
+      "name": "Łukasz Sitnicki",
+      "email": "lukasz.sitnicki@movecloser.pl",
+      "role": "Software Architect"
     },
-    "license": "MIT",
-    "author": {
-        "name": "Move Closer sp. z o.o.",
-        "email": "office@movecloser.co",
-        "url": "https://movecloser.co"
+    {
+      "name": "Stanisław Gregor",
+      "email": "stanislaw.gregor@movecloser.pl",
+      "role": "Front-end Developer"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Agnieszka Zawadzka",
+      "email": "agnieszka.zawadzka@movecloser.pl",
+      "role": "Senior Front-end Developer"
     },
-    "maintainers": [
-        {
-            "name": "Stanisław Gregor",
-            "email": "stanislaw.gregor@movecloser.pl",
-            "role": "Front-end Developer"
-        },
-        {
-            "name": "Łukasz Sitnicki",
-            "email": "lukasz.sitnicki@movecloser.pl",
-            "role": "Software Architect"
-        }
-    ],
-    "contributors": [
-        {
-            "name": "Paweł Korzeniewski",
-            "email": "pawel.korzeniewski@movecloser.pl",
-            "role": "Product Designer"
-        },
-        {
-            "name": "Olga Milczek",
-            "email": "olga.milczek@movecloser.pl",
-            "role": "Junior Front-end Developer"
-        },
-        {
-            "name": "Michał Rossian",
-            "email": "michal.rossian@movecloser.pl",
-            "role": "Junior Front-end Developer"
-        },
-        {
-            "name": "Agnieszka Zawadzka",
-            "email": "agnieszka.zawadzka@movecloser.pl",
-            "role": "Senior Front-end Developer"
-        }
-    ],
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "files": [
-        "lib/**/*"
-    ],
-    "scripts": {
-        "build": "rm -rf lib && tsc",
-        "coverage": "jest --config jestconfig.json --coverage",
-        "lint": "tslint --project \"./tsconfig.json\"",
-        "storybook": "start-storybook -p 6006 --ci",
-        "test": "jest --config jestconfig.json",
-        "watch-test": "jest --config jestconfig.json --watch"
+    {
+      "name": "Michał Rossian",
+      "email": "michal.rossian@movecloser.pl",
+      "role": "Junior Front-end Developer"
     },
-    "dependencies": {
-        "@movecloser/front-core": "git+ssh://git@github.com:movecloser/front-core.git#semver:1.0.0-rc.76",
-        "@popperjs/core": "^2.10.1",
-        "@vue/composition-api": "^1.1.4",
-        "bootstrap": "^4.6",
-        "bootstrap-vue": "^2.21.2",
-        "vue": "^2.6.14",
-        "vue-fragment": "^1.5.2",
-        "vue-i18n": "^8.25.0",
-        "vue-lazyload": "^1.3.3",
-        "vue-router": "^3.5.2",
-        "vue-unique-id": "^3.2.1"
+    {
+      "name": "Olga Milczek",
+      "email": "olga.milczek@movecloser.pl",
+      "role": "Junior Front-end Developer"
     },
-    "devDependencies": {
-        "@storybook/addon-a11y": "^6.3.8",
-        "@storybook/addon-actions": "^6.3.8",
-        "@storybook/addon-docs": "^6.3.8",
-        "@storybook/addon-essentials": "^6.3.8",
-        "@storybook/addon-links": "^6.3.8",
-        "@storybook/cli": "^6.3.8",
-        "@storybook/preset-scss": "^1.0.3",
-        "@storybook/vue": "^6.3.8",
-        "@types/faker": "^5.5.8",
-        "faker": "^5.5.3",
-        "jest": "^26.6.3",
-        "reflect-metadata": "^0.1.13",
-        "sass": "^1.26.5",
-        "sass-loader": "^8.0.2",
-        "ts-jest": "^26.5.0",
-        "ts-lint": "^4.5.1",
-        "typescript": "~4.1.5",
-        "vue-loader": "^15.9.8",
-        "vue-template-compiler": "^2.6.11"
-    },
-    "publishConfig": {
-        "registry": "https://npm.pkg.github.com/movecloser"
-    },
-    "packageManager": "yarn@3.0.1"
+    {
+      "name": "Paweł Korzeniewski",
+      "email": "pawel.korzeniewski@movecloser.pl",
+      "role": "Product Designer"
+    }
+  ],
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "yarn build:cleanup && yarn build:tsc && yarn build:copy-files",
+    "build:cleanup": "rm -rf lib",
+    "build:copy-files": "copyfiles -u 1 src/**/*.scss src/**/*.json lib/",
+    "build:tsc": "tsc",
+    "lint": "tslint --project ./tsconfig.json",
+    "storybook": "start-storybook -p 6006 --ci",
+    "test": "jest --config jestconfig.json",
+    "test:coverage": "jest --config jestconfig.json --coverage",
+    "test:watch": "jest --config jestconfig.json --watch"
+  },
+  "dependencies": {
+    "@movecloser/front-core": "git+ssh://git@github.com:movecloser/front-core.git#semver:1.0.0-rc.76",
+    "@popperjs/core": "^2.10.1",
+    "@vue/composition-api": "^1.1.4",
+    "bootstrap": "^4.6",
+    "bootstrap-vue": "^2.21.2",
+    "vue": "^2.6.14",
+    "vue-fragment": "^1.5.2",
+    "vue-i18n": "^8.25.0",
+    "vue-lazyload": "^1.3.3",
+    "vue-router": "^3.5.2",
+    "vue-unique-id": "^3.2.1"
+  },
+  "devDependencies": {
+    "@storybook/addon-a11y": "^6.3.8",
+    "@storybook/addon-actions": "^6.3.8",
+    "@storybook/addon-docs": "^6.3.8",
+    "@storybook/addon-essentials": "^6.3.8",
+    "@storybook/addon-links": "^6.3.8",
+    "@storybook/cli": "^6.3.8",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/vue": "^6.3.8",
+    "@types/faker": "^5.5.8",
+    "copyfiles": "^2.4.1",
+    "faker": "^5.5.3",
+    "jest": "^26.6.3",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^3.0.2",
+    "sass": "^1.26.5",
+    "sass-loader": "^8.0.2",
+    "ts-jest": "^26.5.0",
+    "ts-lint": "^4.5.1",
+    "typescript": "~4.1.5",
+    "vue-loader": "^15.9.8",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/movecloser"
+  },
+  "packageManager": "yarn@3.0.1"
 }
