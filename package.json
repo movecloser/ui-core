@@ -1,12 +1,12 @@
 {
     "name": "@movecloser/ui-core",
     "version": "1.0.0-alpha.1",
-    "license": "MIT",
     "description": "Move Closer's UI components library.",
     "repository": {
         "type": "git",
         "url": "git@github.com:movecloser/ui-core.git"
     },
+    "license": "MIT",
     "author": {
         "name": "Move Closer sp. z o.o.",
         "email": "office@movecloser.co",
@@ -46,6 +46,11 @@
             "role": "Senior Front-end Developer"
         }
     ],
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "files": [
+        "lib/**/*"
+    ],
     "scripts": {
         "build": "tsc",
         "coverage": "jest --config jestconfig.json --coverage",
@@ -79,23 +84,17 @@
         "@types/faker": "^5.5.8",
         "faker": "^5.5.3",
         "jest": "^26.6.3",
-        "ts-jest": "^26.5.0",
-        "ts-lint": "^4.5.1",
         "reflect-metadata": "^0.1.13",
         "sass": "^1.26.5",
         "sass-loader": "^8.0.2",
+        "ts-jest": "^26.5.0",
+        "ts-lint": "^4.5.1",
         "typescript": "~4.1.5",
         "vue-loader": "^15.9.8",
         "vue-template-compiler": "^2.6.11"
-
     },
-    "main": "lib/index.js",
-    "types": "lib/index.d.ts",
-    "files": [
-        "lib/**/*"
-    ],
-    "packageManager": "yarn@3.0.1",
     "publishConfig": {
         "registry": "https://npm.pkg.github.com/movecloser"
-    }
+    },
+    "packageManager": "yarn@3.0.1"
 }
