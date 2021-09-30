@@ -1,0 +1,11 @@
+// Copyright © 2021 Move Closer
+
+@use "sass:math";
+
+/// @description - Returns the calculated 'emmy' value from the passed-in pixels values.
+/// @param {Length} $targetSize - The px value of the target element (the target for the calculation).
+/// @param {Length} $parentSize - The px value of the parent element (the source for the calculation).
+/// @returns {Length} - The converted 'emmy' value.
+@function em($targetSize, $parentSize) {
+  @return math.div($targetSize, $parentSize) * 1em;
+}

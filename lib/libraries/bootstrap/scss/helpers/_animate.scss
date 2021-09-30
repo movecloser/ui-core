@@ -1,0 +1,62 @@
+// Copyright © 2021 Move Closer
+
+/// Helps defining the `transition` declaration for multiple properties at once.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+/// @author Adrian Kluska <adrian.kluska@movecloser.pl>
+///
+/// @access public
+///
+/// @param {Map<custom-ident>} $properties - List of the CSS properties
+///   that should be included in the `transition` declaration.
+/// @param {time} $duration [0.2s] - Transition duration.
+/// @param {easing-function} $timing-function [ease-in-out] - Transition easing function.
+/// @param {Boolean} $enable-will-change [true] - Determines whether the mixin should also produce
+///   a `will-change` declaration alongside `transition`.
+///
+/// @example scss - Usage
+///   .foo {
+///     @include animate(('max-height'));
+///   }
+///   .bar {
+///     @include animate(('font-size', 'color'), 300ms, linear, false);
+///   }
+///
+/// @example css - CSS output
+///   .foo {
+///     transition: max-height 0.2s ease-in-out;
+///     will-change: max-height;
+///   }
+///   .bar {
+///     transition: font-size 300ms linear, color 300ms linear;
+///   }
+@mixin animate(
+  $properties,
+  $duration: 0.2s,
+  $timing-function: ease-in-out,
+  $enable-will-change: true
+) {
+  @if $properties and length($properties) {
+    // Define the variables that will hold the values for the CSS declarations.
+    $transition: '';
+    $will-change: '';
+
+    // Loop through all the properties and include it in the declarations.
+    @each $property in $properties {
+      $transition: #{$transition, $property $duration $timing-function};
+      $will-change: #{$will-change, $property};
+    }
+
+    // Remove the disposable ', ' from the beginning of the variables.
+    $transition: str-slice($transition, 3);
+    $will-change: str-slice($will-change, 3);
+
+    // Return the constructed `transition` declaration.
+    transition: $transition;
+
+    // Return the `will-change` declaration only if it wasn't explicitly disabled.
+    @if $enable-will-change {
+      will-change: $will-change;
+    }
+  }
+}

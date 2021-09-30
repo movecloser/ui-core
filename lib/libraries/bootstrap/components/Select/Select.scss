@@ -1,0 +1,216 @@
+// Copyright © 2021 Move Closer
+
+////
+/// This file contains the styles for the `<BootstrapSelect>` DSL component.
+///
+/// @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+////
+
+@use "../../scss/variables";
+@use "../../scss/helpers/animate" as *;
+@use "../../scss/helpers/thick-border" as *;
+
+/// Base state of the <label>.
+@mixin label-base-state() {
+  font-size: var(--form-control-label-font-size);
+  transform: var(--form-control-label-transform);
+}
+
+.form-select {
+  // Be relative for the <label>.
+  position: relative;
+
+  color: var(--form-control-color);
+  font-size: var(--form-control-font-size);
+
+  /*******************************************************************************
+   * Select.
+   */
+
+  &__control {
+    appearance: none;
+    outline: none;
+
+    font-size: inherit;
+    line-height: unset;
+
+    // Fill the parent. This way we allow to control the size of the input
+    // by changing the size of its parent.
+    width: 100%;
+    min-height: 100%;
+
+    padding: 0 var(--form-control-padding-x);
+
+    background: var(--form-control-bg);
+    border: var(--form-control-border-width) var(--form-control-border-style) var(--form-control-border-color);
+    border-radius: var(--border-radius);
+
+    @include animate((color, background, box-shadow, border-color));
+  }
+
+
+  /*******************************************************************************
+   * Label.
+   */
+
+  &__control:not(:focus) ~ label,
+  &__control:empty ~ label {
+    @include label-base-state();
+  }
+
+  &__control:-webkit-autofill {
+    @include label-base-state();
+  }
+
+  &__label,
+  &__control:focus ~ label,
+  &__control:not(:placeholder-shown) ~ label {
+    position: absolute;
+    top: 0;
+    left: calc(var(--form-control-padding-x) - var(--form-control-label-bg-offset));
+
+    transform: translateY(-50%);
+    transform-origin: 0 0;
+
+    @include animate((font-size, color, transform, background));
+
+    pointer-events: none;
+
+    padding: 0 var(--form-control-label-bg-offset);
+
+    color: var(--form-control-label-color);
+    font-size: var(--form-control-label-floating-font-size);
+    background: var(--form-control-bg);
+
+    // Required for aligning label's text with the select as it affects the inner box model.
+    border: var(--form-control-border-width) solid transparent;
+
+    border-radius: var(--border-radius);
+  }
+
+  // Required field indicator.
+  &__control[required] ~ label::after {
+    content: "*";
+    color: var(--danger);
+  }
+
+
+  /*******************************************************************************
+   * :hover state.
+   */
+
+  &__control:hover {
+    color: var(--form-control-hover-color);
+    background: var(--form-control-hover-bg);
+    border-color: var(--form-control-hover-border-color);
+  }
+
+  &__control:hover ~ label {
+    color: var(--form-control-hover-label-color);
+    background: var(--form-control-hover-bg);
+  }
+
+
+  /*******************************************************************************
+   * :focus state.
+   */
+
+  &__control:focus:not([readonly]) {
+    color: var(--form-control-focus-color);
+    background: var(--form-control-focus-bg);
+    border-color: var(--form-control-focus-border-color);
+    @include thick-border(var(--form-control-focus-border-color));
+  }
+
+  &__control:focus:not([readonly]) ~ label {
+    color: var(--form-control-focus-label-color);
+    background: var(--form-control-focus-bg);
+  }
+
+
+  /*******************************************************************************
+   * [disabled] & [readonly] states.
+   */
+
+  &__control[disabled],
+  &__control[readonly] {
+    color: var(--form-control-disabled-color);
+    background: var(--form-control-disabled-bg);
+    border-color: var(--form-control-disabled-border-color);
+  }
+
+  &__control[disabled] ~ label,
+  &__control[readonly] ~ label {
+    color: var(--form-control-disabled-label-color);
+    background: var(--form-control-disabled-bg);
+
+    pointer-events: auto;
+  }
+
+  &__control[disabled] ~ &__icon,
+  &__control[readonly] ~ &__icon {
+    color: var(--form-control-disabled-icon-color);
+  }
+}
+
+
+/*******************************************************************************
+ * Validations states.
+ */
+
+form .form-select {
+
+  /// Generates the style definitions for the :valid/:invalid state.
+  /// @param {Color} $background-color - <select>'s & <label>'s background color.
+  /// @param {Color} $select-border-color - <select>'s border color.
+  /// @param {Color} $label-color - <label>'s text color.
+  @mixin validation-state($background-color, $select-border-color, $label-color) {
+    background: $background-color;
+    border-color: $select-border-color;
+    @include thick-border($select-border-color);
+
+    ~ label {
+      color: $label-color;
+      background: $background-color;
+    }
+  }
+
+  // :valid state.
+  &__control.--valid {
+    @include validation-state(
+        var(--form-control-valid-bg),
+        var(--form-control-valid-border-color),
+        var(--form-control-valid-label-color)
+    );
+  }
+
+  @if variables.$enable-native-validation {
+    &__control:valid {
+      @include validation-state(
+          var(--form-control-valid-bg),
+          var(--form-control-valid-border-color),
+          var(--form-control-valid-label-color)
+      );
+    }
+  }
+
+
+  // :invalid state.
+  &__control.--invalid {
+    @include validation-state(
+        var(--form-control-invalid-bg),
+        var(--form-control-invalid-border-color),
+        var(--form-control-invalid-label-color)
+    );
+  }
+
+  @if variables.$enable-native-validation {
+    &__control:invalid {
+      @include validation-state(
+          var(--form-control-invalid-bg),
+          var(--form-control-invalid-border-color),
+          var(--form-control-invalid-label-color)
+      );
+    }
+  }
+}
