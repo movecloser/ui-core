@@ -1,23 +1,30 @@
 {
-    "compilerOptions": {
-      "experimentalDecorators": true,
-      "target": "ES2019",
-      "lib": [
-        "DOM",
-        "DOM.Iterable",
-        "ES2019",
-        "ScriptHost"
-      ],
-      "module": "commonjs",
-      "declaration": true,
-      "outDir": "./lib",
-      "rootDir": "./src",
-      "strict": true,
-      "skipLibCheck": true,
-      "resolveJsonModule": true,
-      "allowJs": true,
-      "allowSyntheticDefaultImports": true
-    },
-    "include": ["src"],
-    "exclude": [".storybook", "node_modules", "**/*.stories.ts", "**/*.test.ts"]
+  "compilerOptions": {
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2019",
+      "ScriptHost"
+    ],
+    "module": "CommonJS",
+    "outDir": "./lib",
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "ES2019"
+  },
+  "exclude": [
+    "**/*.stories.ts",
+    "**/*.test.ts",
+    ".storybook",
+    "node_modules"
+  ],
+  "include": [
+    "src"
+  ]
 }
