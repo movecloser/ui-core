@@ -1,5 +1,4 @@
 import { SizeMap } from '../../../../composables';
-import './Input.scss';
 import { BootstrapInputProps } from './Input.contracts';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

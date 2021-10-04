@@ -1,4 +1,3 @@
-import './Breadcrumbs.scss';
 import { BootstrapBreadcrumbsProps } from './Breadcrumbs.contracts';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

@@ -7,7 +7,6 @@ import { useSelectControl } from '../../../../abstract'
 
 import { BootstrapFormError } from '../FormError'
 
-import './Select.scss'
 import { bootstrapSelectProps } from './Select.hooks'
 import { BootstrapSelectProps } from './Select.contracts'
 import { bootstrapSelectSizeRegistry } from './Select.config'

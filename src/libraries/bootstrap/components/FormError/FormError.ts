@@ -2,8 +2,6 @@
 
 import { defineComponent } from '@vue/composition-api'
 
-import './FormError.scss'
-
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>

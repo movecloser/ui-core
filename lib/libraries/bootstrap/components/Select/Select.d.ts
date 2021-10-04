@@ -1,4 +1,3 @@
-import './Select.scss';
 import { BootstrapSelectProps } from './Select.contracts';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

@@ -1,4 +1,3 @@
-import './Button.scss';
 import { BootstrapButtonProps } from './Button.contract';
 /**
  * @emits click - When the button gets clicked.

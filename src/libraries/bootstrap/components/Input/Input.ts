@@ -8,7 +8,6 @@ import { useInputControl } from '../../../../abstract'
 import { BootstrapFormError } from '../FormError'
 import { BootstrapIcon } from '../Icon'
 
-import './Input.scss'
 import { bootstrapInputProps } from './Input.hooks'
 import { BootstrapInputProps } from './Input.contracts'
 import { bootstrapInputSizeRegistry } from './Input.config'

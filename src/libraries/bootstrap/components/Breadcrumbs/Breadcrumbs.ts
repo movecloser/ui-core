@@ -5,7 +5,6 @@ import { BBreadcrumb, BBreadcrumbItem } from 'bootstrap-vue'
 
 import { BootstrapIcon } from '../Icon'
 
-import './Breadcrumbs.scss'
 import { BootstrapBreadcrumbsProps } from './Breadcrumbs.contracts'
 import { bootstrapBreadcrumbsProps, useBootstrapBreadcrumbs } from './Breadcrumbs.hooks'
 
