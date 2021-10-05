@@ -1,5 +1,5 @@
 import { ComponentObjectPropsOptions } from '../../../../contracts';
-import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contract';
+import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contracts';
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>

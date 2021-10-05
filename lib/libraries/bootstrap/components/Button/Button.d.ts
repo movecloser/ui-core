@@ -1,4 +1,4 @@
-import { BootstrapButtonProps } from './Button.contract';
+import { BootstrapButtonProps } from './Button.contracts';
 /**
  * @emits click - When the button gets clicked.
  *
