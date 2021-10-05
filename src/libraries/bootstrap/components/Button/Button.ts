@@ -3,7 +3,7 @@
 import { BButton } from 'bootstrap-vue'
 import { defineComponent } from '@vue/composition-api'
 
-import { BootstrapButtonProps } from './Button.contract'
+import { BootstrapButtonProps } from './Button.contracts'
 import { bootstrapButtonProps, useBootstrapButton } from './Button.hooks'
 
 /**

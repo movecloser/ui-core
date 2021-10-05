@@ -8,7 +8,7 @@ import { canBeDisabledProp } from '../../../../composables'
 import { BootstrapSize } from '../../contracts'
 import { getThemePropDefinition } from '../../composables'
 
-import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contract'
+import { BootstrapButtonProps, UseBootstrapButtonProvides } from './Button.contracts'
 
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>

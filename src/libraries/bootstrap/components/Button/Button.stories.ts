@@ -6,7 +6,7 @@ import { BootstrapSize, BootstrapTheme } from '../../contracts'
 import { getTemplateBase } from '../../storybook'
 
 import { BootstrapButton } from './Button'
-import { BootstrapButtonProps } from './Button.contract'
+import { BootstrapButtonProps } from './Button.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
