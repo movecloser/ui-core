@@ -101,7 +101,7 @@
 
     color: var(--form-control-label-color);
     font-size: var(--form-control-label-floating-font-size);
-    background: var(--form-control-bg);
+    background: var(--form-control-label-bg, var(--form-control-bg));
 
     // Required for aligning label's text with the input as it affects the inner box model.
     border: var(--form-control-border-width) solid transparent;
@@ -157,7 +157,7 @@
 
   &__control:hover ~ label {
     color: var(--form-control-hover-label-color);
-    background: var(--form-control-hover-bg);
+    background: var(--form-control-hover-label-bg, var(--form-control-hover-bg));
   }
 
 
@@ -174,7 +174,7 @@
 
   &__control:focus:not([readonly]) ~ label {
     color: var(--form-control-focus-label-color);
-    background: var(--form-control-focus-bg);
+    background: var(--form-control-focus-label-bg, var(--form-control-focus-bg));
   }
 
 
@@ -192,7 +192,7 @@
   &__control[disabled] ~ label,
   &__control[readonly] ~ label {
     color: var(--form-control-disabled-label-color);
-    background: var(--form-control-disabled-bg);
+    background: var(--form-control-disabled-label-bg, var(--form-control-disabled-bg));
 
     pointer-events: auto;
   }
@@ -228,18 +228,18 @@ form .form-input {
   // :valid state.
   &__control.--valid {
     @include validation-state(
-        var(--form-control-valid-bg),
-        var(--form-control-valid-border-color),
-        var(--form-control-valid-label-color)
+                    var(--form-control-valid-bg),
+                    var(--form-control-valid-border-color),
+                    var(--form-control-valid-label-color)
     );
   }
 
   @if variables.$enable-native-validation {
     &__control:valid {
       @include validation-state(
-          var(--form-control-valid-bg),
-          var(--form-control-valid-border-color),
-          var(--form-control-valid-label-color)
+                      var(--form-control-valid-bg),
+                      var(--form-control-valid-border-color),
+                      var(--form-control-valid-label-color)
       );
     }
   }
@@ -248,18 +248,18 @@ form .form-input {
   // :invalid state.
   &__control.--invalid {
     @include validation-state(
-        var(--form-control-invalid-bg),
-        var(--form-control-invalid-border-color),
-        var(--form-control-invalid-label-color)
+                    var(--form-control-invalid-bg),
+                    var(--form-control-invalid-border-color),
+                    var(--form-control-invalid-label-color)
     );
   }
 
   @if variables.$enable-native-validation {
     &__control:invalid {
       @include validation-state(
-          var(--form-control-invalid-bg),
-          var(--form-control-invalid-border-color),
-          var(--form-control-invalid-label-color)
+                      var(--form-control-invalid-bg),
+                      var(--form-control-invalid-border-color),
+                      var(--form-control-invalid-label-color)
       );
     }
   }
