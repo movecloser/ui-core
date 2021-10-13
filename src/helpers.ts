@@ -11,7 +11,7 @@ import { DSL_CONFIG_INJECTION_KEY } from './config'
  *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export const getDSLConfig = <Config extends AnyObject>(): Config => {
+export const getDSLConfig = <Config extends AnyObject> (): Config => {
   const config = inject<Config>(DSL_CONFIG_INJECTION_KEY)
 
   if (typeof config === 'undefined') {

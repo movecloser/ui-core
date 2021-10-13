@@ -6,7 +6,7 @@ import VueRouter from 'vue-router'
 import VueUniqueId from 'vue-unique-id'
 import { PluginObject, VueConstructor } from 'vue'
 
-import { DSL_CONFIG_INJECTION_KEY } from '../../config'
+import { DSL_CONFIG_INJECTION_KEY, uniqueIdConfig } from '../../config'
 import { registerComponent } from '../../helpers'
 
 import { BootstrapDSLConfiguration } from './contracts'
@@ -66,10 +66,17 @@ export const BootstrapDSL: PluginObject<BootstrapDSLConfiguration> = {
     // This line HAS TO come first, before any other plugins.
     _Vue.use(VueCompositionAPI)
 
+    if (typeof configuration.uidConfig !== 'object' || configuration.uidConfig === null) {
+      configuration.uidConfig = uniqueIdConfig
+    }
+
     // Next, register additional plugins required for the Bootstrap DSL to work.
     _Vue.use(VueI18n)
     _Vue.use(VueRouter)
-    _Vue.use(VueUniqueId)
+    _Vue.use(
+      VueUniqueId,
+      configuration.uidConfig
+    )
 
     // Finally, register the components.
     for (const [name, component] of Object.entries(componentsRegistry)) {

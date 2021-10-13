@@ -3,8 +3,10 @@
 import 'reflect-metadata'
 import Vue from 'vue'
 import 'bootstrap/scss/bootstrap.scss'
+import '../src/libraries/dashmix/scss/index.scss'
 
 import { BootstrapDSL } from '../src'
+import { DashmixDSL } from '../src'
 
 /**
  * @type {import('@storybook/api').Parameters}
@@ -25,3 +27,5 @@ Vue.use(BootstrapDSL, {
   icons: {},
   prefix: 'Ui'
 })
+
+Vue.use(DashmixDSL)

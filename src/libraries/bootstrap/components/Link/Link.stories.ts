@@ -57,8 +57,10 @@ const TCustomSlot: Story<BootstrapLinkProps> = (args, { argTypes }) => ({
   components: { BootstrapLink },
   template: `
     <BootstrapLink v-bind="$props">
-      <span class="position-absolute bg-white p-2">This image works as a link!</span>
-      <img src="https://images.unsplash.com/photo-1619143921821-61e111505f3e?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="" style="max-width: 400px">
+    <span class="position-absolute bg-white p-2">This image works as a link!</span>
+    <img
+        src="https://images.unsplash.com/photo-1619143921821-61e111505f3e?ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60"
+        alt="" style="max-width: 400px">
     </BootstrapLink>
   `
 })

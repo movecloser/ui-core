@@ -85,7 +85,8 @@ export const useBootstrapIcon = (
     }
 
     if (!hasTitle) {
-      console.warn('useBootstrapIcon(): The value for the title prop has not been provided. Falling back to the generic translation.')
+      console.warn(
+        'useBootstrapIcon(): The value for the title prop has not been provided. Falling back to the generic translation.')
       return internalInstance.proxy.$t('_.icon')
     }
 

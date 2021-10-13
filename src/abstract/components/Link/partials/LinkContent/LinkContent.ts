@@ -15,8 +15,8 @@ export const LinkContent = defineComponent({
 
   template: `
     <Fragment>
-      <slot v-if="$slots.default" />
-      <span v-else-if="label && label.length">
+    <slot v-if="$slots.default" />
+    <span v-else-if="label && label.length">
         {{ label }}
       </span>
     </Fragment>

@@ -20,7 +20,7 @@ export interface AbstractCheckControlProps<ModelType> extends FormControlBasePro
   /**
    * Id of check control.
    */
-  id: string|null;
+  id: string | null;
 
   /**
    * Determines whether the control allows selection of more than one option.
@@ -56,12 +56,12 @@ export type AbstractCheckControlType = 'checkbox' | 'radio'
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export type AbstractCheckControlModelType<ModelType> = ModelType|ModelType[]
+export type AbstractCheckControlModelType<ModelType> = ModelType | ModelType[]
 
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export interface UseCheckControlProvides<ModelType> {
-  checked: WritableComputedRef<AbstractCheckControlModelType<ModelType>>;
   checkType: Ref<AbstractCheckControlType>;
+  checked: WritableComputedRef<AbstractCheckControlModelType<ModelType>>;
 }

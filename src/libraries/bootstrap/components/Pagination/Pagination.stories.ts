@@ -31,14 +31,14 @@ const Template: Story = (args, { argTypes }) => ({
   },
   template: `
     <div>
-      <code class="small">:model.sync</code>
-      <BootstrapPagination v-bind="$props" :model.sync="currentPage" />
+    <code class="small">:model.sync</code>
+    <BootstrapPagination v-bind="$props" :model.sync="currentPage" />
 
-      <code class="small">:model & @update:model</code>
-      <BootstrapPagination v-bind="$props" :model="currentPage" @update:model="onChange" />
+    <code class="small">:model & @update:model</code>
+    <BootstrapPagination v-bind="$props" :model="currentPage" @update:model="onChange" />
 
-      <hr>
-      <p>Current page: <code>{{ currentPage }}</code></p>
+    <hr>
+    <p>Current page: <code>{{ currentPage }}</code></p>
     </div>
   `
 })

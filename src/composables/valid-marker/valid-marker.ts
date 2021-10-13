@@ -1,7 +1,11 @@
 // Copyright © 2021 Move Closer
 
 import { computed, ComputedRef } from '@vue/composition-api'
-import { defaultValidationClassMap, UseValidMarkerProvides, ValidationClassMap } from './valid-marker.contracts'
+import {
+  defaultValidationClassMap,
+  UseValidMarkerProvides,
+  ValidationClassMap
+} from './valid-marker.contracts'
 
 /**
  * @param isValid - Component's `isValid` reactive reference.

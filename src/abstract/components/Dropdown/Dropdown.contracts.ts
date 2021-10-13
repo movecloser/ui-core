@@ -19,11 +19,11 @@ export enum DropdownAlignmentMap {
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export interface DropdownItem {
-  type: DropdownItemType;
   icon?: string;
   label?: string;
-  onClick?: () => void|Promise<void>;
+  onClick?: () => void | Promise<void>;
   theme?: string;
+  type: DropdownItemType;
 }
 
 /**
@@ -66,7 +66,7 @@ export enum DropdownPositionMap {
  */
 export interface DropdownProps extends Data {
   align: DropdownAlignment;
-  icon: string|null;
+  icon: string | null;
   items: DropdownItem[];
   label: string;
   openOnMount: boolean;

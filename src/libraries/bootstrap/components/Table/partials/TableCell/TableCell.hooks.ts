@@ -33,20 +33,21 @@ export const useBootstrapTableCell = (props: TableCellProps): UseBootstrapTableC
   /**
    * @see UseBootstrapTableCellProvides.shouldRenderComponent
    */
-  const shouldRenderComponent: UseBootstrapTableCellProvides['shouldRenderComponent'] = computed<boolean>(() => {
-    const isVueComponent: boolean = (
-      typeof props.value === 'function' ||
-      props.value instanceof Vue
-    )
+  const shouldRenderComponent: UseBootstrapTableCellProvides['shouldRenderComponent'] = computed<boolean>(
+    () => {
+      const isVueComponent: boolean = (
+        typeof props.value === 'function' ||
+        props.value instanceof Vue
+      )
 
-    const isVueComponentOptions: boolean = (
-      typeof props.value === 'object' &&
-      props.value !== null &&
-      Object.prototype.hasOwnProperty.call(props.value, 'template')
-    )
+      const isVueComponentOptions: boolean = (
+        typeof props.value === 'object' &&
+        props.value !== null &&
+        Object.prototype.hasOwnProperty.call(props.value, 'template')
+      )
 
-    return isVueComponent || isVueComponentOptions
-  })
+      return isVueComponent || isVueComponentOptions
+    })
 
   return { shouldRenderComponent }
 }

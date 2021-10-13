@@ -1,0 +1,26 @@
+// Copyright © 2021 Move Closer
+
+
+.breadcrumb {
+  align-items: center;
+
+  .icon {
+    font-size: 0.5em;
+  }
+}
+
+.breadcrumb-item {
+  font-family: Inter, serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.breadcrumb-container {
+  padding: 0.875rem 0.875rem 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .breadcrumb-container {
+    padding: 0.9rem 1.75rem 0.9rem;
+  }
+}

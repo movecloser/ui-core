@@ -1,0 +1,59 @@
+/* Copyright © 2021 Move Closer */
+
+.v-select {
+  .vs__dropdown-toggle > .vs__selected-options {
+    max-width: calc(100% - 1rem);
+  }
+
+  &[size='small'] {
+    .vs__selected {
+      margin: 0;
+    }
+  }
+
+  .vs__clear {
+    transform: translateY(-5%);
+  }
+
+  font-size: $input-font-size;
+  line-height: $input-line-height;
+
+  .vs__actions {
+    padding-top: 0;
+  }
+
+  .vs__dropdown-toggle {
+    height: add($input-line-height * 1em, $input-padding-y * 2);
+    padding: 0;
+
+    .vs__search, .vs__search:focus {
+      font-size: $input-font-size;
+      line-height: $input-line-height;
+      margin: 0;
+    }
+  }
+
+  &.select-lg {
+    font-size: $input-font-size-lg;
+
+    .vs__dropdown-toggle {
+      height: add($input-line-height * 1em, $input-padding-y-lg * 2);
+
+      .vs__search, .vs__search:focus {
+        font-size: $input-font-size-lg;
+      }
+    }
+  }
+
+  &.select-sm {
+    font-size: $input-font-size-sm;
+
+    .vs__dropdown-toggle {
+      height: add($input-line-height * 1em, $input-padding-y-sm * 2);
+
+      .vs__search, .vs__search:focus {
+        font-size: $input-font-size-sm;
+      }
+    }
+  }
+}

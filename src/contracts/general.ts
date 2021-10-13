@@ -9,7 +9,7 @@ import { CanBeDisabled, HasErrors, HasSize } from '../composables'
  *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export type ClassRegistry<T extends string|number|symbol, CSSClass = string> = Record<T, CSSClass>
+export type ClassRegistry<T extends string | number | symbol, CSSClass = string> = Record<T, CSSClass>
 
 /**
  * Base FormControl props.
@@ -43,7 +43,7 @@ export interface FormControlBaseProps<ModelType> extends CanBeDisabled, HasError
   /**
    * Value for the `[placeholder]` attribute.
    */
-  placeholder: string|undefined;
+  placeholder: string | undefined;
 
   /**
    * Determines whether the element should be mutable.

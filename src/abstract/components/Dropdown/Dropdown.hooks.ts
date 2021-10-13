@@ -57,9 +57,15 @@ export function useDropdown (props: DropdownProps, ctx: SetupContext): UseDropdo
 
   const hasCustomTrigger = computed<boolean>(() => props.trigger !== null)
 
-  const close = () => { isOpen.value = false }
-  const open = () => { isOpen.value = true }
-  const toggle = () => { isOpen.value ? close() : open() }
+  const close = () => {
+    isOpen.value = false
+  }
+  const open = () => {
+    isOpen.value = true
+  }
+  const toggle = () => {
+    isOpen.value ? close() : open()
+  }
 
   return { close, hasCustomTrigger, isOpen, open, toggle }
 }

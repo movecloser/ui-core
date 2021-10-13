@@ -1,0 +1,27 @@
+// Copyright © 2021 Move Closer
+
+.typeahead {
+  .dropdown {
+    display: block !important;
+
+    .dropdown-menu {
+      max-height: 10rem;
+      overflow-y: auto;
+    }
+  }
+
+  .input-group.custom.--disabled {
+    background-color: $input-disabled-bg;
+    pointer-events: none;
+  }
+
+  .input-group.custom,
+  .input-group.custom .form-control,
+  .input-group.custom .input-group-prepend {
+    border-radius: $border-radius;
+  }
+
+  .dropdown-menu {
+    width: 100%;
+  }
+}

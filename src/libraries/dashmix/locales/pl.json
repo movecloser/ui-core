@@ -1,0 +1,23 @@
+{
+  "conjunction": {
+    "and": "i",
+    "or": "lub"
+  },
+  "filters": {
+    "addNext": "Dodaj warunek",
+    "approved": "Zastosuj",
+    "delete": "Usuń wszystkie",
+    "add": "Dodaj filtr",
+    "notSet": "--",
+    "conjunctionType": "Spójnik:",
+    "datePlaceholder": "Wybierz datę",
+    "placeholder": "Wprowadź filtr",
+    "operators": {
+      "is": "jest",
+      "isNot": "nie jest",
+      "contains": "zawiera",
+      "from": "od",
+      "to": "do"
+    }
+  }
+}

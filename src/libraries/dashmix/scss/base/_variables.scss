@@ -1,0 +1,21 @@
+// Copyright © 2021 Move Closer
+
+// Bootstrap functions
+@import "../../../../../node_modules/bootstrap/scss/functions";
+
+// Custom Bootstrap variables overrides
+@import 'dashmix/variables-bootstrap';
+
+// Bootstrap variables
+@import "../../../../../node_modules/bootstrap/scss/variables";
+
+// Bootstrap mixins
+@import "../../../../../node_modules/bootstrap/scss/mixins";
+
+// Custom mixins and Bootstrap overrides
+@import 'dashmix/mixins';
+
+// This variable should be used EACH TIME you want to reference a file from the `assets/` dir.
+$app-assets-path: '../assets' !default;
+
+$separators-color: $gray-200;

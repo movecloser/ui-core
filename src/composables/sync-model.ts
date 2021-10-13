@@ -15,7 +15,7 @@ import { computed, Ref, SetupContext, WritableComputedRef } from '@vue/compositi
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useSyncModel = <ModelType>(
+export const useSyncModel = <ModelType> (
   model: Ref<ModelType>,
   ctx: SetupContext,
   propName: string = 'model'

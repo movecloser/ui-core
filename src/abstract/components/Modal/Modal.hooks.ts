@@ -32,7 +32,9 @@ export const useModal = (props: AbstractModalProps, ctx: SetupContext): UseModal
   /**
    * Emits the `@close` event to the parent component.
    */
-  const close = (): void => { emit('close') }
+  const close = (): void => {
+    emit('close')
+  }
 
   return { close }
 }
