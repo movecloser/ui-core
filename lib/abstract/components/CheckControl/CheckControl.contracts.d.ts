@@ -50,6 +50,6 @@ export declare type AbstractCheckControlModelType<ModelType> = ModelType | Model
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export interface UseCheckControlProvides<ModelType> {
-    checked: WritableComputedRef<AbstractCheckControlModelType<ModelType>>;
     checkType: Ref<AbstractCheckControlType>;
+    checked: WritableComputedRef<AbstractCheckControlModelType<ModelType>>;
 }

@@ -1,0 +1,50 @@
+// Copyright © 2021 Move Closer
+
+// Alternate variant
+@mixin badge-alt-variant($background, $text-color) {
+  color: $text-color;
+
+  @include gradient-bg($background);
+  border-color: $background;
+}
+
+//
+// Badge
+// --------------------------------------------------
+
+.badge-secondary {
+  @include badge-variant(rgba($black, .33));
+}
+
+// Alternate variant buttons
+.badge-alt-primary {
+  @include badge-alt-variant($btn-alt-primary-bg, theme-color("primary-dark"));
+}
+
+.badge-alt-secondary {
+  @include badge-alt-variant($body-bg, $body-color);
+}
+
+.badge-alt-success {
+  @include badge-alt-variant(lighten(theme-color("success-light"), 10%), darken(theme-color("success"), 25%));
+}
+
+.badge-alt-info {
+  @include badge-alt-variant(lighten(theme-color("info-light"), 10%), darken(theme-color("info"), 25%));
+}
+
+.badge-alt-warning {
+  @include badge-alt-variant(lighten(theme-color("warning-light"), 10%), darken(theme-color("warning"), 25%));
+}
+
+.badge-alt-danger {
+  @include badge-alt-variant(lighten(theme-color("danger-light"), 10%), darken(theme-color("danger"), 25%));
+}
+
+.badge-alt-dark {
+  @include badge-alt-variant(lighten(theme-color("dark"), 60%), theme-color("dark"));
+}
+
+.badge-alt-light {
+  @include badge-alt-variant(theme-color("light"), theme-color("dark"));
+}

@@ -32,11 +32,11 @@ export declare type SrcSet = {
  */
 export interface UseSrcSetProvides {
     /**
-     * Value for the `<img>'s` `[sizes]` attribute.
-     */
-    sizes: ComputedRef<string> | undefined;
-    /**
      * Value for the `<img>'s` `[srcset]` attribute.
      */
     _srcset: ComputedRef<string> | undefined;
+    /**
+     * Value for the `<img>'s` `[sizes]` attribute.
+     */
+    sizes: ComputedRef<string> | undefined;
 }

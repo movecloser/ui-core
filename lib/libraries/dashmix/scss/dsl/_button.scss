@@ -1,0 +1,12 @@
+// Copyright © 2021 Move Closer
+
+.btn {
+  &.loading {
+    cursor: wait;
+  }
+
+  &.btn-none {
+    font-weight: normal;
+    padding: 0;
+  }
+}

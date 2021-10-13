@@ -34,11 +34,11 @@ export interface BootstrapIconProps extends AbstractIconProps {
  */
 export interface UseBootstrapIconProvides {
     /**
-     * Vue component that will be used to render the icon.
-     */
-    component: ComputedRef<VueConstructor | undefined>;
-    /**
      * String to inject into the `<title>` element.
      */
     _title: ComputedRef<string | TranslateResult>;
+    /**
+     * Vue component that will be used to render the icon.
+     */
+    component: ComputedRef<VueConstructor | undefined>;
 }

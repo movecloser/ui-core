@@ -1,0 +1,90 @@
+import { SizeMap } from '../../../../../composables';
+import { DashmixTheme } from '../../../contracts';
+import { DashmixBadgeShape, DashmixIconName } from '../../atoms';
+import { TypeaheadProps } from './Typeahead.contracts';
+/**
+ * @author Olga Milczek <olga.milczek@movecloser.pl>
+ */
+export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
+    badgeShapes: typeof DashmixBadgeShape;
+    colorTheme: typeof DashmixTheme;
+    icon: typeof DashmixIconName;
+    sizes: typeof SizeMap;
+    dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
+    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    input: import("@vue/composition-api").Ref<import("vue").VueConstructor<import("vue").default> | null>;
+    onClear: () => void;
+    onInputChange: (newValue: string) => void;
+    value: import("@vue/composition-api").Ref<string>;
+}> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<TypeaheadProps>, {} & {
+    disabled?: any;
+    size?: any;
+    autofocus?: any;
+    name?: any;
+    placeholder?: any;
+    error?: any;
+    loading?: any;
+    clearable?: any;
+    taggable?: any;
+    isMulti?: any;
+    badgeMaxLength?: any;
+    badgeTheme?: any;
+    badgeVariant?: any;
+    hints?: any;
+    newResult?: any;
+    noResults?: any;
+    selected?: any;
+    showSelection?: any;
+    useDebounce?: any;
+}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+    disabled?: any;
+    size?: any;
+    autofocus?: any;
+    name?: any;
+    placeholder?: any;
+    error?: any;
+    loading?: any;
+    clearable?: any;
+    taggable?: any;
+    isMulti?: any;
+    badgeMaxLength?: any;
+    badgeTheme?: any;
+    badgeVariant?: any;
+    hints?: any;
+    newResult?: any;
+    noResults?: any;
+    selected?: any;
+    showSelection?: any;
+    useDebounce?: any;
+}, import("@vue/composition-api").ShallowUnwrapRef<{
+    badgeShapes: typeof DashmixBadgeShape;
+    colorTheme: typeof DashmixTheme;
+    icon: typeof DashmixIconName;
+    sizes: typeof SizeMap;
+    dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
+    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    input: import("@vue/composition-api").Ref<import("vue").VueConstructor<import("vue").default> | null>;
+    onClear: () => void;
+    onInputChange: (newValue: string) => void;
+    value: import("@vue/composition-api").Ref<string>;
+}>, import("@vue/composition-api").Data, {}, {}, {} & {
+    disabled?: any;
+    size?: any;
+    autofocus?: any;
+    name?: any;
+    placeholder?: any;
+    error?: any;
+    loading?: any;
+    clearable?: any;
+    taggable?: any;
+    isMulti?: any;
+    badgeMaxLength?: any;
+    badgeTheme?: any;
+    badgeVariant?: any;
+    hints?: any;
+    newResult?: any;
+    noResults?: any;
+    selected?: any;
+    showSelection?: any;
+    useDebounce?: any;
+}, {}, true>);

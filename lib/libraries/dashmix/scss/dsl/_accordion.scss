@@ -1,0 +1,29 @@
+// Copyright © 2021 Move Closer
+
+.accordion {
+  .block {
+    border-bottom: 1px solid #ebebeb;
+    box-shadow: none !important;
+  }
+
+  .block-header-default {
+    &:hover {
+      cursor: pointer;
+      background-color: #f5f5f5;
+    }
+  }
+
+  .accordion-item-content {
+    transition: max-height .5s;
+    overflow: hidden;
+    max-height: 0;
+
+    &.show {
+      max-height: 500px;
+
+      &.visible {
+        overflow: visible;
+      }
+    }
+  }
+}

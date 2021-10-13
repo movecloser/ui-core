@@ -45,9 +45,9 @@ export interface TableFakeRowProps {
  */
 export interface TableHeadElement {
     column: string;
+    isSorted?: boolean;
     label: string;
     sortable?: boolean;
-    isSorted?: boolean;
     width?: string;
 }
 /**
@@ -103,9 +103,9 @@ export interface TableSelectionEvent {
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  */
 export interface TableRowElement {
+    data: unknown;
     id: unknown;
     selectable: boolean;
-    data: unknown;
 }
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>

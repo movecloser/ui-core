@@ -1,0 +1,71 @@
+// Copyright © 2021 Move Closer
+
+.filter_badge {
+  &.badge {
+    font-weight: normal;
+    padding: .325rem .325rem .325rem .5rem;
+    transition: background-color .15s ease-in-out;
+
+    .badge__button {
+      padding: 0;
+    }
+  }
+
+  &__date-picker {
+    max-width: 6.75rem;
+
+    &.mx-datepicker svg {
+      width: .75em;
+      height: 0.75em;
+      vertical-align: 0.05em;
+    }
+
+    .mx-input {
+      height: calc(1.5em + 0.5rem);
+      font-size: 0.74375rem;
+    }
+  }
+
+  &__dropdown {
+    width: 15rem;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) min-content;
+    align-items: center;
+    grid-gap: map-get($spacers, 2);
+
+    .typeahead {
+      .input-group.custom.input-group-sm {
+        .btn-sm {
+          padding: 0;
+        }
+      }
+
+      .form-control.custom {
+        max-height: subtract($input-height-sm, 2px);
+        font-size: $input-font-size-sm;
+      }
+    }
+
+    &.--enumerable {
+      grid-template-columns: minmax(0, 1fr) min-content;
+    }
+
+    &:not(:last-child) {
+      padding-bottom: .75rem;
+    }
+  }
+
+  .input-group,
+  .v-select {
+    flex: 0 0 1;
+  }
+}
+
+.conjunction-label {
+  font-weight: normal;
+  font-style: italic;
+  padding-left: .5rem;
+}

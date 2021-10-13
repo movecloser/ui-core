@@ -13,4 +13,11 @@ export interface BootstrapDSLConfiguration {
      * @default "Bs"
      */
     prefix?: string;
+    /**
+     * The object for uid package configuration
+     * @see https://www.npmjs.com/package/vue-unique-id#plugin-options
+     *
+     * @default uniqueIdConfig
+     */
+    uidConfig?: Object;
 }

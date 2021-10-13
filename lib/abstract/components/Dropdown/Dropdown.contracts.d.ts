@@ -14,11 +14,11 @@ export declare enum DropdownAlignmentMap {
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export interface DropdownItem {
-    type: DropdownItemType;
     icon?: string;
     label?: string;
     onClick?: () => void | Promise<void>;
     theme?: string;
+    type: DropdownItemType;
 }
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>

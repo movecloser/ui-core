@@ -8,6 +8,12 @@ export interface AbstractBreadcrumbsItem extends Data {
     target: RawLocation;
 }
 /**
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ */
+export interface AbstractBreadcrumbsItemProps extends AbstractBreadcrumbsItem {
+    active: boolean;
+}
+/**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Olga Milczek <olga.milczek@movecloser.pl>

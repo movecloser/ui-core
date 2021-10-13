@@ -1,0 +1,32 @@
+// Copyright © 2021 Move Closer
+
+.badge.custom {
+  padding: 0.4rem;
+  font-weight: normal;
+  cursor: default;
+
+  &.badge-light-green {
+    color: #00705d;
+    background-color: rgba(173, 235, 224, 0.6);
+  }
+
+  &.badge-deep-green {
+    color: white;
+    background-color: #15bfa3;
+  }
+
+  &.badge-yellow {
+    color: #cc8100;
+    background-color: #ffe3b2;
+  }
+
+  &.badge-red {
+    color: #990000;
+    background-color: rgba(255, 178, 178, 0.8);
+  }
+
+  &.badge-gray {
+    color: rgba(46, 51, 56, 0.7);
+    background-color: rgba(209, 209, 209, 0.7);
+  }
+}

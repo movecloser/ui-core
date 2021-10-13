@@ -1,0 +1,239 @@
+// Copyright © 2021 Move Closer
+
+.custom.root {
+  position: relative;
+  // Minimum height of table with 10 rows
+  min-height: 29.625rem;
+  width: 100%;
+  display: inline-block;
+
+  @include media-breakpoint-up(md) {
+    width: 100%;
+  }
+
+  .head {
+    display: none;
+
+    @include media-breakpoint-up(md) {
+      display: grid;
+    }
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+
+    @include media-breakpoint-up(md) {
+      display: grid;
+    }
+  }
+
+  .head,
+  .row {
+    width: 100%;
+    border-bottom: 1px solid $separators-color;
+    grid-template-columns: 4rem repeat(5, 2fr);
+    word-break: break-all;
+
+    &__cell {
+      display: flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 0 4px;
+
+
+      &.center {
+        justify-content: center;
+      }
+
+      &.action-cell {
+        position: absolute;
+        top: 0;
+        right: 0;
+        justify-content: flex-end;
+
+        @include media-breakpoint-up(md) {
+          position: relative;
+          justify-content: center;
+        }
+
+        .dropdown-menu {
+          margin-right: 1.6rem;
+        }
+      }
+
+      .custom-check + label {
+        margin-bottom: 0;
+      }
+    }
+
+    &--no-bottom:last-child {
+      border-bottom: none;
+    }
+  }
+
+  //Only head row styles
+  .head {
+    border-top: 1px solid $separators-color;
+
+    &__cell {
+      border-width: 1px 0;
+      background: none;
+      text-align: left;
+      font-weight: 600;
+      outline: 0;
+      appearance: none;
+      transition: 0.1s color ease-in-out;
+      color: $body-color;
+
+
+      &.sortable {
+        width: 100%;
+        border: inherit;
+
+        &:hover {
+          background-color: #f7f8f9;
+        }
+      }
+    }
+
+    &__icons {
+      display: flex;
+      flex-direction: column;
+      padding-left: .5rem;
+      justify-content: center;
+      width: .75rem;
+      height: .75rem;
+      transform: translateY(-1.5px);
+
+      .icon {
+        height: .6rem;
+      }
+    }
+  }
+
+  //Only body row styles
+  .row {
+    margin: 0;
+    position: relative;
+    transition: 0.1s background-color ease-in-out;
+
+    &.selected {
+      background-color: #f4f4f4;
+
+      &:hover {
+        background-color: #f3f4f5;
+      }
+    }
+
+    &.disabled {
+      background-color: #f4f4f4;
+
+    }
+
+    &:hover {
+      background-color: #fafbfc;
+    }
+
+    &__dropdown-button .btn {
+      background-color: transparent;
+      border: 0;
+      outline: 0;
+    }
+
+    &--fake {
+      .row__cell {
+        overflow: hidden;
+        position: relative;
+
+        label {
+          visibility: hidden;
+        }
+      ;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          display: block;
+          height: 16px;
+          top: 50%;
+          left: 0;
+          right: 1rem;
+          margin-top: -8px;
+
+          .compact &,
+          .minimal & {
+            left: .5rem;
+            right: .5rem;
+          }
+        }
+
+        &:first-child {
+          .minimal & {
+            &::before,
+            &::after {
+              left: 0;
+            }
+          }
+        }
+
+        &:last-child {
+          .minimal & {
+            &::before,
+            &::after {
+              right: 0;
+            }
+          }
+        }
+
+        &::before {
+          background-color: $separators-color;
+          border-radius: 4px;
+        }
+
+        &.loading {
+
+          &::after {
+            background: linear-gradient(
+                            90deg,
+                            rgba($white, 0) 0%,
+                            rgba($white, 0.5) 50%,
+                            rgba($white, 0) 100%
+            );
+            transform: translateX(-100%);
+            animation: blinkMove 1s ease-in-out -0.2s infinite;
+          }
+        }
+      }
+    }
+  }
+
+  .loadingIcon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+  }
+}
+
+.table-filter-bar {
+  padding: 0.5rem 0.85rem;
+  background-color: #f4f4f4;
+  border-top: 1px solid $separators-color;
+
+  &.row {
+    margin: 0;
+  }
+}
+
+
+@keyframes blinkMove {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
