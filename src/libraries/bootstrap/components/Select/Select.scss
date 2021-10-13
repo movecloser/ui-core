@@ -178,18 +178,18 @@ form .form-select {
   // :valid state.
   &__control.--valid {
     @include validation-state(
-        var(--form-control-valid-bg),
-        var(--form-control-valid-border-color),
-        var(--form-control-valid-label-color)
+                    var(--form-control-valid-bg),
+                    var(--form-control-valid-border-color),
+                    var(--form-control-valid-label-color)
     );
   }
 
   @if variables.$enable-native-validation {
     &__control:valid {
       @include validation-state(
-          var(--form-control-valid-bg),
-          var(--form-control-valid-border-color),
-          var(--form-control-valid-label-color)
+                      var(--form-control-valid-bg),
+                      var(--form-control-valid-border-color),
+                      var(--form-control-valid-label-color)
       );
     }
   }
@@ -198,18 +198,18 @@ form .form-select {
   // :invalid state.
   &__control.--invalid {
     @include validation-state(
-        var(--form-control-invalid-bg),
-        var(--form-control-invalid-border-color),
-        var(--form-control-invalid-label-color)
+                    var(--form-control-invalid-bg),
+                    var(--form-control-invalid-border-color),
+                    var(--form-control-invalid-label-color)
     );
   }
 
   @if variables.$enable-native-validation {
     &__control:invalid {
       @include validation-state(
-          var(--form-control-invalid-bg),
-          var(--form-control-invalid-border-color),
-          var(--form-control-invalid-label-color)
+                      var(--form-control-invalid-bg),
+                      var(--form-control-invalid-border-color),
+                      var(--form-control-invalid-label-color)
       );
     }
   }

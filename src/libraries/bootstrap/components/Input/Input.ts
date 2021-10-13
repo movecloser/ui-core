@@ -24,7 +24,11 @@ export const BootstrapInput = defineComponent({
   setup (props: BootstrapInputProps, ctx: SetupContext) {
     const { size } = toRefs(props)
 
-    const { sizeClass, validationClass, value: _model } = useInputControl(props, ctx, bootstrapInputSizeRegistry)
+    const { sizeClass, validationClass, value: _model } = useInputControl(
+      props,
+      ctx,
+      bootstrapInputSizeRegistry
+    )
 
     /**
      * Determines the size of the prepended icon
@@ -39,23 +43,23 @@ export const BootstrapInput = defineComponent({
   template: `
     <div class="form-input" :class="[sizeClass, icon ? '--with-icon' : '']">
 
-      <!-- Main <input> element -->
-      <input v-model="_model" v-bind="{ disabled, name, readonly, required, type }" :id="$id()"
-             class="form-input__control" :class="validationClass"
-             :placeholder="placeholder || ' '">
+    <!-- Main <input> element -->
+    <input v-model="_model" v-bind="{ disabled, name, readonly, required, type }" :id="$id()"
+           class="form-input__control" :class="validationClass"
+           :placeholder="placeholder || ' '">
 
-      <!-- Icon -->
-      <BootstrapIcon v-if="icon" :name="icon" :size="iconSize" class="form-input__icon" />
+    <!-- Icon -->
+    <BootstrapIcon v-if="icon" :name="icon" :size="iconSize" class="form-input__icon" />
 
-      <!-- Label -->
-      <label :for="$id()" class="form-input__label">
-        {{ label }}
-      </label>
+    <!-- Label -->
+    <label :for="$id()" class="form-input__label">
+      {{ label }}
+    </label>
 
-      <!-- Validation errors -->
-      <BootstrapFormError v-for="error in errors" :key="error">
-        {{ error }}
-      </BootstrapFormError>
+    <!-- Validation errors -->
+    <BootstrapFormError v-for="error in errors" :key="error">
+      {{ error }}
+    </BootstrapFormError>
 
     </div>
   `

@@ -15,7 +15,7 @@ export const BootstrapBadge = defineComponent({
 
   template: `
     <BBadge :variant="theme">
-      <slot />
+    <slot />
     </BBadge>
   `
 })

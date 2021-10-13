@@ -116,8 +116,9 @@ export const useTable = (props: TableProps, ctx: SetupContext): UseTableProvides
       // TODO - add responsive design to table - without hardcoded min-width.
       // WARNING - changing min-width 5rem will break RWD of tabel.
       (prev: string, headElement: TableHeadElement) => (
-        ` minmax(${headElement.width ? (headElement.width.includes('px') || headElement.width.includes('em')
-          ? headElement.width : '5rem') : '5rem'},` +
+        ` minmax(${headElement.width
+          ? (headElement.width.includes('px') || headElement.width.includes('em')
+            ? headElement.width : '5rem') : '5rem'},` +
         ` ${headElement.width ? headElement.width : '1fr'})`
       ) + prev,
       `${showActions.value ? ' minmax(5rem, max-content)' : ''}`

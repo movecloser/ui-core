@@ -45,7 +45,7 @@ export interface UsePaginationProvides {
   /**
    * Pagination items to render.
    */
-  items: ComputedRef<Array<string|number>>;
+  items: ComputedRef<Array<string | number>>;
 
   /**
    * Handles the `@click` event on the "go to page" button.

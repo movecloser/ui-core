@@ -36,4 +36,4 @@ export interface BootstrapInputProps extends AbstractInputControlProps<Bootstrap
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
-export type BootstrapInputModelType = string|number
+export type BootstrapInputModelType = string | number

@@ -1,0 +1,79 @@
+// Copyright © 2021 Move Closer
+
+.avatar {
+  display: inline-block;
+  margin: 0;
+
+  &.img-avatar28 {
+    width: 30px;
+    height: 30px;
+
+    figcaption {
+      line-height: 24px;
+      font-size: .7rem;
+    }
+  }
+
+  &.img-avatar32 {
+    width: 34px;
+    height: 34px;
+
+    figcaption {
+      line-height: 28px;
+      font-size: .7rem;
+    }
+  }
+
+
+  &.img-avatar48 {
+    width: 50px;
+    height: 50px;
+
+    figcaption {
+      line-height: 44px;
+      font-size: 1.2rem;
+    }
+  }
+
+  &.img-avatar64 {
+    width: 66px;
+    height: 66px;
+
+    figcaption {
+      line-height: 60px;
+      font-size: 1.5rem;
+    }
+  }
+
+  .img-avatar {
+    border: 2px solid #eaeaea;
+
+
+    &.img-avatar28 {
+      width: 28px;
+      height: 28px;
+    }
+
+    &.img-avatar32 {
+      width: 32px;
+      height: 32px;
+    }
+
+    &.img-avatar48 {
+      width: 48px;
+      height: 48px;
+    }
+
+    &.img-avatar64 {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  figcaption {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}

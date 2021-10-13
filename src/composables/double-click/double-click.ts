@@ -34,7 +34,11 @@ export const doubleClickProps: ComponentObjectPropsOptions<DoubleClick> = {
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export function useDoubleClick (onDouble: DoubleClickCallback, turnedOn: boolean, clickPeriod: number = defaultPeriod): UseDoubleClickProvides {
+export function useDoubleClick (
+  onDouble: DoubleClickCallback,
+  turnedOn: boolean,
+  clickPeriod: number = defaultPeriod
+): UseDoubleClickProvides {
   const clicksCount = ref<number>(0)
 
   const resetClicks = () => {

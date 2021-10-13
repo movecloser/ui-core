@@ -22,9 +22,9 @@ export const BootstrapTable = defineComponent({
 
   template: `
     <BTable v-bind="{ fields, items }">
-      <template v-for="field in fields" v-slot:[composeSlotName(field)]="{ index, item, value }">
-        <BootstrapTableCell v-bind="{ index, item, value }" />
-      </template>
+    <template v-for="field in fields" v-slot:[composeSlotName(field)]="{ index, item, value }">
+      <BootstrapTableCell v-bind="{ index, item, value }" />
+    </template>
     </BTable>
   `
 })

@@ -102,7 +102,7 @@ export const usePagination = (
    * @see UsePaginationProvides.items
    * @see https://github.com/vuetifyjs/vuetify/blob/6bb948463c2e9559d60f5f99e1208f79a0935b39/packages/vuetify/src/components/VPagination/VPagination.ts#L89
    */
-  const items = computed<Array<string|number>>(() => {
+  const items = computed<Array<string | number>>(() => {
     let totalVisible = props.totalVisible
 
     if (typeof totalVisible !== 'number') {
@@ -180,5 +180,12 @@ export const usePagination = (
     goToPrevPage()
   }
 
-  return { canGoBack, canGoNext, items, onNextPageClick, onDirectPageClick: onPageClick, onPrevPageClick }
+  return {
+    canGoBack,
+    canGoNext,
+    items,
+    onNextPageClick,
+    onDirectPageClick: onPageClick,
+    onPrevPageClick
+  }
 }

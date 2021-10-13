@@ -23,11 +23,11 @@ export const BootstrapBreadcrumbs = defineComponent({
 
   template: `
     <BBreadcrumb>
-      <BBreadcrumbItem v-for="item in items" :key="item.label"
-                       :active="isLast(item)" :to="item.target">
-        <BootstrapIcon v-if="item.icon" :name="item.icon" />
-        {{ item.label }}
-      </BBreadcrumbItem>
+    <BBreadcrumbItem v-for="item in items" :key="item.label"
+                     :active="isLast(item)" :to="item.target">
+      <BootstrapIcon v-if="item.icon" :name="item.icon" />
+      {{ item.label }}
+    </BBreadcrumbItem>
     </BBreadcrumb>
   `
 })

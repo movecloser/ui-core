@@ -32,14 +32,19 @@ export const hasSizeProp: ComponentObjectPropsOptions<HasSize> = {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useSizeClass = (size: Ref<Size>, sizeClassRegistry: SizeRegistry): UseSizeClassProvides => {
+export const useSizeClass = (
+  size: Ref<Size>,
+  sizeClassRegistry: SizeRegistry
+): UseSizeClassProvides => {
   return computed<string>(() => {
     if (typeof sizeClassRegistry[size.value] !== 'string') {
       if (!Object.keys(sizeClassRegistry).length) {
-        console.warn('useSizeClass(): Provided registry does NOT contain any definition. Used no class.')
+        console.warn(
+          'useSizeClass(): Provided registry does NOT contain any definition. Used no class.')
       }
 
-      console.warn(`useSizeClass(): Provided registry does NOT contain the given key.\nFalling back to the first key in the set, which is [${Object.keys(sizeClassRegistry)[0]}].`)
+      console.warn(`useSizeClass(): Provided registry does NOT contain the given key.\nFalling back to the first key in the set, which is [${Object.keys(
+        sizeClassRegistry)[0]}].`)
 
       return Object.values(sizeClassRegistry)[0] as string
     }

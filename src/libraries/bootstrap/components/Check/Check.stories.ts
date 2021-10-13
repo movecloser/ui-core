@@ -30,9 +30,9 @@ const Template: Story<BootstrapCheckProps> = (args, { argTypes }) => ({
   },
   template: `
     <div>
-      <BootstrapCheck v-bind="$props" :model.sync="model" name="check" />
-      <hr class="mt-5">
-      <code class="small">Current value: "{{ model }}"</code>
+    <BootstrapCheck v-bind="$props" :model.sync="model" name="check" />
+    <hr class="mt-5">
+    <code class="small">Current value: "{{ model }}"</code>
     </div>
   `
 })

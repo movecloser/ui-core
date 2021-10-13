@@ -43,7 +43,7 @@ const Template: Story<BootstrapButtonProps> = (args, { argTypes }) => ({
 
   template: `
     <BootstrapButton v-bind="$props" @click="onClick">
-      Lorem ipsum
+    Lorem ipsum
     </BootstrapButton>
   `
 })

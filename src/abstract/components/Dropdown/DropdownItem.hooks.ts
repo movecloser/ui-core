@@ -19,7 +19,10 @@ export const dropdownItemProps: ComponentObjectPropsOptions<DropdownItemProps> =
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export function useDropdownItem (props: DropdownItemProps, ctx: SetupContext): UseDropdownItemProvides {
+export function useDropdownItem (
+  props: DropdownItemProps,
+  ctx: SetupContext
+): UseDropdownItemProvides {
   const isLoading = ref<boolean>(false)
   const isClickable = computed<boolean>(() => typeof props.item.onClick === 'function')
 

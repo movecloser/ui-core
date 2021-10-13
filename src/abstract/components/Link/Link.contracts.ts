@@ -29,7 +29,7 @@ export interface Link {
   /**
    * Link's label (text to render).
    */
-  label?: string|TranslateResult;
+  label?: string | TranslateResult;
 
   /**
    * Determines whether the link's target should be opened in a new browser's tab.

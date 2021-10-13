@@ -1,0 +1,31 @@
+// Copyright © 2021 Move Closer
+
+@import "~vue-select/src/scss/vue-select.scss";
+
+.vs__dropdown-toggle {
+  height: 37px;
+  border-radius: 3px;
+  border: solid 1px $separators-color;
+  background-color: white;
+  white-space: nowrap;
+  overflow: hidden;
+
+  // Focused input is getting blue highlight
+  &:focus-within {
+    box-shadow: 0 0 0 1px $info;
+    border-color: $info;
+  }
+
+  &:hover {
+    background-color: #f7f8f9;
+  }
+}
+
+.vs__dropdown-menu {
+  margin-top: 2px;
+}
+
+.vs__dropdown-toggle > .vs__selected-options {
+  max-width: calc(100% - 2.5rem);
+  overflow: hidden;
+}

@@ -5,7 +5,13 @@ import { computed, PropType, SetupContext, toRef } from '@vue/composition-api'
 import { ComponentObjectPropsOptions } from '../../../contracts'
 import { useSyncModel } from '../../../composables'
 
-import { TableFakeRowProps, TableHead, TableRowActions, TableRowProps, UseTableRowProvides } from './Table.contracts'
+import {
+  TableFakeRowProps,
+  TableHead,
+  TableRowActions,
+  TableRowProps,
+  UseTableRowProvides
+} from './Table.contracts'
 
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>

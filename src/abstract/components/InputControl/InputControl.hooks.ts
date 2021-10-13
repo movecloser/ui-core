@@ -22,7 +22,7 @@ import { AbstractInputControlProps, UseInputControlProvides } from './InputContr
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractBaseControlProps = <ModelType>(): ComponentObjectPropsOptions<FormControlBaseProps<ModelType>> => ({
+export const getAbstractBaseControlProps = <ModelType> (): ComponentObjectPropsOptions<FormControlBaseProps<ModelType>> => ({
   ...canBeDisabledProp,
   ...hasSizeProp,
   ...hasErrorsProp,
@@ -87,32 +87,32 @@ export const getAbstractBaseControlProps = <ModelType>(): ComponentObjectPropsOp
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractInputControlProps = <ModelType>():
+export const getAbstractInputControlProps = <ModelType> ():
   ComponentObjectPropsOptions<AbstractInputControlProps<ModelType>> => ({
-    ...getAbstractBaseControlProps<ModelType>(),
+  ...getAbstractBaseControlProps<ModelType>(),
 
-    /**
-     * Value for the `[autocomplete]` attribute.
-     */
-    autocomplete: {
-      type: String,
-      required: false
-    },
+  /**
+   * Value for the `[autocomplete]` attribute.
+   */
+  autocomplete: {
+    type: String,
+    required: false
+  },
 
-    /**
-     * Determines whether the control should be automatically focused.
-     */
-    autofocus: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
+  /**
+   * Determines whether the control should be automatically focused.
+   */
+  autofocus: {
+    type: Boolean,
+    required: false,
+    default: false
+  },
 
-    /**
-     * Control's value, synced via `v-model`.
-     */
-    model: { required: true }
-  })
+  /**
+   * Control's value, synced via `v-model`.
+   */
+  model: { required: true }
+})
 
 /**
  * @param props
@@ -123,7 +123,7 @@ export const getAbstractInputControlProps = <ModelType>():
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useInputControl = <ModelType>(
+export const useInputControl = <ModelType> (
   props: AbstractInputControlProps<ModelType>,
   ctx: SetupContext,
   sizeRegistry: SizeRegistry,

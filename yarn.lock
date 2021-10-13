@@ -1450,9 +1450,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@movecloser/front-core@git+ssh://git@github.com:movecloser/front-core.git#semver:1.0.0-rc.76":
+"@movecloser/front-core@1.0.0-rc.76":
   version "1.0.0-rc.76"
-  resolved "git+ssh://git@github.com:movecloser/front-core.git#930bec3e4038338877f502e84563a80f82c8610a"
+  resolved "https://npm.pkg.github.com/download/@movecloser/front-core/1.0.0-rc.76/633b52190400bb430646647882015069c7663b5fb61abc71ce4d31eb5e7f8131#56e5a28457baa41a2cf4c0b3976a4417cc1f4260"
+  integrity sha512-tuFC39Pb5N3QtA4Arj0I25qe3VBmseKojHE5YFTvYQ7s9x/FnH4U8PMI4Nm0coTbZiyBsuMK6Mq7osXSYyBOsQ==
   dependencies:
     axios "^0.21.1"
     core-js "^3.8.3"
@@ -2473,6 +2474,11 @@
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.9.tgz#97edc9037ea0c38585320b28964dde3b39e4660d"
   integrity sha512-qcUXuemtEu+E5wZSJHNxUXeCZhAfXKQ41D+duX+VYPde7xyEVZci+/oXKJL13tnRs9lR2pr4fod59GT6/X1/yQ==
 
+"@types/lodash@^4.14.175":
+  version "4.14.175"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.175.tgz#b78dfa959192b01fae0ad90e166478769b215f45"
+  integrity sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==
+
 "@types/markdown-to-jsx@^6.11.3":
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.3.tgz#cdd1619308fecbc8be7e6a26f3751260249b020e"
@@ -2621,6 +2627,25 @@
   version "2.0.6"
   resolved "https://registry.yarnpkg.com/@types/unist/-/unist-2.0.6.tgz#250a7b16c3b91f672a24552ec64678eeb1d3a08d"
   integrity sha512-PBjIUxZHOuj0R15/xuwJYjFi+KZdNFrehocChv4g5hu6aFroHue8m0lBP0POdK2nKzbw0cgV1mws8+V/JAcEkQ==
+
+"@types/uuid@^8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@types/uuid/-/uuid-8.3.1.tgz#1a32969cf8f0364b3d8c8af9cc3555b7805df14f"
+  integrity sha512-Y2mHTRAbqfFkpjldbkHGY8JIzRN6XqYRliG8/24FcHm2D2PwW24fl5xMRTVGdrb7iMrwCaIEbLWerGIkXuFWVg==
+
+"@types/vue-select@^3.11.2":
+  version "3.11.2"
+  resolved "https://registry.yarnpkg.com/@types/vue-select/-/vue-select-3.11.2.tgz#e6de780375a92b9a182f673a346b7dc7d5ffae01"
+  integrity sha512-9+aQfKFOQ1K9rLOVdcRNKmW12YJ+tFOvCddDyNLC7CtdIqUMmPh0N3/DtKt4LL6bxiz30tgko/BlEN5SkKVSlA==
+  dependencies:
+    vue "^2.0.0"
+
+"@types/vue2-datepicker@^3.3.1":
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/@types/vue2-datepicker/-/vue2-datepicker-3.3.1.tgz#20da71cd5924e6380a615dc52ae0f02c7620170e"
+  integrity sha512-1fWCfzDcfKVFUrWnSMMMOkejM4n0VFSnXEY2t84pkiz6+wwX3teL62njeZ9CRSfaeZWa0PIPfVi5cEPLRDHyrw==
+  dependencies:
+    vue "^2.5.0"
 
 "@types/webpack-env@^1.16.0":
   version "1.16.2"
@@ -4627,6 +4652,11 @@ data-urls@^2.0.0:
     abab "^2.0.3"
     whatwg-mimetype "^2.3.0"
     whatwg-url "^8.0.0"
+
+date-format-parse@^0.2.7:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/date-format-parse/-/date-format-parse-0.2.7.tgz#a2f78bca857a821785b48abedd4426c65aa7b918"
+  integrity sha512-/+lyMUKoRogMuTeOVii6lUwjbVlesN9YRYLzZT/g3TEZ3uD9QnpjResujeEqUW+OSNbT7T1+SYdyEkTcRv+KDQ==
 
 de-indent@^1.0.2:
   version "1.0.2"
@@ -11373,7 +11403,7 @@ uuid@^3.3.2:
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
 
-uuid@^8.3.0:
+uuid@^8.3.0, uuid@^8.3.2:
   version "8.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
   integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
@@ -11508,6 +11538,11 @@ vue-router@^3.5.2:
   resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.5.2.tgz#5f55e3f251970e36c3e8d88a7cd2d67a350ade5c"
   integrity sha512-807gn82hTnjCYGrnF3eNmIw/dk7/GE4B5h69BlyCK9KHASwSloD1Sjcn06zg9fVG4fYH2DrsNBZkpLtb25WtaQ==
 
+vue-select@^3.13.2:
+  version "3.13.2"
+  resolved "https://registry.yarnpkg.com/vue-select/-/vue-select-3.13.2.tgz#e9c0f6a0d3c4613aebd23b0bbee7d8568e81e25a"
+  integrity sha512-KfvUebV9cFwsov56Rx3pMYBhkSsVv28zsoZ5XmtMa2P5htVIaC12LImPx9IL/mtmdR4WOt9Fxx9UVEuXfUiWQg==
+
 vue-style-loader@^4.1.0:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/vue-style-loader/-/vue-style-loader-4.1.3.tgz#6d55863a51fa757ab24e89d9371465072aa7bc35"
@@ -11534,7 +11569,14 @@ vue-unique-id@^3.2.1:
   resolved "https://registry.yarnpkg.com/vue-unique-id/-/vue-unique-id-3.2.1.tgz#e5db2e8620409a4b718578ca7f00eac78b15e818"
   integrity sha512-Ih4vw3nx5O0M0q16Omx23T6VQW5U+RD16SEEbGa+aJWLJxFco8slQN6z6GUuzwgREgofH3ns9n7a97qr6DI73g==
 
-vue@^2.6.14:
+vue2-datepicker@^3.10.2:
+  version "3.10.2"
+  resolved "https://registry.yarnpkg.com/vue2-datepicker/-/vue2-datepicker-3.10.2.tgz#7e5e83f38c273764ef26db5cd48dc79e38f58198"
+  integrity sha512-9loqYDKGLLreueUhAlnW6U07XQHFlO+WdqDzGszcHwciHpBiJivrmr73Cu8RCfciBbHxUoJR8TWfoxKWLGk8YA==
+  dependencies:
+    date-format-parse "^0.2.7"
+
+vue@^2.0.0, vue@^2.5.0, vue@^2.6.14:
   version "2.6.14"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.14.tgz#e51aa5250250d569a3fbad3a8a5a687d6036e235"
   integrity sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==

@@ -1,0 +1,35 @@
+// Copyright © 2021 Move Closer
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+
+  &__button {
+    border: none;
+    background-color: transparent;
+    color: inherit;
+    padding: 0 .125rem;
+
+    &:not(.disabled) {
+      &:active,
+      &:focus,
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: transparent !important;
+      color: inherit !important;
+      border: none !important;
+    }
+  }
+
+  &__icon {
+    .icon {
+      color: inherit;
+    }
+  }
+}

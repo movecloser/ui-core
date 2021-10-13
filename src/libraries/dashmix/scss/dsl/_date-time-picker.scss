@@ -1,0 +1,21 @@
+// Copyright © 2021 Move Closer
+
+@import '../../../../../node_modules/vue2-datepicker/scss/index';
+
+.mx-input {
+
+  height: 37px;
+  border-radius: 3px;
+  border: solid 1px #e0e0e0;
+  box-shadow: none;
+
+  &:hover {
+    border: solid 1px #e0e0e0;
+    background-color: #f7f8f9;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 1px $info;
+    border-color: $info;
+  }
+}

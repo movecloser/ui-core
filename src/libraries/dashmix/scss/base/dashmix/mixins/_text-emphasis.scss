@@ -1,0 +1,23 @@
+// Copyright © 2021 Move Closer
+
+//
+// Text emphasis
+// --------------------------------------------------
+
+@mixin text-emphasis-variant($parent, $color, $ignore-warning: false) {
+  #{$parent} {
+    color: $color !important;
+  }
+
+  @if $emphasized-link-hover-darken-percentage != 0 {
+    a#{$parent} {
+      &.link-fx::before {
+        background-color: $color;
+      }
+
+      @include hover-focus {
+        color: darken($color, 20%) !important;
+      }
+    }
+  }
+}

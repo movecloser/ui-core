@@ -1,0 +1,104 @@
+// Copyright © 2021 Move Closer
+
+input.custom-check {
+  position: absolute;
+  opacity: 0;
+
+  & + label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  // Box.
+  & + label:before {
+    content: '';
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: #f9f9f9;
+    border-radius: 2px;
+    border: solid 1px $separators-color;
+  }
+
+  &:hover + label:before {
+    background: #f7f8f9;
+    border: solid 1px #dbdbdb;
+  }
+
+  // Disabled label.
+  &:disabled + label {
+    color: rgba(64, 70, 77, 0.5);
+    cursor: auto;
+  }
+
+  // Disabled box.
+  &:disabled + label:before {
+    border: solid 1px $separators-color;
+  }
+
+  // Checkmark
+  &:checked + label:after {
+    content: '';
+    position: absolute;
+  }
+
+  &.default:checked + label:after {
+    background-color: $info;
+  }
+
+  &.mono:checked + label:after {
+    background: $body-color;
+  }
+}
+
+
+input.custom-check.checkbox {
+
+  // Box.
+  & + label:before {
+    border-radius: 2px;
+  }
+
+  // Checkmark
+  &:checked + label:after {
+    left: 5px;
+    top: 12px;
+    width: 3px;
+    height: 3px;
+    transform: rotate(45deg);
+  }
+
+  &.default:checked + label:after {
+    box-shadow: 3px 0 0 $info,
+    3px -3px 0 $info,
+    3px -6px 0 $info,
+    3px -9px 0 $info;
+  }
+
+  &.mono:checked + label:after {
+    box-shadow: 3px 0 0 $body-color,
+    3px -3px 0 $body-color,
+    3px -6px 0 $body-color,
+    3px -9px 0 $body-color;
+  }
+}
+
+input.custom-check.radio {
+
+  // Box.
+  & + label:before {
+    border-radius: 20px
+  }
+
+  // Checkmark
+  &:checked + label:after {
+    left: 6px;
+    top: 8px;
+    border-radius: 5px;
+    width: 8px;
+    height: 8px;
+  }
+}

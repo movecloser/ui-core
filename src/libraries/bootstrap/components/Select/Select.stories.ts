@@ -29,10 +29,10 @@ const Template: Story<BootstrapSelectProps> = (args, { argTypes }) => ({
   },
   template: `
     <form>
-      <BootstrapSelect :model.sync="model" name="example_name"
-                       v-bind="$props" />
-      <hr class="mt-5">
-      <code class="small">Current value: "{{ model }}"</code>
+    <BootstrapSelect :model.sync="model" name="example_name"
+                     v-bind="$props" />
+    <hr class="mt-5">
+    <code class="small">Current value: "{{ model }}"</code>
     </form>`
 })
 

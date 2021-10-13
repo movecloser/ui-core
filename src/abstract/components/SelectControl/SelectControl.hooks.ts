@@ -26,15 +26,15 @@ import {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const getAbstractSelectControlProps = <ModelType>():
+export const getAbstractSelectControlProps = <ModelType> ():
   ComponentObjectPropsOptions<AbstractSelectControlProps<ModelType>> => ({
-    ...getAbstractBaseControlProps<ModelType>(),
+  ...getAbstractBaseControlProps<ModelType>(),
 
-    options: {
-      type: Array as PropType<AbstractSelectControlOption[]>,
-      required: true
-    }
-  })
+  options: {
+    type: Array as PropType<AbstractSelectControlOption[]>,
+    required: true
+  }
+})
 
 /**
  * @param props
@@ -45,7 +45,7 @@ export const getAbstractSelectControlProps = <ModelType>():
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useSelectControl = <ModelType>(
+export const useSelectControl = <ModelType> (
   props: AbstractSelectControlProps<ModelType>,
   ctx: SetupContext,
   sizeRegistry: SizeRegistry,
