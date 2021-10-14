@@ -4,7 +4,7 @@ import { defineComponent, SetupContext } from '@vue/composition-api'
 
 import {
   SortDirectionMap,
-  TableProps,
+  AbstractTableProps,
   tableProps,
   useTable
 } from '../../../../../abstract/components/Table'
@@ -35,7 +35,7 @@ export const DashmixTable = defineComponent({
   props: tableProps,
   emits: ['do', 'selected', 'sortBy'],
 
-  setup (props: TableProps, ctx: SetupContext) {
+  setup (props: AbstractTableProps, ctx: SetupContext) {
     return {
       ...useTable(props, ctx),
       DashmixIconName,

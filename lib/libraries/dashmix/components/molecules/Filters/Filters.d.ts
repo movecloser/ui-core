@@ -11,7 +11,7 @@ export declare const DashmixFilters: import("vue").ComponentOptions<import("vue"
     clearFilters: () => void;
     dictionaries: import("@vue/composition-api").Ref<import("./Filters.contracts").GroupsDictionaries>;
     filters: import("@vue/composition-api").Ref<import("@movecloser/front-core").FiltersConfig>;
-    filtersItems: () => import("../../../../../abstract/components/Dropdown").DropdownItem[];
+    filtersItems: () => import("../../../../..").DropdownItem[];
     isFromQuery: (filterKey: string) => boolean;
     loadDict: (groupKey: string, query: import("@movecloser/front-core").QueryParams) => void;
     loading: import("@vue/composition-api").Ref<boolean>;
@@ -34,7 +34,7 @@ export declare const DashmixFilters: import("vue").ComponentOptions<import("vue"
     clearFilters: () => void;
     dictionaries: import("@vue/composition-api").Ref<import("./Filters.contracts").GroupsDictionaries>;
     filters: import("@vue/composition-api").Ref<import("@movecloser/front-core").FiltersConfig>;
-    filtersItems: () => import("../../../../../abstract/components/Dropdown").DropdownItem[];
+    filtersItems: () => import("../../../../..").DropdownItem[];
     isFromQuery: (filterKey: string) => boolean;
     loadDict: (groupKey: string, query: import("@movecloser/front-core").QueryParams) => void;
     loading: import("@vue/composition-api").Ref<boolean>;

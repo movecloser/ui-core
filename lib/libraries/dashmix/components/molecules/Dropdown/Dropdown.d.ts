@@ -8,7 +8,7 @@ export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue
     close: () => void;
     dropdownClass: import("@vue/composition-api").ComputedRef<string>;
     dropdownMenuClass: import("@vue/composition-api").ComputedRef<string>;
-    isOpen: import("@vue/composition-api").ComputedRef<boolean>;
+    isOpen: import("@vue/composition-api").Ref<boolean>;
     open: () => void;
     toggle: () => void;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixDropdownProps>, {} & {
@@ -22,7 +22,7 @@ export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue
     close: () => void;
     dropdownClass: import("@vue/composition-api").ComputedRef<string>;
     dropdownMenuClass: import("@vue/composition-api").ComputedRef<string>;
-    isOpen: import("@vue/composition-api").ComputedRef<boolean>;
+    isOpen: import("@vue/composition-api").Ref<boolean>;
     open: () => void;
     toggle: () => void;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {

@@ -1,4 +1,4 @@
-import { SortDirectionMap, TableProps } from '../../../../../abstract/components/Table';
+import { SortDirectionMap, AbstractTableProps } from '../../../../../abstract/components/Table';
 import { DashmixIconName } from '../../atoms/Icon';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -13,7 +13,7 @@ export declare const DashmixTable: import("vue").ComponentOptions<import("vue").
     handleSort: (headElement: import("../../../../../abstract/components/Table").TableHeadElement, sortDirection?: "asc" | "desc" | undefined) => void;
     isEmpty: import("@vue/composition-api").ComputedRef<boolean>;
     selectedRows: import("@vue/composition-api").Ref<unknown>;
-}> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<TableProps>, {} & {
+}> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<AbstractTableProps>, {} & {
     [x: string]: any;
     [x: number]: any;
 }> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {

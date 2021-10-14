@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { ComputedRef } from '@vue/composition-api'
+import { ComputedRef, Ref } from '@vue/composition-api'
 
 import { DropdownProps } from '../../../../../abstract/components/Dropdown'
 
@@ -23,7 +23,7 @@ export interface UseDashmixDropDownProvides {
   close: () => void;
   dropdownClass: ComputedRef<string>;
   dropdownMenuClass: ComputedRef<string>;
-  isOpen: ComputedRef<boolean>;
+  isOpen: Ref<boolean>;
   open: () => void;
   toggle: () => void;
 }

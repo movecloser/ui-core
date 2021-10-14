@@ -2,7 +2,7 @@
 
 import { Meta, Story } from '@storybook/vue'
 
-import { SortDirectionMap, TableProps } from '../../../../../abstract/components/Table'
+import { SortDirectionMap, AbstractTableProps } from '../../../../../abstract/components/Table'
 
 import { DashmixTable } from './Table'
 
@@ -15,7 +15,7 @@ const meta: Meta = {
 }
 export default meta
 
-const Template: Story<TableProps> = (args, { argTypes }) => ({
+const Template: Story<AbstractTableProps> = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   data () {
     return {
