@@ -95,7 +95,7 @@ export type TableRowActions = TableRowAction[]
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  */
-export interface TableProps extends Data {
+export interface AbstractTableProps extends Data {
   actions: TableRowActions;
   head: TableHead;
   hideLastBorder: boolean;

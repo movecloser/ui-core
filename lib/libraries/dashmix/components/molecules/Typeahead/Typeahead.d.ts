@@ -11,7 +11,7 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     icon: typeof DashmixIconName;
     sizes: typeof SizeMap;
     dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
-    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../..").DropdownItem[]>;
     input: import("@vue/composition-api").Ref<import("vue").VueConstructor<import("vue").default> | null>;
     onClear: () => void;
     onInputChange: (newValue: string) => void;
@@ -22,6 +22,8 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     autofocus?: any;
     name?: any;
     placeholder?: any;
+    showSelection?: any;
+    selected?: any;
     error?: any;
     loading?: any;
     clearable?: any;
@@ -33,8 +35,6 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     hints?: any;
     newResult?: any;
     noResults?: any;
-    selected?: any;
-    showSelection?: any;
     useDebounce?: any;
 }> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     disabled?: any;
@@ -42,6 +42,8 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     autofocus?: any;
     name?: any;
     placeholder?: any;
+    showSelection?: any;
+    selected?: any;
     error?: any;
     loading?: any;
     clearable?: any;
@@ -53,8 +55,6 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     hints?: any;
     newResult?: any;
     noResults?: any;
-    selected?: any;
-    showSelection?: any;
     useDebounce?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     badgeShapes: typeof DashmixBadgeShape;
@@ -62,7 +62,7 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     icon: typeof DashmixIconName;
     sizes: typeof SizeMap;
     dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
-    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    dropdownItems: import("@vue/composition-api").ComputedRef<import("../../../../..").DropdownItem[]>;
     input: import("@vue/composition-api").Ref<import("vue").VueConstructor<import("vue").default> | null>;
     onClear: () => void;
     onInputChange: (newValue: string) => void;
@@ -73,6 +73,8 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     autofocus?: any;
     name?: any;
     placeholder?: any;
+    showSelection?: any;
+    selected?: any;
     error?: any;
     loading?: any;
     clearable?: any;
@@ -84,7 +86,5 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     hints?: any;
     newResult?: any;
     noResults?: any;
-    selected?: any;
-    showSelection?: any;
     useDebounce?: any;
 }, {}, true>);

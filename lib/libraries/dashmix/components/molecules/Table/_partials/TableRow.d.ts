@@ -7,7 +7,7 @@ import { DashmixIconName } from '../../../atoms/Icon';
  */
 export declare const DashmixTableRow: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
     DashmixIconName: typeof DashmixIconName;
-    dropdownActions: import("@vue/composition-api").ComputedRef<import("../../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    dropdownActions: import("@vue/composition-api").ComputedRef<import("../../../../../..").DropdownItem[]>;
     isSelected: import("@vue/composition-api").ComputedRef<boolean>;
     selected: import("@vue/composition-api").WritableComputedRef<unknown[]>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<TableRowProps>, {} & {
@@ -18,7 +18,7 @@ export declare const DashmixTableRow: import("vue").ComponentOptions<import("vue
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     DashmixIconName: typeof DashmixIconName;
-    dropdownActions: import("@vue/composition-api").ComputedRef<import("../../../../../../abstract/components/Dropdown").DropdownItem[]>;
+    dropdownActions: import("@vue/composition-api").ComputedRef<import("../../../../../..").DropdownItem[]>;
     isSelected: import("@vue/composition-api").ComputedRef<boolean>;
     selected: import("@vue/composition-api").WritableComputedRef<unknown[]>;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {

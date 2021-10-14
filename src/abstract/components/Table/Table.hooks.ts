@@ -9,7 +9,7 @@ import {
   SortDirection,
   TableHead,
   TableHeadElement,
-  TableProps,
+  AbstractTableProps,
   TableRowActions,
   TableRowElement,
   TableSelectionEvent, UseTableProvides
@@ -19,7 +19,7 @@ import {
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const tableProps: ComponentObjectPropsOptions<TableProps> = {
+export const tableProps: ComponentObjectPropsOptions<AbstractTableProps> = {
   /**
    * Table actions
    */
@@ -105,7 +105,7 @@ export const tableProps: ComponentObjectPropsOptions<TableProps> = {
  * @author Olga Milczek <olga.milczek@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export const useTable = (props: TableProps, ctx: SetupContext): UseTableProvides => {
+export const useTable = (props: AbstractTableProps, ctx: SetupContext): UseTableProvides => {
   const { head, isLoading, rows, showSelection, showActions, sortedBy } = toRefs(props)
 
   const bulkSelection = ref<boolean>(false)

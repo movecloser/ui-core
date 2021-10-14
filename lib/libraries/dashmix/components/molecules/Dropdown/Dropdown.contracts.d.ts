@@ -1,4 +1,4 @@
-import { ComputedRef } from '@vue/composition-api';
+import { ComputedRef, Ref } from '@vue/composition-api';
 import { DropdownProps } from '../../../../../abstract/components/Dropdown';
 import { Size } from '../../../../../composables';
 import { DashmixTheme } from '../../../contracts';
@@ -16,7 +16,7 @@ export interface UseDashmixDropDownProvides {
     close: () => void;
     dropdownClass: ComputedRef<string>;
     dropdownMenuClass: ComputedRef<string>;
-    isOpen: ComputedRef<boolean>;
+    isOpen: Ref<boolean>;
     open: () => void;
     toggle: () => void;
 }

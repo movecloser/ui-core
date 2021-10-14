@@ -24,15 +24,15 @@ export declare const FilterEditPopupDefinition: import("vue").ComponentOptions<i
     selected: () => import("../../Typeahead").Hint[];
     value: import("@vue/composition-api").Ref<import("../../../../../..").FormControlModelType>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<FilterEditPopupDefinitionProps>, {} & {
-    loading?: any;
     index?: any;
+    loading?: any;
     hints?: any;
     config?: any;
     dictionaries?: any;
     definition?: any;
 }> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
-    loading?: any;
     index?: any;
+    loading?: any;
     hints?: any;
     config?: any;
     dictionaries?: any;
@@ -56,8 +56,8 @@ export declare const FilterEditPopupDefinition: import("vue").ComponentOptions<i
     selected: () => import("../../Typeahead").Hint[];
     value: import("@vue/composition-api").Ref<import("../../../../../..").FormControlModelType>;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {
-    loading?: any;
     index?: any;
+    loading?: any;
     hints?: any;
     config?: any;
     dictionaries?: any;
