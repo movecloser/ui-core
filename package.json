@@ -57,7 +57,7 @@
     "build:copy-files": "copyfiles -u 1 src/**/*.scss src/**/*.json lib/",
     "build:tsc": "tsc",
     "lint": "tslint --project ./tsconfig.json",
-    "storybook": "start-storybook -p 6006 --ci",
+    "preview": "start-storybook -p 6006 --ci",
     "test": "jest --config jestconfig.json",
     "test:coverage": "jest --config jestconfig.json --coverage",
     "test:watch": "jest --config jestconfig.json --watch"
