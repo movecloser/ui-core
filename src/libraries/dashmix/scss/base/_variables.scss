@@ -15,9 +15,4 @@
 // Custom mixins and Bootstrap overrides
 @import 'dashmix/mixins';
 
-// This variable should be used EACH TIME you want to reference a file from the `assets/` dir.
-$app-assets-path: '../../../../assets' !default;
-$simple-line-font-path: '../../../../assets/fonts/simple-line-icons/' !default;
-$fa-font-path: '../../../../assets/fonts/fontawesome/' !default;
-
 $separators-color: $gray-200;
