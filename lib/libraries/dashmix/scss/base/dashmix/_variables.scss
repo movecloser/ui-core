@@ -16,23 +16,23 @@ $theme-colors: map-merge((
         "info-light": lighten($info, 24%),
         "warning-light": lighten($warning, 24%),
         "danger-light": lighten($danger, 24%)
-), $theme-colors);
+), $theme-colors) !default;
 
-$body-bg-dark: darken($body-bg, 3.5%);
-$body-bg-light: lighten($body-bg, 1%);
+$body-bg-dark: darken($body-bg, 3.5%) !default;
+$body-bg-light: lighten($body-bg, 1%) !default;
 
 $body-color-dark: $gray-900 !default;
 $body-color-light: $body-bg-dark !default;
 
 // Paragraphs
 
-$paragraph-line-height: 1.6;
-$paragraph-line-height-lg: 1.8;
+$paragraph-line-height: 1.6 !default;
+$paragraph-line-height-lg: 1.8 !default;
 
 
 // Fonts
 
-$font-size-root: 16px;
+$font-size-root: 16px !default;
 $enable-text-optimize-legibility: true; // you can set it to false to increase rendering performance
 
 

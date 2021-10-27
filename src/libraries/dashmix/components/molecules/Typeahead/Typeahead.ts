@@ -62,7 +62,7 @@ export const DashmixTypeahead = defineComponent({
         <template v-else>
           <InputTypeahead
               ref="input"
-              v-bind="{ clearable, name, placeholder, isMulti, size, loading, disabled, autofocus }"
+              v-bind="{ clearable, name, placeholder: $t(placeholder), isMulti, size, loading, disabled, autofocus }"
               :model.sync="value"
               v-closable="{ handler: close, exclude: [] }"
               @onClear="onClear" @onInput="onInputChange" @focus="open" />

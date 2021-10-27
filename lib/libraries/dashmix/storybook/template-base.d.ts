@@ -7,4 +7,4 @@ import { ComponentOptions } from 'vue';
  *
  * @author Olga Milczek <olga.milczek@movecloser.pl>
  */
-export declare const getTemplateBase: (argTypes: ArgTypes) => Partial<ComponentOptions<Vue>>;
+export declare const getDashmixTemplateBase: (argTypes: ArgTypes) => Partial<ComponentOptions<Vue>>;

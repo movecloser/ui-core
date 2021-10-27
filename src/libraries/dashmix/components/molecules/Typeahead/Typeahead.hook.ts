@@ -125,7 +125,7 @@ export const typeaheadProps: ComponentObjectPropsOptions<TypeaheadProps> = {
  * @author Olga Milczek <olga.milczek@movecloser.pl>
  */
 export const useTypeahead = (props: TypeaheadProps, ctx: SetupContext): UseTypeahead => {
-  const { emit } = ctx
+  const { emit, root } = ctx
 
   const dropdown: Ref<null | HTMLElement> = ref(null)
   const input: Ref<null | VueConstructor> = ref(null)
@@ -168,7 +168,7 @@ export const useTypeahead = (props: TypeaheadProps, ctx: SetupContext): UseTypea
       })
       tempHints.unshift({
         type: 'item',
-        label: `${props.newResult}: ${value.value}`,
+        label: `${root.$t(props.newResult)}: ${value.value}`,
         onClick: () => {
           hintSelected({ label: value.value, value: '', new: true })
         }
@@ -179,7 +179,7 @@ export const useTypeahead = (props: TypeaheadProps, ctx: SetupContext): UseTypea
     if (props.hints.length < 1 && props.noResults) {
       tempHints.push({
         type: 'item',
-        label: `${props.noResults}`
+        label: `${root.$t(props.noResults)}`
       })
     }
 
