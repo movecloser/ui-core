@@ -6,7 +6,7 @@ import { DashmixFilters } from './Filters'
 import { FiltersProps, FilterType } from './Filters.contracts'
 import { defaultIgnoredQueryParams } from './Filters.hook'
 import { Container } from '@movecloser/front-core'
-import { getTemplateBase } from '../../../storybook/template-base'
+import { getDashmixTemplateBase } from '../../../storybook/template-base'
 
 /**
  * @author Olga Milczek <olga.milczek@movecloser.pl>
@@ -37,7 +37,7 @@ const defaultArgs = {
  * Default.
  */
 const filters: Story<FiltersProps> = (args, { argTypes }) => ({
-  ...getTemplateBase(argTypes),
+  ...getDashmixTemplateBase(argTypes),
   props: Object.keys(argTypes),
   template: `
     <DsFilters v-bind="$props" />

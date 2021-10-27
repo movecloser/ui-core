@@ -4,6 +4,7 @@ import faker from 'faker'
 
 import { Meta, Story } from '@storybook/vue'
 
+import { getDashmixTemplateBase } from '../../../storybook/template-base'
 import { SizeMap } from '../../../../../composables'
 import { DashmixTheme } from '../../../contracts'
 
@@ -85,6 +86,7 @@ const defaultArgs = {
  * Default.
  */
 const typeahead: Story<TypeaheadProps> = (args, { argTypes }) => ({
+  ...getDashmixTemplateBase(argTypes),
   props: Object.keys(argTypes),
 
   data () {

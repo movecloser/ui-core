@@ -7,7 +7,7 @@ import { DashmixTheme } from '../../../contracts'
 
 import { DashmixSwitch } from './Switch'
 import { SwitchesProps } from './Switch.contracts'
-import { getTemplateBase } from '../../../storybook/template-base'
+import { getDashmixTemplateBase } from '../../../storybook/template-base'
 
 /**
  * @author Olga Milczek <olga.milczek@movecloser.pl>
@@ -54,7 +54,7 @@ const defaultArgs = {
  * Default.
  */
 const template: Story<SwitchesProps> = (args, { argTypes }) => ({
-  ...getTemplateBase(argTypes),
+  ...getDashmixTemplateBase(argTypes),
   props: Object.keys(argTypes),
   template: `
     <DsSwitch v-bind="$props" />

@@ -14,7 +14,7 @@ import { i18n } from '../config/i18n'
  *
  * @author Olga Milczek <olga.milczek@movecloser.pl>
  */
-export const getTemplateBase = (argTypes: ArgTypes): Partial<ComponentOptions<Vue>> => ({
+export const getDashmixTemplateBase = (argTypes: ArgTypes): Partial<ComponentOptions<Vue>> => ({
   i18n: new VueI18n(i18n),
   props: Object.keys(argTypes),
   router: new VueRouter()
