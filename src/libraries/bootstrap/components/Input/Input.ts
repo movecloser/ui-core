@@ -2,7 +2,7 @@
 
 import { computed, defineComponent, SetupContext, toRefs } from '@vue/composition-api'
 
-import { Size, SizeMap } from '../../../../composables'
+import { defaultValidationClassMap, Size, SizeMap } from '../../../../composables'
 import { useInputControl } from '../../../../abstract'
 
 import { BootstrapFormError } from '../FormError'
@@ -27,7 +27,9 @@ export const BootstrapInput = defineComponent({
     const { sizeClass, validationClass, value: _model } = useInputControl(
       props,
       ctx,
-      bootstrapInputSizeRegistry
+      bootstrapInputSizeRegistry,
+      defaultValidationClassMap,
+      props.type === 'number' && props.castAsNumber
     )
 
     /**

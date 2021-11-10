@@ -10,6 +10,7 @@ import { dashmixInputProps } from './Input.hooks'
 import { dashmixSizeClasses, dashmixValidClasses } from './Input.maps'
 
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export const DashmixInput = defineComponent({
@@ -22,7 +23,8 @@ export const DashmixInput = defineComponent({
       props,
       ctx,
       dashmixSizeClasses,
-      dashmixValidClasses
+      dashmixValidClasses,
+      props.type === 'number' && props.castAsNumber
     )
   },
 

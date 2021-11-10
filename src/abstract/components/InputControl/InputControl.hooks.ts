@@ -28,7 +28,7 @@ export const getAbstractBaseControlProps = <ModelType> (): ComponentObjectPropsO
   ...hasErrorsProp,
 
   /**
-   * Value for the `[autocomplete]` attribute.
+   * @inheritDoc
    */
   autocomplete: {
     type: String,
@@ -36,7 +36,7 @@ export const getAbstractBaseControlProps = <ModelType> (): ComponentObjectPropsO
   },
 
   /**
-   * Determines whether the control should be automatically focused.
+   * @inheritDoc
    */
   autofocus: {
     type: Boolean,
@@ -44,38 +44,56 @@ export const getAbstractBaseControlProps = <ModelType> (): ComponentObjectPropsO
     default: false
   },
 
+  /**
+   * @inheritDoc
+   */
   label: {
     type: String,
     required: false
   },
 
   /**
-   * Control's value, synced via PropSync.
+   * @inheritDoc
    */
   model: { required: true },
 
+  /**
+   * @inheritDoc
+   */
   name: {
     type: String,
     required: true
   },
 
+  /**
+   * @inheritDoc
+   */
   placeholder: {
     type: String,
     required: false
   },
 
+  /**
+   * @inheritDoc
+   */
   readonly: {
     type: Boolean,
     required: false,
     default: false
   },
 
+  /**
+   * @inheritDoc
+   */
   required: {
     type: Boolean,
     required: false,
     default: false
   },
 
+  /**
+   * @inheritDoc
+   */
   valid: {
     type: Boolean,
     required: false,
@@ -92,7 +110,7 @@ export const getAbstractInputControlProps = <ModelType> ():
   ...getAbstractBaseControlProps<ModelType>(),
 
   /**
-   * Value for the `[autocomplete]` attribute.
+   * @inheritDoc
    */
   autocomplete: {
     type: String,
@@ -100,7 +118,7 @@ export const getAbstractInputControlProps = <ModelType> ():
   },
 
   /**
-   * Determines whether the control should be automatically focused.
+   * @inheritDoc
    */
   autofocus: {
     type: Boolean,
@@ -109,16 +127,22 @@ export const getAbstractInputControlProps = <ModelType> ():
   },
 
   /**
-   * Control's value, synced via `v-model`.
+   * @inheritDoc
    */
-  model: { required: true }
+  castAsNumber: {
+    type: Boolean,
+    required: false,
+    default: false
+  }
 })
 
 /**
  * @param props
  * @param ctx
  * @param sizeRegistry - Registry binding form control's size.
- * @param validClassMap
+ * @param [validClassMap=defaultValidationClassMap] - TODO: Documentation.
+ * @param [castAsNumber=false] - Determines whether the User's input should be automatically
+ *   typecast as a `Number` (see: https://vuejs.org/v2/guide/forms.html#number).
  *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
@@ -127,9 +151,10 @@ export const useInputControl = <ModelType> (
   props: AbstractInputControlProps<ModelType>,
   ctx: SetupContext,
   sizeRegistry: SizeRegistry,
-  validClassMap: ValidationClassMap = defaultValidationClassMap
+  validClassMap: ValidationClassMap = defaultValidationClassMap,
+  castAsNumber: boolean = false
 ): UseInputControlProvides<ModelType> => {
-  const { errors, valid, model, size } = toRefs(props)
+  const { errors, model, size, valid } = toRefs(props)
 
   const hasErrors = useHasErrors(errors)
 
@@ -138,7 +163,7 @@ export const useInputControl = <ModelType> (
   const isValid = useIsValid(hasErrors, valid)
   const validationClass = useValidMarkerClass(isValid, validClassMap)
 
-  const value = useSyncModel<ModelType>(model, ctx)
+  const value = useSyncModel<ModelType>(model, ctx, 'model', castAsNumber)
 
   return { hasErrors, sizeClass, validationClass, value }
 }

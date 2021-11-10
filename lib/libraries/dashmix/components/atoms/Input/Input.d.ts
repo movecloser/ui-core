@@ -1,6 +1,7 @@
 import { FormControlModelType } from '../../../../../contracts';
 import { DashmixInputProps } from './Input.contracts';
 /**
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export declare const DashmixInput: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<import("../../../../../abstract").UseInputControlProvides<FormControlModelType>> & import("@vue/composition-api").Data, {}, {}, import("../../../../../contracts").ComponentObjectPropsOptions<DashmixInputProps>, {} & {

@@ -18,6 +18,12 @@ export interface AbstractInputControlProps<ModelType> extends FormControlBasePro
    * Determines whether the control should be automatically focused.
    */
   autofocus: boolean;
+
+  /**
+   * Determines whether the User's input should be automatically
+   * typecast as a `Number` (see: https://vuejs.org/v2/guide/forms.html#number).
+   */
+  castAsNumber: boolean
 }
 
 /**

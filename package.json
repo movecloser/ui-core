@@ -1,6 +1,6 @@
 {
   "name": "@movecloser/ui-core",
-  "version": "1.0.0-alpha.11",
+  "version": "1.0.0-alpha.12",
   "description": "Move Closer's UI components library.",
   "repository": {
     "type": "git",
@@ -57,7 +57,7 @@
     "build:cleanup": "rm -rf lib",
     "build:copy-files": "copyfiles -u 1 src/**/*.scss src/**/*.json lib/",
     "build:tsc": "tsc",
-    "lint": "tslint --project ./tsconfig.json",
+    "lint": "tsc --noEmit",
     "preview": "start-storybook -p 6006 --ci",
     "test": "jest --config jestconfig.json",
     "test:coverage": "jest --config jestconfig.json --coverage",
