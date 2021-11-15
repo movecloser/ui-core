@@ -1450,17 +1450,20 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@movecloser/front-core@1.0.0-rc.76":
-  version "1.0.0-rc.76"
-  resolved "https://npm.pkg.github.com/download/@movecloser/front-core/1.0.0-rc.76/633b52190400bb430646647882015069c7663b5fb61abc71ce4d31eb5e7f8131#56e5a28457baa41a2cf4c0b3976a4417cc1f4260"
-  integrity sha512-tuFC39Pb5N3QtA4Arj0I25qe3VBmseKojHE5YFTvYQ7s9x/FnH4U8PMI4Nm0coTbZiyBsuMK6Mq7osXSYyBOsQ==
+"@movecloser/front-core@1.0.0-rc.80":
+  version "1.0.0-rc.80"
+  resolved "https://npm.pkg.github.com/download/@movecloser/front-core/1.0.0-rc.80/f1d5c95ba1760b708300f1716d9d5dba39995bc16b9ce5cfc0bb65177eb74a07#332a5b27c3098f3079d32adcbed6641d92d4aec0"
+  integrity sha512-j4dANQXLXFg5YHHtjbdnjbO7lvkZLulCIAgYyvKFmdIbj5eaOmvLhLdlY5pc2F4AP83NBWRnKhgqxXpAMd+ClQ==
   dependencies:
-    axios "^0.21.1"
+    "@types/lodash" "^4.14.176"
+    axios "^0.21.2"
     core-js "^3.8.3"
     inversify "^5.0.5"
+    lodash "^4.17.21"
     moment "^2.27.0"
     reflect-metadata "^0.1.13"
     rxjs "^6.6.2"
+    vue-class-component "^7.2.6"
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -2479,6 +2482,11 @@
   resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.175.tgz#b78dfa959192b01fae0ad90e166478769b215f45"
   integrity sha512-XmdEOrKQ8a1Y/yxQFOMbC47G/V2VDO1GvMRnl4O75M4GW/abC5tnfzadQYkqEveqRM1dEJGFFegfPNA2vvx2iw==
 
+"@types/lodash@^4.14.176":
+  version "4.14.176"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.176.tgz#641150fc1cda36fbfa329de603bbb175d7ee20c0"
+  integrity sha512-xZmuPTa3rlZoIbtDUyJKZQimJV3bxCmzMIO2c9Pz9afyDro6kr7R79GwcB6mRhuoPmV2p1Vb66WOJH7F886WKQ==
+
 "@types/markdown-to-jsx@^6.11.3":
   version "6.11.3"
   resolved "https://registry.yarnpkg.com/@types/markdown-to-jsx/-/markdown-to-jsx-6.11.3.tgz#cdd1619308fecbc8be7e6a26f3751260249b020e"
@@ -3317,7 +3325,7 @@ axe-core@^4.2.0:
   resolved "https://registry.yarnpkg.com/axe-core/-/axe-core-4.3.3.tgz#b55cd8e8ddf659fe89b064680e1c6a4dceab0325"
   integrity sha512-/lqqLAmuIPi79WYfRpy2i8z+x+vxU3zX2uAm0gs1q52qTuKwolOj1P8XbufpXcsydrpKx2yGn2wzAnxCMV86QA==
 
-axios@^0.21.1:
+axios@^0.21.2:
   version "0.21.4"
   resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.4.tgz#c67b90dc0568e5c1cf2b0b858c43ba28e2eda575"
   integrity sha512-ut5vewkiu8jjGBdqpM44XxjuCjq9LAKeHVmoVfHVzy8eHgxxq8SbAVQNovDA8mVi05kP0Ea/n/UzcSHcTJQfNg==
@@ -11462,6 +11470,11 @@ void-elements@^3.1.0:
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/void-elements/-/void-elements-3.1.0.tgz#614f7fbf8d801f0bb5f0661f5b2f5785750e4f09"
   integrity sha1-YU9/v42AHwu18GYfWy9XhXUOTwk=
+
+vue-class-component@^7.2.6:
+  version "7.2.6"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
+  integrity sha512-+eaQXVrAm/LldalI272PpDe3+i4mPis0ORiMYxF6Ae4hyuCh15W8Idet7wPUEs4N4YptgFHGys4UrgNQOMyO6w==
 
 vue-docgen-api@^4.38.0:
   version "4.41.2"
