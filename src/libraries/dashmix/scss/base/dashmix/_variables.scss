@@ -16,7 +16,7 @@ $theme-colors: map-merge((
         "info-light": lighten($info, 24%),
         "warning-light": lighten($warning, 24%),
         "danger-light": lighten($danger, 24%)
-), $theme-colors);
+), $theme-colors) !default;
 
 $body-bg-dark: darken($body-bg, 3.5%) !default;
 $body-bg-light: lighten($body-bg, 1%) !default;
@@ -57,8 +57,7 @@ $btn-hero-padding-x-sm: 1.25rem !default;
 $btn-hero-padding-y-lg: .875rem !default;
 $btn-hero-padding-x-lg: 2.25rem !default;
 
-$btn-alt-primary-bg: lighten(theme-color("primary-lighter"), 18%);
-
+$btn-alt-primary-bg: lighten(theme-color("primary-lighter"), 18%) !default;
 
 // Header
 
