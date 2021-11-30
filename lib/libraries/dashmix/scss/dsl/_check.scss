@@ -20,7 +20,7 @@ input.custom-check {
     height: 20px;
     background: #f9f9f9;
     border-radius: 2px;
-    border: solid 1px $separators-color;
+    border: solid 1px $border-color;
   }
 
   &:hover + label:before {
@@ -36,7 +36,7 @@ input.custom-check {
 
   // Disabled box.
   &:disabled + label:before {
-    border: solid 1px $separators-color;
+    border: solid 1px $border-color;
   }
 
   // Checkmark
