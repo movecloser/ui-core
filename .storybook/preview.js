@@ -2,8 +2,9 @@
 
 import 'reflect-metadata'
 import Vue from 'vue'
+
 import 'bootstrap/scss/bootstrap.scss'
-import '../src/libraries/dashmix/scss/index.scss'
+import '../src/libraries/dashmix/scss/preview.scss'
 
 import { BootstrapDSL } from '../src'
 import { DashmixDSL } from '../src'
