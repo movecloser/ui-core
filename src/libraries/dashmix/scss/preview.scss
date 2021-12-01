@@ -1,18 +1,15 @@
 // Copyright © 2021 Move Closer
 
-@import "base/variables";
+// Bootstrap functions
+@import '~bootstrap/scss/functions';
 
-$theme-colors: map-merge((
-        "primary-light": lighten($primary, 15%),
-        "primary-lighter": lighten($primary, 30%),
-        "primary-dark": darken($primary, 10%),
-        "primary-darker": darken($primary, 25%),
-        "success-light": lighten($success, 24%),
-        "info-light": lighten($info, 24%),
-        "warning-light": lighten($warning, 24%),
-        "danger-light": lighten($danger, 24%)
-), $theme-colors);
+// Place for your own custom variables
+@import "custom/variables";
+@import "custom/dashmix-variables";
 
-@import "base/index";
-@import "dsl/index";
+// Custom variables
+@import 'base/variables';
+
+@import "base";
+@import "dsl";
 
