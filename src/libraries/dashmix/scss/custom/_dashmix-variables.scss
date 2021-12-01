@@ -1,0 +1,9 @@
+// Copyright © 2021 Move Closer
+
+// EXAMPLE FILE - works in Storybook preview
+
+// You can overwrite $theme-colors here or other variables thet are not !default in dashmix/variables.scss
+
+// NOTE!!!: When changing $theme-colors be aware that dashmix use define variables sucha as:
+// "primary-light", "primary-lighter", "primary-dark" and so on.
+// Deleting them will cause build error!

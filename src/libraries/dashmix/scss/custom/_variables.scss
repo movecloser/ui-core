@@ -1,0 +1,22 @@
+// Copyright © 2021 Move Closer
+
+// EXAMPLE FILE - works in Storybook preview
+//
+// Custom Variables
+//
+// Here you can add your own variables overrides
+//
+// The file is included before any other variable file,
+// so you can override them because they all use !default
+// --------------------------------------------------
+
+// For example, changing the primary color
+// $primary: #3b5998;
+
+$primary: #00965E;
+$info: #3585da;
+
+$btn-alt-primary-bg: #438067;
+
+// Default font color
+$gray-900: #2e3338;

@@ -1,0 +1,18 @@
+// Copyright © 2021 Move Closer
+
+// THIS INDEX FILE doesn't allow to ovwewrite Dasmix variables - use it only when you don't need to overwrite themes colors
+// Otherwise create your own file base on index_example
+
+// Bootstrap functions
+@import '~bootstrap/scss/functions';
+
+///////////////////////////////////////////////
+// Place for your own custom variables
+// @import "custom/variables";
+//////////////////////////////////////////////
+
+// Custom variables
+@import 'base/variables';
+
+@import "dsl";
+@import "base";

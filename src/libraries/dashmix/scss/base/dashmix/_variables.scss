@@ -3,8 +3,6 @@
 //
 // Dashmix variables
 // --------------------------------------------------
-
-
 // Colors
 
 $theme-colors: map-merge((
@@ -16,7 +14,7 @@ $theme-colors: map-merge((
         "info-light": lighten($info, 24%),
         "warning-light": lighten($warning, 24%),
         "danger-light": lighten($danger, 24%)
-), $theme-colors) !default;
+), $theme-colors);
 
 $body-bg-dark: darken($body-bg, 3.5%) !default;
 $body-bg-light: lighten($body-bg, 1%) !default;
