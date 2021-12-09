@@ -26,15 +26,16 @@ export const DashmixDropdown = defineComponent({
   template: `
     <div class="dropdown" :class="[dropdownClass, { open: isOpen }]">
     <slot name="trigger"
-          v-bind="{ close, isOpen, open, toggle, triggerSize, triggerTheme, triggerVariant }">
+          v-bind="{ close, isOpen, open, toggle, triggerSize, triggerTheme, triggerVariant, trigger }">
       <DashmixButton :id="id" :size="triggerSize" :theme="triggerTheme" :variant="triggerVariant"
                      :icon="icon" :label="label"
                      data-toggle="dropdown" aria-haspopup="true"
+                     ref="trigger"
                      :aria-expanded="isOpen ? 'true' : 'false'"
                      v-closable="{ handler: 'close', exclude: [] }" @click="toggle" />
     </slot>
 
-    <div class="dropdown-menu" :class="[dropdownMenuClass, { 'd-block': isOpen }]"
+    <div class="dropdown-menu" ref="dropdown" :class="[dropdownMenuClass, { 'd-block': isOpen }]"
          :aria-labelledby="id">
       <template v-for="(item, i) in items">
         <DashmixDropdownDivider v-if="item.type === 'divider'" :key="'item'+ i" />

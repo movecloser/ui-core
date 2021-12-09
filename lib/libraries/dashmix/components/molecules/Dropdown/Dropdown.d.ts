@@ -6,11 +6,13 @@ import { DashmixDropdownProps } from './Dropdown.contracts';
 export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
     id: string;
     close: () => void;
+    dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
     dropdownClass: import("@vue/composition-api").ComputedRef<string>;
     dropdownMenuClass: import("@vue/composition-api").ComputedRef<string>;
     isOpen: import("@vue/composition-api").Ref<boolean>;
     open: () => void;
     toggle: () => void;
+    trigger: import("@vue/composition-api").Ref<import("vue/types/umd") | null>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixDropdownProps>, {} & {
     [x: string]: any;
     [x: number]: any;
@@ -20,11 +22,13 @@ export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     id: string;
     close: () => void;
+    dropdown: import("@vue/composition-api").Ref<HTMLElement | null>;
     dropdownClass: import("@vue/composition-api").ComputedRef<string>;
     dropdownMenuClass: import("@vue/composition-api").ComputedRef<string>;
     isOpen: import("@vue/composition-api").Ref<boolean>;
     open: () => void;
     toggle: () => void;
+    trigger: import("@vue/composition-api").Ref<import("vue/types/umd") | null>;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;

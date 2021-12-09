@@ -23,8 +23,8 @@ export const DashmixSelect = defineComponent({
   },
 
   template: `
-    <VSelect v-model="_model" v-bind="$props" :appendToBody="false" v-on="$listeners"
-             :class="sizeClass">
+    <VSelect v-model="_model" v-bind="$props" :appendToBody="withDynamicPosition" v-on="$listeners"
+             :class="sizeClass" :calculatePosition="withPopper">
     <template #spinner="{ loading }">
       <DashmixIcon v-if="loading" :icon="DashmixIconName.SpinnerSolid" />
     </template>

@@ -32,6 +32,7 @@ const defaultArgs = {
   loading: false,
   multiple: false,
   taggable: false,
+  withDynamicPosition: true,
   options: [
     {
       label: 'numero uno',

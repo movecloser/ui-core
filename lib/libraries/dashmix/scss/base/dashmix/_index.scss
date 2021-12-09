@@ -1,0 +1,43 @@
+// Copyright © 2021 Move Closer
+
+// Extend Bootstrap styles and override the ones..
+// ..we can't alter with the provided variables
+@import 'reboot';
+@import 'type';
+@import 'grid';
+@import 'tables';
+@import 'forms';
+@import 'buttons';
+@import 'transitions';
+@import 'dropdown';
+@import 'input-group';
+@import 'custom-forms';
+@import 'nav';
+@import 'breadcrumb';
+@import 'pagination';
+@import 'badge';
+@import 'modal';
+@import 'print';
+@import 'select';
+
+// Custom layout
+@import 'layout';
+@import 'header';
+@import 'sidebar';
+@import 'side-overlay';
+@import 'layout-variations';
+@import 'hero';
+@import 'block';
+
+// Custom components
+@import 'page-loader';
+@import 'nav-main';
+@import 'images';
+@import 'lists';
+@import 'item';
+@import 'overlay';
+@import 'timeline';
+@import 'ribbon';
+
+// Utilities
+@import 'utilities';
