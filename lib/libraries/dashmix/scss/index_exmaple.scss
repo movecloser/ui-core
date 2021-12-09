@@ -1,0 +1,20 @@
+// Copyright © 2021 Move Closer
+
+// Bootstrap functions
+@import '~bootstrap/scss/functions';
+
+///////////////////////////////////////////////
+// Place for your own custom variables
+// @import "custom/variables";
+//////////////////////////////////////////////
+
+///////////////////////////////////////////////
+// Place to overwrite dashmix themes-variables if it is nesesery
+// @import "custom/dashmix-variables";
+//////////////////////////////////////////////
+
+// Custom variables
+@import 'base/variables';
+
+@import "base";
+@import "dsl";

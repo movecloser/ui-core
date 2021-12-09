@@ -1214,6 +1214,18 @@
   resolved "https://registry.yarnpkg.com/@emotion/weak-memoize/-/weak-memoize-0.2.5.tgz#8eed982e2ee6f7f4e44c253e12962980791efd46"
   integrity sha512-6U71C2Wp7r5XtFtQzYrW5iKFT67OixrSxjI4MptCHzdSVlgabczzqLe0ZSgnub/5Kp4hSbpDB1tMytZY9pwxxA==
 
+"@floating-ui/core@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@floating-ui/core/-/core-0.2.0.tgz#d4d50ccb8afd276b0cfb6e52938cf0834406dbce"
+  integrity sha512-GVja5m6llsWlD+SrZcX4u7GRrymVyyujnBU7vpNJqD/NzwIbqLP6RRpNASGANtTV2Aj7Zw7MISqk8wmELE6zUQ==
+
+"@floating-ui/dom@^0.1.6":
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/@floating-ui/dom/-/dom-0.1.6.tgz#6dc2b4d6c863782e4a9d8124692601a8beff1fed"
+  integrity sha512-JeZJ2XniuP3m9Y0F9bt3WpJDJPF5vrvtLXwHgfLd+TftBokReTs4e4RqrmWFYKeGbfjwxltB2XAD4YJPLNir1w==
+  dependencies:
+    "@floating-ui/core" "^0.2.0"
+
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/@gar/promisify/-/promisify-1.1.2.tgz#30aa825f11d438671d585bd44e7fd564535fc210"

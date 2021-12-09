@@ -21,9 +21,11 @@ export interface DashmixDropdownProps extends DropdownProps {
  */
 export interface UseDashmixDropDownProvides {
   close: () => void;
+  dropdown: Ref<null | HTMLElement>;
   dropdownClass: ComputedRef<string>;
   dropdownMenuClass: ComputedRef<string>;
   isOpen: Ref<boolean>;
   open: () => void;
   toggle: () => void;
+  trigger: Ref<null | Vue>;
 }

@@ -6,7 +6,7 @@ import { SizeMap, SizeRegistry, ValidationClassMap } from '../../../../../compos
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export const dashmixValidClasses: ValidationClassMap = {
-  invalid: 'is_invalid',
+  invalid: 'is-invalid',
   valid: 'is-valid'
 }
 

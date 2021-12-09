@@ -5,6 +5,15 @@ import { Data } from '@vue/composition-api'
 import { HasSize } from '../../../../../composables'
 
 /**
+ * @author Olga Milczek <olga.milczek@movecloser.pl>
+ */
+export interface CalculatedPosition {
+  width: string;
+  top: string;
+  left: string;
+}
+
+/**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
@@ -36,4 +45,5 @@ export interface DashmixSelectProps extends HasSize, Data {
   placeholder: string;
   searchable: boolean;
   taggable: boolean;
+  withDynamicPosition: boolean;
 }

@@ -1,6 +1,7 @@
 // Copyright © 2021 Move Closer
 
-import { PropType, SetupContext, toRefs } from '@vue/composition-api'
+import { createPopper, Instance, VirtualElement } from '@popperjs/core'
+import { onMounted, onUnmounted, PropType, Ref, ref, SetupContext, toRefs } from '@vue/composition-api'
 
 import { ComponentObjectPropsOptions } from '../../../../../contracts'
 import {
@@ -53,6 +54,10 @@ export const useDashmixDropdown = (
 
   const { close, isOpen, open, toggle } = useDropdown(props, ctx)
 
+  const dropdown: Ref<null | HTMLElement> = ref(null)
+  const trigger: Ref<null | Vue> = ref(null)
+  let popper: Instance | null = null
+
   const dropdownClass = useThemeClass<DropdownPosition>(
     position,
     dashmixDropdownPositionClassRegistry
@@ -62,12 +67,38 @@ export const useDashmixDropdown = (
     dashmixDropdownAlignClassRegistry
   )
 
+  onMounted(() => {
+    if (!dropdown.value || !trigger.value) {
+      return
+    }
+
+
+    popper = createPopper(trigger.value.$el, dropdown.value, {
+      modifiers: [
+        {
+          name: 'offset',
+          options: {
+            offset: [0, -1]
+          }
+        }
+      ]
+    })
+  })
+
+  onUnmounted(() => {
+    if (popper) {
+      popper.destroy()
+    }
+  })
+
   return {
     close,
     dropdownClass: dropdownClass.themeClass,
+    dropdown,
     dropdownMenuClass: dropdownMenuClass.themeClass,
     isOpen,
     open,
-    toggle
+    toggle,
+    trigger
   }
 }
