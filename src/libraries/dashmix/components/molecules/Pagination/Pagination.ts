@@ -42,7 +42,7 @@ export const DashmixPagination = defineComponent({
 
         <div class="divider" />
 
-        <DashmixSelect :model.sync="_perPage" :options="perPageOptions" />
+        <DashmixSelect :model.sync="_perPage" :options="perPageOptions" withDynamicPosition />
       </div>
     </slot>
 

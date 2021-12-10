@@ -4,10 +4,20 @@
 // Dropdown
 // --------------------------------------------------
 
+.dropdown.open {
+  .dropdown-menu {
+    visibility: visible;
+    pointer-events: all;
+  }
+}
+
 .dropdown-menu {
   padding-right: .5rem;
   padding-left: .5rem;
   box-shadow: $dropdown-box-shadow;
+  display: block;
+  visibility: hidden;
+  pointer-events: none;
 
   &.dropdown-menu-lg {
     min-width: 300px;
