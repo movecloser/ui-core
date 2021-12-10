@@ -40,15 +40,15 @@ export declare enum DropdownItemTypeMap {
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
-export declare type DropdownPosition = 'down' | 'left' | 'right' | 'up';
+export declare type DropdownPosition = 'bottom' | 'left' | 'right' | 'top';
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export declare enum DropdownPositionMap {
-    Down = "down",
+    Down = "bottom",
     Left = "left",
     Right = "right",
-    Up = "up"
+    Up = "top"
 }
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>

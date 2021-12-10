@@ -72,13 +72,16 @@ export const useDashmixDropdown = (
       return
     }
 
-
     popper = createPopper(trigger.value.$el, dropdown.value, {
+      placement: position.value,
       modifiers: [
+        {
+          name: 'hide'
+        },
         {
           name: 'offset',
           options: {
-            offset: [0, -1]
+            offset: [0, 5]
           }
         }
       ]
