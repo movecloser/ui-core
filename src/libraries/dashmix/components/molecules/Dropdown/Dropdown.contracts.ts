@@ -29,3 +29,21 @@ export interface UseDashmixDropDownProvides {
   toggle: () => void;
   trigger: Ref<null | Vue>;
 }
+
+export enum PopperPositions {
+  Auto = 'auto',
+  AutoStart = 'auto-start',
+  AutoEnd = 'auto-end',
+  Top = 'top',
+  TopStart = 'top-start',
+  TopEnd = 'top-end',
+  Bottom = 'bottom',
+  BottomStart = 'bottom-start',
+  BottomEnd = 'bottom-end',
+  Right = 'right',
+  RightStart = 'right-start',
+  RightEnd = 'right-end',
+  Left = 'left',
+  LeftStart = 'left-start',
+  LeftEnd = 'left-end'
+}

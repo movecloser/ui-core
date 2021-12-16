@@ -1,6 +1,8 @@
 // Copyright © 2021 Move Closer
 
+import { AnyObject } from '@movecloser/front-core'
 import { Data } from '@vue/composition-api'
+import { VueConstructor } from 'vue'
 
 import { HasSize } from '../../../../../composables'
 
@@ -18,7 +20,7 @@ export interface CalculatedPosition {
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export interface DashmixSelectItem {
-  label: string;
+  label: string | SelectLabel;
   value: unknown;
 }
 
@@ -46,4 +48,9 @@ export interface DashmixSelectProps extends HasSize, Data {
   searchable: boolean;
   taggable: boolean;
   withDynamicPosition: boolean;
+}
+
+export interface SelectLabel {
+  props: AnyObject,
+  constructor: VueConstructor
 }

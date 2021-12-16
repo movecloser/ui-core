@@ -17,7 +17,7 @@ import { DashmixTheme } from '../../../contracts'
 import { DashmixButtonVariant, DashmixButtonVariantMap } from '../../atoms/Button'
 
 import {
-  dashmixDropdownAlignClassRegistry,
+  dashmixDropdownAlignClassRegistry, dashmixDropdownPopperPositionRegistry,
   dashmixDropdownPositionClassRegistry
 } from './Dropdown.config'
 import { DashmixDropdownProps, UseDashmixDropDownProvides } from './Dropdown.contracts'
@@ -73,7 +73,7 @@ export const useDashmixDropdown = (
     }
 
     popper = createPopper(trigger.value.$el, dropdown.value, {
-      placement: position.value,
+      placement: dashmixDropdownPopperPositionRegistry[position.value],
       modifiers: [
         {
           name: 'hide'

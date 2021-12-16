@@ -13,6 +13,7 @@ import { DashmixBadgeVariant, DashmixSelectItem } from '../../atoms'
 
 export interface Hint extends DashmixSelectItem {
   new?: boolean
+  label: string
   notClickable?: boolean
 }
 

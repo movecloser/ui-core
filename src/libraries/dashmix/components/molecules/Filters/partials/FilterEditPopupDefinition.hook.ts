@@ -97,9 +97,16 @@ export const useFilterEditPopupDefinition = (
 
   const dictionariesOptions = () => {
     return buildDictionaryOptions(dictionaries.value, config.key).map(o => {
-      return {
-        label: proxy.$t(o.label).toString(),
-        value: o.value
+      if (typeof o.label === 'string') {
+        return {
+          label: proxy.$t(o.label).toString(),
+          value: o.value
+        }
+      } else {
+        return {
+          label: o.label,
+          value: o.value
+        }
       }
     })
   }
@@ -114,9 +121,16 @@ export const useFilterEditPopupDefinition = (
 
   const operatorsOptions = computed<DashmixSelectItem[]>(() => {
     return buildOperatorsOptions(config.type).map(o => {
-      return {
-        label: proxy.$t(o.label).toString(),
-        value: o.value
+      if (typeof o.label === 'string') {
+        return {
+          label: proxy.$t(o.label).toString(),
+          value: o.value
+        }
+      } else {
+        return {
+          label: o.label,
+          value: o.value
+        }
       }
     })
   })

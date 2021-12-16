@@ -14,5 +14,6 @@ export declare const dashmixSelectProps: ComponentObjectPropsOptions<DashmixSele
 export declare const useDashmixSelect: (props: DashmixSelectProps, ctx: SetupContext) => {
     _model: import("@vue/composition-api").WritableComputedRef<DashmixSelectItem | DashmixSelectItem[] | undefined>;
     sizeClass: import("../../../../../composables").UseSizeClassProvides;
+    isSimpleLabel: import("@vue/composition-api").ComputedRef<boolean>;
     withPopper: (dropdownList: HTMLUListElement, component: VueSelectInstance, { width }: CalculatedPosition) => (() => void) | undefined;
 };

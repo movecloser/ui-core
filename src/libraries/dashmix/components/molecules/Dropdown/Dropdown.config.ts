@@ -9,6 +9,8 @@ import {
 
 import { DashmixTheme } from '../../../contracts'
 
+import { PopperPositions } from './Dropdown.contracts'
+
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
@@ -39,6 +41,16 @@ export const dashmixDropdownPositionClassRegistry: ThemeRegistry<DropdownPositio
   [DropdownPositionMap.Left]: 'dropleft push',
   [DropdownPositionMap.Right]: 'dropright push',
   [DropdownPositionMap.Up]: 'dropup'
+}
+
+/**
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ */
+export const dashmixDropdownPopperPositionRegistry = {
+  [DropdownPositionMap.Down]: PopperPositions.BottomEnd,
+  [DropdownPositionMap.Left]: PopperPositions.Left,
+  [DropdownPositionMap.Right]: PopperPositions.Right,
+  [DropdownPositionMap.Up]: PopperPositions.LeftEnd
 }
 
 /**
