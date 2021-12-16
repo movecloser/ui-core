@@ -128,6 +128,13 @@ export const useDashmixSelect = (props: DashmixSelectProps, ctx: SetupContext) =
     }
   })
 
+  const isSimpleLabel = computed<boolean>(() => {
+    if (props.options.length === 0) {
+      return true
+    }
+    return typeof props.options[0].label === 'string'
+  })
+
   // Method from VSelect documentation
   const withPopper = (dropdownList: HTMLUListElement, component: VueSelectInstance, { width }: CalculatedPosition) => {
     if (!props.withDynamicPosition) {
@@ -160,7 +167,7 @@ export const useDashmixSelect = (props: DashmixSelectProps, ctx: SetupContext) =
         {
           name: 'offset',
           options: {
-            offset: [0, -1]
+            offset: [0, 2]
           }
         },
         {
@@ -184,5 +191,5 @@ export const useDashmixSelect = (props: DashmixSelectProps, ctx: SetupContext) =
     return () => popper.destroy()
   }
 
-  return { _model, sizeClass, withPopper }
+  return { _model, sizeClass, isSimpleLabel, withPopper }
 }

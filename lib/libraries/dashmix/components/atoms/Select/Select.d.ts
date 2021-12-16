@@ -9,6 +9,7 @@ export declare const DashmixSelect: import("vue").ComponentOptions<import("vue")
     DashmixIconName: typeof DashmixIconName;
     _model: import("@vue/composition-api").WritableComputedRef<import("./Select.contracts").DashmixSelectItem | import("./Select.contracts").DashmixSelectItem[] | undefined>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
+    isSimpleLabel: import("@vue/composition-api").ComputedRef<boolean>;
     withPopper: (dropdownList: HTMLUListElement, component: import("vue-select").VueSelectInstance, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixSelectProps>, {} & {
     [x: string]: any;
@@ -20,6 +21,7 @@ export declare const DashmixSelect: import("vue").ComponentOptions<import("vue")
     DashmixIconName: typeof DashmixIconName;
     _model: import("@vue/composition-api").WritableComputedRef<import("./Select.contracts").DashmixSelectItem | import("./Select.contracts").DashmixSelectItem[] | undefined>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
+    isSimpleLabel: import("@vue/composition-api").ComputedRef<boolean>;
     withPopper: (dropdownList: HTMLUListElement, component: import("vue-select").VueSelectInstance, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {
     [x: string]: any;

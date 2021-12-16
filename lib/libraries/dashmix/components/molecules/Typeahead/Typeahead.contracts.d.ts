@@ -6,6 +6,7 @@ import { DashmixTheme } from '../../../contracts';
 import { DashmixBadgeVariant, DashmixSelectItem } from '../../atoms';
 export interface Hint extends DashmixSelectItem {
     new?: boolean;
+    label: string;
     notClickable?: boolean;
 }
 export interface TypeaheadProps {

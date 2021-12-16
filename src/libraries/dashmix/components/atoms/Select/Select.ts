@@ -36,17 +36,25 @@ export const DashmixSelect = defineComponent({
     </template>
 
     <template #selected-option="{label, icon}">
-      <slot name="selected-option">
+      <template v-if="isSimpleLabel">
         <DashmixIcon v-if="icon" v-bind="{ icon }" class="mr-2" />
         {{ label }}
-      </slot>
+      </template>
+
+      <template v-else>
+        <component :is="label.constructor" v-bind="label.props" />
+      </template>
     </template>
 
     <template #option="{ icon, label }">
-      <slot name="option">
+      <template v-if="isSimpleLabel">
         <DashmixIcon v-if="icon" v-bind="{ icon }" class="mr-2" />
         {{ label }}
-      </slot>
+      </template>
+
+      <template v-else>
+        <component :is="label.constructor" v-bind="label.props" />
+      </template>
     </template>
 
     <template #no-options>
