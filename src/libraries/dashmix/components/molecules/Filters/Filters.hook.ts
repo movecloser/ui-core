@@ -1,6 +1,7 @@
 // Copyright © 2021 Move Closer
 
 import {
+  ComponentInternalInstance,
   computed,
   onMounted,
   PropType,
@@ -52,10 +53,18 @@ export const useFiltersProps: ComponentObjectPropsOptions<FiltersProps> = {
 /**
  * @author Olga Milczek
  */
-export function useFilters (props: FiltersProps, ctx: SetupContext): UseFiltersProvides {
+export function useFilters (
+  props: FiltersProps,
+  internalInstance: ComponentInternalInstance | null
+): UseFiltersProvides {
+  if (internalInstance === null) {
+    throw new Error(
+      'useFilterEditPopupDefinition(): FATAL ERROR! Failed to resolve the component instance!')
+  }
+
   const { container } = props
 
-  const { emit } = ctx
+  const { emit, proxy } = internalInstance
 
   const filters: Ref<FiltersConfig> = ref({})
 
@@ -124,7 +133,7 @@ export function useFilters (props: FiltersProps, ctx: SetupContext): UseFiltersP
     return Object.values(props.config.groups).map(g => {
       return {
         type: 'item',
-        label: g.label,
+        label: proxy.$t(g.label).toString(),
         onClick: () => onFilterApply(g.key)
       }
     })
