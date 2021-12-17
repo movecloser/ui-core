@@ -12,7 +12,7 @@
   }
 
   &__date-picker {
-    max-width: 6.75rem;
+    max-width: 100%;
 
     &.mx-datepicker svg {
       width: .75em;
@@ -32,7 +32,7 @@
 
   &__row {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) min-content;
+    grid-template-columns: minmax(0, 0.6fr) minmax(0, 1fr) min-content;
     align-items: center;
     grid-gap: map-get($spacers, 2);
 

@@ -1,4 +1,4 @@
-import { SetupContext } from '@vue/composition-api';
+import { ComponentInternalInstance } from '@vue/composition-api';
 import { ComponentObjectPropsOptions } from '../../../../../contracts';
 import { FiltersProps, UseFiltersProvides } from './Filters.contracts';
 export declare const defaultIgnoredQueryParams: string[];
@@ -9,4 +9,4 @@ export declare const useFiltersProps: ComponentObjectPropsOptions<FiltersProps>;
 /**
  * @author Olga Milczek
  */
-export declare function useFilters(props: FiltersProps, ctx: SetupContext): UseFiltersProvides;
+export declare function useFilters(props: FiltersProps, internalInstance: ComponentInternalInstance | null): UseFiltersProvides;
