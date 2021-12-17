@@ -39,15 +39,15 @@ export const FilterBadge = defineComponent({
     <DashmixDropdown :openOnMount="isNew">
       <template v-slot:trigger="{open, close, isOpen}">
         <DashmixActionBadge
-            class="filter_badge"
-            :shape="badgeShape.Rectangle" :theme="isOpen ? badgeTheme.Warning : badgeTheme.Info"
-            variant="alt"
-            :icon="isOpen ? icons.CheckSolid : icons.TimesSolid"
-            @clicked="() => onBadgeClick(close, isOpen)"
-            @click.native="() => toggleEditMode(open, close, isOpen)"
+          class="filter_badge"
+          :shape="badgeShape.Rectangle" :theme="isOpen ? badgeTheme.Warning : badgeTheme.Info"
+          variant="alt"
+          :icon="isOpen ? icons.CheckSolid : icons.TimesSolid"
+          @clicked="() => onBadgeClick(close, isOpen)"
+          @click.native="() => toggleEditMode(open, close, isOpen)"
         >
           <template>
-            {{ config.label }}
+            {{ $t(config.label) }}
             <template v-for="filter in resolvedParams">
               <template v-if="'conjunction' in filter">
                 {{ $t('conjunction.' + filter.conjunction) }}
