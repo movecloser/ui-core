@@ -5,7 +5,7 @@
 // --------------------------------------------------
 
 .dropdown.open {
-  .dropdown-menu {
+  > .dropdown-menu {
     visibility: visible;
     pointer-events: all;
   }
