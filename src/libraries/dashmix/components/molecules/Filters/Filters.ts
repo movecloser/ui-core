@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { defineComponent, SetupContext } from '@vue/composition-api'
+import { defineComponent, getCurrentInstance, SetupContext } from '@vue/composition-api'
 
 import { DashmixButton, DashmixIconName } from '../../atoms'
 import { DashmixTheme } from '../../../contracts'
@@ -20,9 +20,11 @@ export const DashmixFilters = defineComponent({
   props: useFiltersProps,
   emits: ['setQuery'],
 
-  setup (props: FiltersProps, ctx: SetupContext) {
+  setup (props: FiltersProps) {
+    const internalInstance = getCurrentInstance()
+
     return {
-      ...useFilters(props, ctx),
+      ...useFilters(props, internalInstance),
       icons: DashmixIconName,
       buttonTheme: DashmixTheme
     }
