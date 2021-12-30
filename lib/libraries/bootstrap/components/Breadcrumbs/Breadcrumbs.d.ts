@@ -1,5 +1,10 @@
 import { BootstrapBreadcrumbsProps } from './Breadcrumbs.contracts';
 /**
+ * @scopedSlot icon - Exposes the `item` object that represents a single `BootstrapBreadcrumbsItem`.
+ * @scopedSlot label - Exposes the `item` object that represents a single `BootstrapBreadcrumbsItem`.
+ *
+ * @see https://bootstrap-vue.org/docs/components/breadcrumb
+ *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export declare const BootstrapBreadcrumbs: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{

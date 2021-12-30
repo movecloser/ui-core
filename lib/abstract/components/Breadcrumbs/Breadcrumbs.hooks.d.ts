@@ -5,6 +5,7 @@ import { AbstractBreadcrumbsItemProps, AbstractBreadcrumbsProps } from './Breadc
  */
 export declare const abstractBreadcrumbsProps: ComponentObjectPropsOptions<AbstractBreadcrumbsProps>;
 /**
- * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl> (edited)
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl> (original)
  */
 export declare const abstractBreadcrumbsItemProps: ComponentObjectPropsOptions<AbstractBreadcrumbsItemProps>;
