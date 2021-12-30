@@ -9,6 +9,11 @@ import { BootstrapBreadcrumbsProps } from './Breadcrumbs.contracts'
 import { bootstrapBreadcrumbsProps, useBootstrapBreadcrumbs } from './Breadcrumbs.hooks'
 
 /**
+ * @scopedSlot icon - Exposes the `item` object that represents a single `BootstrapBreadcrumbsItem`.
+ * @scopedSlot label - Exposes the `item` object that represents a single `BootstrapBreadcrumbsItem`.
+ *
+ * @see https://bootstrap-vue.org/docs/components/breadcrumb
+ *
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  */
 export const BootstrapBreadcrumbs = defineComponent({
@@ -23,11 +28,17 @@ export const BootstrapBreadcrumbs = defineComponent({
 
   template: `
     <BBreadcrumb>
-    <BBreadcrumbItem v-for="item in items" :key="item.label"
-                     :active="isLast(item)" :to="item.target">
-      <BootstrapIcon v-if="item.icon" :name="item.icon" />
-      {{ item.label }}
-    </BBreadcrumbItem>
+      <BBreadcrumbItem v-for="(item, index) in items" :key="item.label + index"
+                       :active="isLast(item)" :href="item.isExternal ? item.target : undefined"
+                       :to="item.isExternal ? undefined : item.target">
+        <!-- Icon -->
+        <slot v-if="$scopedSlots.icon" name="icon" v-bind:item="item" />
+        <BootstrapIcon v-else-if="item.icon" :name="item.icon" />
+        
+        <!-- Label -->
+        <slot v-if="$scopedSlots.label" name="label" v-bind:item="item" />
+        <template v-else-if="item.label">{{ item.label }}</template>
+      </BBreadcrumbItem>
     </BBreadcrumb>
   `
 })

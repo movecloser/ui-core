@@ -29,13 +29,20 @@ export const abstractBreadcrumbsProps: ComponentObjectPropsOptions<AbstractBread
 }
 
 /**
- * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl> (edited)
+ * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl> (original)
  */
 export const abstractBreadcrumbsItemProps: ComponentObjectPropsOptions<AbstractBreadcrumbsItemProps> = {
   active: {
     type: Boolean,
     required: false,
     default: true
+  },
+
+  isExternal: {
+    type: Boolean,
+    required: false,
+    default: false
   },
 
   label: {
