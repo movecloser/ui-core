@@ -18,7 +18,7 @@ export interface BootstrapCheckProps extends AbstractCheckListProps<FormControlM
    *
    * @see https://bootstrap-vue.org/docs/components/form-checkbox#inline-and-stacked-checkboxes
    */
-  stacked: boolean;
+  stacked: boolean
 }
 
 /**
@@ -33,10 +33,10 @@ export interface UseBootstrapCheckProvides extends UseCheckControlProvides<FormC
   /**
    * Determines whether the control contains any errors.
    */
-  hasErrors: ComputedRef<boolean>;
+  hasErrors: ComputedRef<boolean>
 
   /**
    * CSS class determining the control's validation state.
    */
-  validationClass: ComputedRef<string>;
+  validationClass: ComputedRef<string>
 }
