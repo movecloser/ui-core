@@ -47,8 +47,9 @@ export const useBootstrapCheck = (
   const isValid = useIsValid(hasErrors, valid)
   const validationClass = useValidMarkerClass(isValid, validClassMap)
 
-  const component = computed<VueConstructor>(() => multiple.value ? BFormCheckboxGroup
-    : BFormRadioGroup)
+  const component = computed<VueConstructor>(
+    () => multiple.value ? BFormCheckboxGroup : BFormRadioGroup
+  )
 
   return { checked, checkType, component, hasErrors, validationClass }
 }

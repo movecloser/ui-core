@@ -30,21 +30,24 @@ const Template: Story<BootstrapCheckProps> = (args, { argTypes }) => ({
   },
   template: `
     <div>
-    <BootstrapCheck v-bind="$props" :model.sync="model" name="check" />
-    <hr class="mt-5">
-    <code class="small">Current value: "{{ model }}"</code>
+      <BootstrapCheck v-bind="$props" :model.sync="model" name="check" />
+      <hr class="mt-5">
+      <code class="small">Current value: "{{ model }}"</code>
     </div>
   `
 })
 
 const defaultArgs: Partial<BootstrapCheckProps> = {
+  disabled: false,
   label: faker.lorem.sentence(),
   options: Array.from(Array(5)).map((_, index) => {
     const label = faker.lorem.word()
     const value = `${index}-${label}`
     return { label, value }
   }),
-  stacked: false
+  stacked: false,
+  readonly: false,
+  required: false,
 }
 
 export const Single = Template.bind({})

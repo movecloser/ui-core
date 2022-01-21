@@ -24,15 +24,16 @@ export const BootstrapCheck = defineComponent({
   },
 
   template: `
-    <BFormGroup v-bind="{ disabled, label, readonly }" v-slot="{ ariaDescribedby }">
-    <component :is="component" v-model="checked" v-bind="{ name, options, stacked }"
-               class="form-check" :class="validationClass"
-               text-field="label" :id="name" :aria-describedby="ariaDescribedby" />
-
-    <!-- Validation errors -->
-    <BootstrapFormError v-for="error in errors" :key="error">
-      {{ error }}
-    </BootstrapFormError>
+    <BFormGroup v-bind="{ disabled, label }" v-slot="{ ariaDescribedby }">
+      <!-- Form component -->
+      <component :is="component" v-model="checked" v-bind="{ disabled, name, options, readonly, required, stacked }"
+                 class="form-check" :class="validationClass"
+                 text-field="label" :id="name" :aria-describedby="ariaDescribedby" />
+  
+      <!-- Validation errors -->
+      <BootstrapFormError v-for="error in errors" :key="error">
+        {{ error }}
+      </BootstrapFormError>
     </BFormGroup>
   `
 })
