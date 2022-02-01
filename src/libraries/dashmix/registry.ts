@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import VueCompositionAPI from '@vue/composition-api'
 import VueI18n from 'vue-i18n'
@@ -12,6 +12,7 @@ import { registerComponent } from '../../helpers'
 import {
   DashmixActionBadge,
   DashmixAccordion,
+  DashmixAlert,
   DashmixAvatar,
   DashmixBadge,
   DashmixBox,
@@ -54,6 +55,7 @@ import { UICoreExtensions } from '../../extensions'
 const componentsRegistry: Record<string, VueConstructor> = {
   Accordion: DashmixAccordion,
   ActionBadge: DashmixActionBadge,
+  Alert: DashmixAlert,
   Avatar: DashmixAvatar,
   Badge: DashmixBadge,
   Box: DashmixBox,
