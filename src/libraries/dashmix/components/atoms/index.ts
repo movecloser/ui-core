@@ -1,6 +1,6 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
-
+export * from './Alert'
 export * from './Badge'
 export * from './Box'
 export * from './Button'
