@@ -15,6 +15,10 @@ export interface DashmixNavTabsItemProps extends CanBeDisabled, Data {
      */
     index: number;
     /**
+     * Tab id.
+     */
+    id: string | number;
+    /**
      * Tab's label.
      */
     label: string | VueConstructor;

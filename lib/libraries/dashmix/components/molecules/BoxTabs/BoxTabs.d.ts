@@ -3,10 +3,10 @@ import { DashmixBoxTabsProps } from './BoxTabs.contracts';
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export declare const DashmixBoxTabs: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
-    activeItem: import("@vue/composition-api").WritableComputedRef<string>;
+    activeItem: import("@vue/composition-api").WritableComputedRef<string | number>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     tabId: import("@vue/composition-api").Ref<string>;
-    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTab[]>;
+    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabsItemProps[]>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixBoxTabsProps>, {} & {
     [x: string]: any;
     [x: number]: any;
@@ -14,10 +14,10 @@ export declare const DashmixBoxTabs: import("vue").ComponentOptions<import("vue"
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
-    activeItem: import("@vue/composition-api").WritableComputedRef<string>;
+    activeItem: import("@vue/composition-api").WritableComputedRef<string | number>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     tabId: import("@vue/composition-api").Ref<string>;
-    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTab[]>;
+    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabsItemProps[]>;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;

@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { defineComponent, SetupContext } from '@vue/composition-api'
 
@@ -23,8 +23,8 @@ export const DashmixModal = defineComponent({
     <div v-if="isOpen" class="modal fade d-block" :class="{ 'show': isOpen }" tabindex="-1"
          role="dialog">
     <div v-if="isOpen" class="modal-backdrop fade show" @click="close" />
-    <div class="modal-dialog modal-dialog-centered modal-dialog-popout modal-dialog-scrollable"
-         :class="[sizeClass]" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-popout"
+         :class="[sizeClass, {'modal-dialog-scrollable': isScrollable }]" role="document">
       <slot v-bind="{ class: ['modal-content', contentClass], close }" />
     </div>
     </div>

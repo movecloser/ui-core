@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { Data } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
@@ -18,6 +18,12 @@ export interface DashmixNavTabsItemProps extends CanBeDisabled, Data {
    * Index of tab.
    */
   index: number;
+
+  /**
+   * Tab id.
+   */
+  id: string | number
+
   /**
    * Tab's label.
    */

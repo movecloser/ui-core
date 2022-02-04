@@ -11,8 +11,8 @@ export declare const dashmixBoxTabsProps: ComponentObjectPropsOptions<DashmixBox
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
 export declare const useDashmixBoxTabs: (props: DashmixBoxTabsProps, ctx: SetupContext) => {
-    activeItem: import("@vue/composition-api").WritableComputedRef<string>;
+    activeItem: import("@vue/composition-api").WritableComputedRef<string | number>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     tabId: import("@vue/composition-api").Ref<string>;
-    tabs: import("@vue/composition-api").ComputedRef<import("..").DashmixNavTab[]>;
+    tabs: import("@vue/composition-api").ComputedRef<import("..").DashmixNavTabsItemProps[]>;
 };

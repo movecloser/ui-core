@@ -1,14 +1,6 @@
 import { Data } from '@vue/composition-api';
 import { CanBeDisabled } from '../../../../../composables';
-/**
- * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
- * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
- */
-export interface DashmixNavTab {
-    disabled?: boolean;
-    id: string;
-    label: string;
-}
+import { DashmixNavTabsItemProps } from './_partials';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
@@ -16,7 +8,7 @@ export interface DashmixNavTab {
 export interface DashmixNavTabsProps extends CanBeDisabled, Data {
     active: string;
     hasDefaultBackground: boolean;
-    items: DashmixNavTab[];
+    items: DashmixNavTabsItemProps[];
     justify: boolean;
     scrollable: boolean;
 }

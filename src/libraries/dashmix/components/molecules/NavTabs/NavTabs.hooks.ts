@@ -5,7 +5,8 @@ import { computed, PropType, SetupContext } from '@vue/composition-api'
 import { ComponentObjectPropsOptions } from '../../../../../contracts'
 import { canBeDisabledProp } from '../../../../../composables'
 
-import { DashmixNavTab, DashmixNavTabsProps } from './NavTabs.contracts'
+import { DashmixNavTabsProps } from './NavTabs.contracts'
+import { DashmixNavTabsItemProps } from './_partials'
 
 /**
  * @author Jan Dobrowolski <jan.dobrowolski@movecloser.pl>
@@ -26,7 +27,7 @@ export const dashmixNavTabsProps: ComponentObjectPropsOptions<DashmixNavTabsProp
    * List of tabs to render.
    */
   items: {
-    type: Array as PropType<DashmixNavTab[]>,
+    type: Array as PropType<DashmixNavTabsItemProps[]>,
     required: true
   },
 

@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { Data } from '@vue/composition-api'
 import { VueConstructor } from 'vue'
@@ -6,7 +6,7 @@ import { VueConstructor } from 'vue'
 import { CanBeDisabled } from '../../../../../composables'
 
 import { DashmixBoxMode } from '../../atoms/Box'
-import { DashmixNavTab } from '../NavTabs'
+import { DashmixNavTabsItemProps } from '../NavTabs'
 
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
@@ -28,5 +28,5 @@ export interface DashmixBoxTabsProps extends CanBeDisabled, Data {
 export interface DashmixBoxTabItem {
   component?: VueConstructor;
   props?: Data;
-  tab: DashmixNavTab;
+  tab: DashmixNavTabsItemProps;
 }
