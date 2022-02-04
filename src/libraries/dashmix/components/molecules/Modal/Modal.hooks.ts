@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { SetupContext, toRef } from '@vue/composition-api'
 
@@ -25,6 +25,11 @@ export const dashmixModalProps: ComponentObjectPropsOptions<DashmixModalProps> =
     type: Boolean,
     required: false,
     default: false
+  },
+  isScrollable: {
+    type: Boolean,
+    required: false,
+    default: true
   }
 }
 

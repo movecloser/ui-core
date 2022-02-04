@@ -65,8 +65,8 @@ export const dashmixBoxTabsProps: ComponentObjectPropsOptions<DashmixBoxTabsProp
 export const useDashmixBoxTabs = (props: DashmixBoxTabsProps, ctx: SetupContext) => {
   const { items } = toRefs(props)
 
-  const activeTab = ref<string>(items.value.length ? items.value[0].tab.id : '')
-  const activeItem = computed<string>({
+  const activeTab = ref<string | number>(items.value.length ? items.value[0].tab.id : '')
+  const activeItem = computed<string | number>({
     get: () => {
       return props.active ? props.active : activeTab.value
     },

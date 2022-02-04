@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 input.custom-check {
   position: absolute;
@@ -56,10 +56,14 @@ input.custom-check {
 
 
 input.custom-check.checkbox {
+  & + label {
+    font-size: 14px;
+    font-weight: normal;
+    margin-bottom: 16px;
 
-  // Box.
-  & + label:before {
-    border-radius: 2px;
+    &:before {
+      border-radius: 2px;
+    }
   }
 
   // Checkmark

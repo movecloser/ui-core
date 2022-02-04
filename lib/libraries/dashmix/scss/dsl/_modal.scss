@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 //
 // Modal
@@ -65,8 +65,15 @@ body.locked {
     }
   }
 
-  .modal-dialog.modal-dialog-scrollable .modal-body {
+  .modal-dialog .modal-body {
     max-height: 85vh;
+  }
+
+  .modal-footer {
+    z-index: 2;
+  }
+
+  .modal-dialog.modal-dialog-scrollable .modal-body {
     overflow-y: auto;
   }
 
@@ -77,16 +84,20 @@ body.locked {
       opacity: 0.25
     }
   }
-
-  .modal-dialog .modal-content .modal-body {
-    overflow-y: visible;
-
-    & > div {
-      overflow-y: visible;
-    }
-  }
 }
 
 .modal-content {
   box-shadow: $modal-content-box-shadow-xs;
+}
+
+.modal-dialog {
+  &:not(.modal-dialog-scrollable) {
+    .modal-body {
+      overflow-y: visible;
+
+      & > div {
+        overflow-y: visible;
+      }
+    }
+  }
 }

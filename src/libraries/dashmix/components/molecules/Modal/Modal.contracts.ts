@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { Data } from '@vue/composition-api'
 
@@ -12,4 +12,5 @@ import { HasSize } from '../../../../../composables'
 export interface DashmixModalProps extends HasSize, Data {
   contentClass: string;
   isOpen: boolean;
+  isScrollable: boolean
 }

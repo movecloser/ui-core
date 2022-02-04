@@ -8,4 +8,5 @@ import { HasSize } from '../../../../../composables';
 export interface DashmixModalProps extends HasSize, Data {
     contentClass: string;
     isOpen: boolean;
+    isScrollable: boolean;
 }

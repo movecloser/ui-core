@@ -1,4 +1,4 @@
-// Copyright © 2021 Move Closer
+// Copyright © 2022 Move Closer
 
 import { SetupContext } from '@vue/composition-api'
 
@@ -27,6 +27,14 @@ export const dashmixNavTabsItemProps: ComponentObjectPropsOptions<DashmixNavTabs
    */
   label: {
     type: [String, Function],
+    required: true
+  },
+
+  /**
+   * Index of tab.
+   */
+  id: {
+    type: [String, Number],
     required: true
   },
 
