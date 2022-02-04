@@ -1462,10 +1462,10 @@
   resolved "https://registry.yarnpkg.com/@mdx-js/util/-/util-1.6.22.tgz#219dfd89ae5b97a8801f015323ffa4b62f45718b"
   integrity sha512-H1rQc1ZOHANWBvPcW+JpGwr+juXSxM8Q8YCkm3GhZd8REu1fHR3z99CErO1p9pkcfcxZnMdIZdIsXkOHY0NilA==
 
-"@movecloser/front-core@1.0.0-rc.80":
-  version "1.0.0-rc.80"
-  resolved "https://npm.pkg.github.com/download/@movecloser/front-core/1.0.0-rc.80/f1d5c95ba1760b708300f1716d9d5dba39995bc16b9ce5cfc0bb65177eb74a07#332a5b27c3098f3079d32adcbed6641d92d4aec0"
-  integrity sha512-j4dANQXLXFg5YHHtjbdnjbO7lvkZLulCIAgYyvKFmdIbj5eaOmvLhLdlY5pc2F4AP83NBWRnKhgqxXpAMd+ClQ==
+"@movecloser/front-core@^1.0.0":
+  version "1.1.0"
+  resolved "https://npm.pkg.github.com/download/@movecloser/front-core/1.1.0/590562ec3983d904b87fc1ab746365022d895be5aac148d80fd5f7b4af32272f#093328a4ae21bcea8c7fc8c8774f1e5a1856a83e"
+  integrity sha512-Wf9+jhic7LfKwT97IEMyLlT7iAXs25ut0q220fA4D9J+xRowM3Hu7XbIzwJOSrzU81wybIuQCNxWYoJ3any8KQ==
   dependencies:
     "@types/lodash" "^4.14.176"
     axios "^0.21.2"

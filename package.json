@@ -1,6 +1,6 @@
 {
   "name": "@movecloser/ui-core",
-  "version": "1.0.0-alpha.22",
+  "version": "1.0.0-beta.1",
   "description": "Move Closer's UI components library.",
   "repository": {
     "type": "git",
@@ -65,7 +65,7 @@
   },
   "dependencies": {
     "@floating-ui/dom": "^0.1.6",
-    "@movecloser/front-core": "1.0.0-rc.80",
+    "@movecloser/front-core": "^1.0.0",
     "@popperjs/core": "^2.10.1",
     "@types/lodash": "^4.14.175",
     "@types/uuid": "^8.3.1",
