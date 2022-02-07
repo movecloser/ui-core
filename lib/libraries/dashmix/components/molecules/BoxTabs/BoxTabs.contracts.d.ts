@@ -2,7 +2,7 @@ import { Data } from '@vue/composition-api';
 import { VueConstructor } from 'vue';
 import { CanBeDisabled } from '../../../../../composables';
 import { DashmixBoxMode } from '../../atoms/Box';
-import { DashmixNavTabsItemProps } from '../NavTabs';
+import { DashmixNavTabItem } from '../NavTabs';
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  */
@@ -22,5 +22,5 @@ export interface DashmixBoxTabsProps extends CanBeDisabled, Data {
 export interface DashmixBoxTabItem {
     component?: VueConstructor;
     props?: Data;
-    tab: DashmixNavTabsItemProps;
+    tab: DashmixNavTabItem;
 }

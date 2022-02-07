@@ -6,7 +6,7 @@ export declare const DashmixBoxTabs: import("vue").ComponentOptions<import("vue"
     activeItem: import("@vue/composition-api").WritableComputedRef<string | number>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     tabId: import("@vue/composition-api").Ref<string>;
-    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabsItemProps[]>;
+    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabItem[]>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixBoxTabsProps>, {} & {
     [x: string]: any;
     [x: number]: any;
@@ -17,7 +17,7 @@ export declare const DashmixBoxTabs: import("vue").ComponentOptions<import("vue"
     activeItem: import("@vue/composition-api").WritableComputedRef<string | number>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     tabId: import("@vue/composition-api").Ref<string>;
-    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabsItemProps[]>;
+    tabs: import("@vue/composition-api").ComputedRef<import("../NavTabs").DashmixNavTabItem[]>;
 }>, import("@vue/composition-api").Data, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
