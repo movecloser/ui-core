@@ -1,6 +1,6 @@
 # Move Closer / UI Core
 
-![](https://img.shields.io/badge/version-1.0.0--alpha.13-%23ed0b77)
+![](https://img.shields.io/badge/version-1.0.0--beta.2-%23ed0b77)
 
 ## Authors
 
