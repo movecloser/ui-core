@@ -91,6 +91,7 @@ export interface AbstractTableProps extends Data {
     showActions: boolean;
     showSelection: boolean;
     sortedBy?: CurrentSorting;
+    withEmptyRows: boolean;
 }
 /**
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
