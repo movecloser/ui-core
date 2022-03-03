@@ -110,6 +110,5 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/movecloser"
-  },
-  "packageManager": "yarn@3.0.1"
+  }
 }

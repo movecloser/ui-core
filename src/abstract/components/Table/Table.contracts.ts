@@ -105,6 +105,7 @@ export interface AbstractTableProps extends Data {
   showActions: boolean;
   showSelection: boolean;
   sortedBy?: CurrentSorting;
+  withEmptyRows: boolean;
 }
 
 /**

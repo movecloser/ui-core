@@ -97,6 +97,15 @@ export const tableProps: ComponentObjectPropsOptions<AbstractTableProps> = {
   sortedBy: {
     type: Object as PropType<CurrentSorting>,
     required: false
+  },
+
+  /**
+   * Determines whatever table should show two fake rows if is empty
+   */
+  withEmptyRows: {
+    type: Boolean,
+    required: false,
+    default: false
   }
 }
 
