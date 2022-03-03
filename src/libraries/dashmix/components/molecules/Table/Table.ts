@@ -83,7 +83,7 @@ export const DashmixTable = defineComponent({
                       :head="head" :rowsCount="numberOfRows" :isLoading="isLoading" />
     </template>
 
-    <template v-else-if="isEmpty">
+    <template v-else-if="isEmpty && withEmptyRows">
       <!-- If table is empty render 2 empty rows and empty message -->
       <DashmixFakeRow :gridColumns="gridColumns" :showSelection="showSelection"
                       :head="head" :rowsCount="2" />
