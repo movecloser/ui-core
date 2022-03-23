@@ -76,14 +76,14 @@ Dropdown.args = {
   items: [
     {
       type: 'item',
-      icon: 'redo',
+      icon: DashmixIconName.TrashAlt,
       label: 'Redo',
       onClick: () => {
         console.log('Redo')
       }
     }, {
       type: 'item',
-      icon: 'times',
+      icon: DashmixIconName.CalendarTimes,
       label: 'Without click'
     }, {
       type: 'divider'

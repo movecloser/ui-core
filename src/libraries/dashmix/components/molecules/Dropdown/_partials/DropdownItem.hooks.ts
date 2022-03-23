@@ -16,5 +16,5 @@ export function useDashmixDropdownItem (props: DropdownItemProps, ctx: SetupCont
   const theme = ref<DashmixTheme>(props.item.theme as DashmixTheme || DashmixTheme.Default)
   const itemClass = useThemeClass(theme, dashmixDropdownItemClassRegistry)
 
-  return { ...useDropdownItem(props, ctx), itemClass }
+  return { ...useDropdownItem(props, ctx), itemClass: itemClass.themeClass }
 }

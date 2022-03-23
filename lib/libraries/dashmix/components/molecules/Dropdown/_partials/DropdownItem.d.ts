@@ -5,7 +5,7 @@ import { DashmixIconName } from '../../../atoms/Icon';
  */
 export declare const DashmixDropdownItem: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
     DashmixIconName: typeof DashmixIconName;
-    itemClass: import("../../../../../..").UseThemeClassProvides;
+    itemClass: import("@vue/composition-api").ComputedRef<string>;
     isClickable: import("@vue/composition-api").ComputedRef<boolean>;
     isLoading: import("@vue/composition-api").Ref<boolean>;
     onClick: () => void;
@@ -15,7 +15,7 @@ export declare const DashmixDropdownItem: import("vue").ComponentOptions<import(
     item?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     DashmixIconName: typeof DashmixIconName;
-    itemClass: import("../../../../../..").UseThemeClassProvides;
+    itemClass: import("@vue/composition-api").ComputedRef<string>;
     isClickable: import("@vue/composition-api").ComputedRef<boolean>;
     isLoading: import("@vue/composition-api").Ref<boolean>;
     onClick: () => void;
