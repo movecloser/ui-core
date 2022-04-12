@@ -1,16 +1,19 @@
 // Copyright © 2021 Move Closer
 
 import { defineComponent, getCurrentInstance } from '@vue/composition-api'
+import { Fragment } from 'vue-fragment'
 
 import { BootstrapIconProps } from './Icon.contracts'
 import { bootstrapIconProps, useBootstrapIcon } from './Icon.hooks'
 
 /**
- * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl> (original)
+ * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
  */
 export const BootstrapIcon = defineComponent({
   name: 'BootstrapIcon',
   props: bootstrapIconProps,
+  components: { Fragment },
 
   setup (props: BootstrapIconProps) {
     const internalInstance = getCurrentInstance()
@@ -19,12 +22,14 @@ export const BootstrapIcon = defineComponent({
   },
 
   template: `
-    <svg class="icon" xmlns="http://www.w3.org/2000/svg" role="img" v-bind="{ height, width }">
-      <title>{{ _title }}</title>
-      <g :fill="color" :stroke="color">
-        <slot v-if="$slots.default" />
-        <component v-else-if="component" :is="component" />
-      </g>
-    </svg>
+    <Fragment>
+      <span class="sr-only">{{ _title }}</span>
+      <svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" v-bind="{ height, width }">
+        <g :fill="color" :stroke="color">
+          <slot v-if="$slots.default" />
+          <component v-else-if="component" :is="component" />
+        </g>
+      </svg>
+    </Fragment>
   `
 })
