@@ -1,6 +1,6 @@
 # Move Closer / UI Core
 
-![](https://img.shields.io/badge/version-1.0.0--beta.2-%23ed0b77)
+![](https://img.shields.io/badge/version-1.0.0--beta.5-%23ed0b77)
 
 ## Authors
 
@@ -12,3 +12,4 @@ Copyright &copy; [Move Closer](https://movecloser.co) 2021
 - [Michał Rossian — Junior Front-end Developer](mailto:michal.rossian@movecloser.pl)
 - [Łukasz "mrluke" Sitnicki — Software Architect](mailto:lukasz.sitnicki@movecloser.pl)
 - [Agnieszka Zawadzka — Senior Front-end Developer](mailto:agnieszka.zawadzka@movecloser.pl)
+- [Javlon Khalimjonov — Front-end Developer](mailto:javlon.khalimjonov@movecloser.pl)
