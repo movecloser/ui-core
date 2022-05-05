@@ -42,7 +42,7 @@ export interface BootstrapIconProps extends AbstractIconProps {
  */
 export interface UseBootstrapIconProvides {
   /**
-   * String to inject into the `<title>` element.
+   * String to inject into the `<span class="sr-only">` element.
    */
   _title: ComputedRef<string | TranslateResult>
   /**

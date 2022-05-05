@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { computed, PropType } from '@vue/composition-api'
+import { ComponentInternalInstance, computed, PropType } from '@vue/composition-api'
 
 import { canBeDisabledProp } from '../../../composables'
 import { ComponentObjectPropsOptions } from '../../../contracts'
@@ -23,9 +23,20 @@ export const abstractLinkProps: ComponentObjectPropsOptions<AbstractLinkProps> =
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
  */
-export const useLink = (props: AbstractLinkProps): UseLinkProvides => {
-  const { label, newTab, target } = props.link
+export const useLink = (
+  props: AbstractLinkProps,
+  internalInstance: ComponentInternalInstance | null
+): UseLinkProvides => {
+  const { label, newTab, target, title } = props.link
+
+  if (internalInstance === null) {
+    throw new Error(
+      'useLink(): FATAL ERROR! Failed to resolve the component instance!')
+  }
+
+  const { proxy } = internalInstance
 
   const aTarget = computed<string>(() => {
     return newTab ? '_blank' : '_self'
@@ -56,5 +67,17 @@ export const useLink = (props: AbstractLinkProps): UseLinkProvides => {
       toCheck.toLowerCase().startsWith('https://')
   })
 
-  return { aTarget, hasCorrectTarget, isExternal, label, target }
+  const _title = computed<string>(() => {
+    if (typeof props.link.newTab === 'undefined' || !props.link.newTab) {
+      return title ?? ''
+    }
+
+    if (typeof title === 'undefined' || !title.length) {
+      return String(proxy.$t('_.link-title'))
+    }
+
+    return `${proxy.$t('_.link-title')}: ${title}`
+  })
+
+  return { aTarget, hasCorrectTarget, isExternal, label, target, title: _title }
 }

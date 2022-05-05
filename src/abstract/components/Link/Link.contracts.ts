@@ -17,7 +17,8 @@ export interface AbstractLinkProps extends CanBeDisabled, Data {
 }
 
 /**
- * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl> (original)
+ * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
  */
 export interface Link {
   /**
@@ -53,11 +54,17 @@ export interface Link {
    *   target: 'https://pudelek.pl'
    */
   target: RawLocation;
+
+  /**
+   * Link's title to bind for ARIA attribute `title` in <a> tag.
+   */
+  title?: string;
 }
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
  */
 export interface UseLinkProvides {
   /**
@@ -84,4 +91,9 @@ export interface UseLinkProvides {
    * @see Link.target
    */
   target: Link['target'];
+
+  /**
+   * @see Link.title
+   */
+  title: ComputedRef<string>;
 }
