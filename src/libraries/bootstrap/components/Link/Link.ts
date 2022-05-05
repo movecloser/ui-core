@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, getCurrentInstance } from '@vue/composition-api'
 
 import { LinkContent, useLink } from '../../../../abstract'
 
@@ -17,13 +17,15 @@ export const BootstrapLink = defineComponent({
   components: { LinkContent },
 
   setup (props: BootstrapLinkProps) {
-    return useLink(props)
+    const internalInstance = getCurrentInstance()
+
+    return useLink(props, internalInstance)
   },
 
   template: `
     <!-- External link OR broken link target -->
     <component v-if="!hasCorrectTarget || isExternal"
-               :is="(!hasCorrectTarget || disabled) ? 'span' : 'a'"
+               :is="(!hasCorrectTarget || disabled) ? 'span' : 'a'" :title="title"
                :class="{ 'text-muted': (!hasCorrectTarget || disabled) }"
                v-bind="(!hasCorrectTarget || disabled) ? {} : { href: target.path ?? target, target: aTarget }">
     <LinkContent v-bind="{ label }">
