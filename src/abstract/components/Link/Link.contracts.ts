@@ -14,6 +14,11 @@ export interface AbstractLinkProps extends CanBeDisabled, Data {
    * The link to render.
    */
   link: Link;
+
+  /**
+   * Determines the nofollow rel to link.
+   */
+  noFollow: boolean
 }
 
 /**
@@ -96,4 +101,9 @@ export interface UseLinkProvides {
    * @see Link.title
    */
   title: ComputedRef<string>;
+
+  /**
+   * Determines whether link should have [rel="nofollow"] attr.
+   */
+  withNoFollow: ComputedRef<boolean>;
 }
