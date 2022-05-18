@@ -1,3 +1,4 @@
+import { ComponentInternalInstance } from '@vue/composition-api';
 import { ComponentObjectPropsOptions } from '../../../contracts';
 import { AbstractLinkProps, UseLinkProvides } from './Link.contracts';
 /**
@@ -8,5 +9,6 @@ export declare const abstractLinkProps: ComponentObjectPropsOptions<AbstractLink
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
  */
-export declare const useLink: (props: AbstractLinkProps) => UseLinkProvides;
+export declare const useLink: (props: AbstractLinkProps, internalInstance: ComponentInternalInstance | null) => UseLinkProvides;

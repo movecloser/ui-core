@@ -47,6 +47,14 @@ export const getAbstractBaseControlProps = <ModelType> (): ComponentObjectPropsO
   /**
    * @inheritDoc
    */
+  id: {
+    type: String,
+    required: false
+  },
+
+  /**
+   * @inheritDoc
+   */
   label: {
     type: String,
     required: false

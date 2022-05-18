@@ -46,7 +46,7 @@ export const BootstrapInput = defineComponent({
     <div class="form-input" :class="[sizeClass, icon ? '--with-icon' : '']">
 
     <!-- Main <input> element -->
-    <input v-model="_model" v-bind="{ disabled, name, readonly, required, type }" :id="$id()"
+    <input v-model="_model" v-bind="{ disabled, name, readonly, required, type, autocomplete }" :id="id ?? name"
            class="form-input__control" :class="validationClass"
            :placeholder="placeholder || ' '">
 
@@ -54,7 +54,7 @@ export const BootstrapInput = defineComponent({
     <BootstrapIcon v-if="icon" :name="icon" :size="iconSize" class="form-input__icon" />
 
     <!-- Label -->
-    <label :for="$id()" class="form-input__label">
+    <label :for="id ?? name" class="form-input__label">
       {{ label }}
     </label>
 

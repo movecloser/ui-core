@@ -104,5 +104,5 @@ export const useBootstrapIcon = (
     return internalInstance.proxy.$t(`dsl.icons.${props.title}`)
   })
 
-  return { component, _title }
+  return { _title, component }
 }
