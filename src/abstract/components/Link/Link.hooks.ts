@@ -17,6 +17,12 @@ export const abstractLinkProps: ComponentObjectPropsOptions<AbstractLinkProps> =
   link: {
     type: Object as PropType<Link>,
     required: true
+  },
+
+  noFollow: {
+    type: Boolean,
+    required: false,
+    default: false
   }
 }
 
@@ -59,6 +65,14 @@ export const useLink = (
     return true
   })
 
+  const withNoFollow = computed<boolean>(() => {
+    if (typeof props.noFollow === 'undefined') {
+      return false
+    }
+
+    return props.noFollow
+  })
+
   const isExternal = computed<boolean>(() => {
     const toCheck: string = typeof target !== 'string' ? `${target.path}` : target
 
@@ -79,5 +93,5 @@ export const useLink = (
     return `${proxy.$t('_.link-title')}: ${title}`
   })
 
-  return { aTarget, hasCorrectTarget, isExternal, label, target, title: _title }
+  return { aTarget, hasCorrectTarget, isExternal, label, target, title: _title, withNoFollow }
 }
