@@ -64,6 +64,12 @@ export interface Link {
    * Link's title to bind for ARIA attribute `title` in <a> tag.
    */
   title?: string;
+
+  /**
+   * Title for non-sense links (ex: see more, go to, read more)
+   * so the screen readers can have better understanding of wherer this link leads.
+   */
+  wcagTitle?: string;
 }
 
 /**
@@ -106,4 +112,9 @@ export interface UseLinkProvides {
    * Determines whether link should have [rel="nofollow"] attr.
    */
   withNoFollow: ComputedRef<boolean>;
+
+  /**
+   * Determines whether wcag title is present.
+   */
+  hasWcagTitle: ComputedRef<boolean>;
 }
