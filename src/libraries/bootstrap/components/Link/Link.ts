@@ -28,7 +28,7 @@ export const BootstrapLink = defineComponent({
                :is="(!hasCorrectTarget || disabled) ? 'span' : 'a'" :title="title"
                :class="{ 'text-muted': (!hasCorrectTarget || disabled) }" :rel="isExternal ? 'nofollow' : null"
                v-bind="(!hasCorrectTarget || disabled) ? {} : { href: target.path ?? target, target: aTarget }">
-    <span v-if="hasWcagTitle" class="sr-only"> {{ wcagTitle }} </span>
+    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }} </span>
     <LinkContent v-bind="{ label }">
       <slot />
     </LinkContent>
@@ -37,7 +37,7 @@ export const BootstrapLink = defineComponent({
 
     <!-- In-app link -->
     <router-link v-else :to="target" :target="aTarget">
-    <span v-if="hasWcagTitle" class="sr-only"> {{ wcagTitle }} </span>
+    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }} </span>
     <LinkContent v-bind="{ label }">
       <slot />
     </LinkContent>
