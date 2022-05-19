@@ -73,6 +73,14 @@ export const useLink = (
     return props.noFollow
   })
 
+  const hasWcagTitle = computed<boolean>(() => {
+    if (typeof props.link.wcagTitle === 'undefined') {
+      return false
+    }
+
+    return props.link.wcagTitle.length > 0
+  })
+
   const isExternal = computed<boolean>(() => {
     const toCheck: string = typeof target !== 'string' ? `${target.path}` : target
 
@@ -93,5 +101,5 @@ export const useLink = (
     return `${proxy.$t('_.link-title')}: ${title}`
   })
 
-  return { aTarget, hasCorrectTarget, isExternal, label, target, title: _title, withNoFollow }
+  return { aTarget, hasCorrectTarget, hasWcagTitle ,isExternal, label, target, title: _title, withNoFollow }
 }
