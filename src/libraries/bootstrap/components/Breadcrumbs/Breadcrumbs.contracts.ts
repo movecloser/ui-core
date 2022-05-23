@@ -10,6 +10,11 @@ export interface BootstrapBreadcrumbsItem extends AbstractBreadcrumbsItem {
    * Name of the icon to render next to the item.
    */
   icon?: string
+
+  /**
+   * Determines title for screen readers.
+   */
+  wcagTitle?: string
 }
 
 /**
