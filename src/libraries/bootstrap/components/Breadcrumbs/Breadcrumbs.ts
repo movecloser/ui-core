@@ -35,7 +35,7 @@ export const BootstrapBreadcrumbs = defineComponent({
         <slot v-if="$scopedSlots.icon" name="icon" v-bind:item="item" />
         <BootstrapIcon v-else-if="item.icon" :name="item.icon" />
         
-        <span v-if="typeof item.wcagTitle !== undefined && item.wcagTitle.length > 0" class="sr-only"> {{ item.wcagTitle }} </span>
+        <span v-if="(typeof item.wcagTitle !== 'undefined' && item.wcagTitle.length > 0)" class="sr-only"> {{ item.wcagTitle }} </span>
         
         <!-- Label -->
         <slot v-if="$scopedSlots.label" name="label" v-bind:item="item" />
