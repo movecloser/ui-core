@@ -18,6 +18,7 @@ export interface AbstractLinkProps extends CanBeDisabled, Data {
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl> (original)
  * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl> (edited)
  */
 export interface Link {
     /**
@@ -75,6 +76,10 @@ export interface UseLinkProvides {
      */
     hasCorrectTarget: ComputedRef<boolean>;
     /**
+     * Determines whether current domain is followed.
+     */
+    isDomainFollowed: ComputedRef<boolean>;
+    /**
      * @see Link.isExternal
      */
     isExternal: ComputedRef<boolean>;
@@ -99,3 +104,4 @@ export interface UseLinkProvides {
      */
     hasWcagTitle: ComputedRef<boolean>;
 }
+export declare const INJECT_FOLLOWED_DOMAINS_KEY = "linkFollowedDomains";
