@@ -1,11 +1,11 @@
 // Copyright © 2021 Move Closer
 
-import { ComponentInternalInstance, computed, PropType } from '@vue/composition-api'
+import { ComponentInternalInstance, computed, inject, PropType } from '@vue/composition-api'
 
 import { canBeDisabledProp } from '../../../composables'
 import { ComponentObjectPropsOptions } from '../../../contracts'
 
-import { AbstractLinkProps, Link, UseLinkProvides } from './Link.contracts'
+import { AbstractLinkProps, INJECT_FOLLOWED_DOMAINS_KEY, Link, UseLinkProvides } from './Link.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
@@ -30,19 +30,32 @@ export const abstractLinkProps: ComponentObjectPropsOptions<AbstractLinkProps> =
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
  * @author Javlon Khalimjonov <javlon.khalimjonov@movecloser.pl> (edited)
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl> (edited)
  */
 export const useLink = (
   props: AbstractLinkProps,
   internalInstance: ComponentInternalInstance | null
 ): UseLinkProvides => {
-  const { label, newTab, target, title } = props.link
-
   if (internalInstance === null) {
     throw new Error(
       'useLink(): FATAL ERROR! Failed to resolve the component instance!')
   }
 
+  const followedDomains = inject<string[]>(INJECT_FOLLOWED_DOMAINS_KEY, [])
+  const { label, newTab, target, title } = props.link
   const { proxy } = internalInstance
+
+  const _title = computed<string>(() => {
+    if (typeof props.link.newTab === 'undefined' || !props.link.newTab) {
+      return title ?? ''
+    }
+
+    if (typeof title === 'undefined' || !title.length) {
+      return String(proxy.$t('_.link-title'))
+    }
+
+    return `${proxy.$t('_.link-title')}: ${title}`
+  })
 
   const aTarget = computed<string>(() => {
     return newTab ? '_blank' : '_self'
@@ -65,14 +78,6 @@ export const useLink = (
     return true
   })
 
-  const withNoFollow = computed<boolean>(() => {
-    if (typeof props.noFollow === 'undefined') {
-      return false
-    }
-
-    return props.noFollow
-  })
-
   const hasWcagTitle = computed<boolean>(() => {
     if (typeof props.link.wcagTitle === 'undefined') {
       return false
@@ -89,17 +94,39 @@ export const useLink = (
       toCheck.toLowerCase().startsWith('https://')
   })
 
-  const _title = computed<string>(() => {
-    if (typeof props.link.newTab === 'undefined' || !props.link.newTab) {
-      return title ?? ''
+  const isDomainFollowed = computed(() => {
+    const toCheck: string = typeof target !== 'string' ? `${target.path}` : target
+
+    if (followedDomains.length === 0) {
+      return true
     }
 
-    if (typeof title === 'undefined' || !title.length) {
-      return String(proxy.$t('_.link-title'))
+    for (const domain of followedDomains) {
+      if (toCheck.match(domain)) {
+        return true
+      }
     }
 
-    return `${proxy.$t('_.link-title')}: ${title}`
+    return false
   })
 
-  return { aTarget, hasCorrectTarget, hasWcagTitle ,isExternal, label, target, title: _title, withNoFollow }
+  const withNoFollow = computed<boolean>(() => {
+    if (typeof props.noFollow === 'undefined') {
+      return false
+    }
+
+    return props.noFollow
+  })
+
+  return {
+    aTarget,
+    hasCorrectTarget,
+    hasWcagTitle,
+    isDomainFollowed,
+    isExternal,
+    label,
+    target,
+    title: _title,
+    withNoFollow
+  }
 }
