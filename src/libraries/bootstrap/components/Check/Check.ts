@@ -11,6 +11,7 @@ import { bootstrapCheckProps, useBootstrapCheck } from './Check.hooks'
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 export const BootstrapCheck = defineComponent({
   name: 'BootstrapCheck',
@@ -24,7 +25,7 @@ export const BootstrapCheck = defineComponent({
   },
 
   template: `
-    <BFormGroup v-bind="{ disabled, label }" v-slot="{ ariaDescribedby }">
+    <BFormGroup v-bind="{ disabled, label }" v-slot="{ ariaDescribedby }" :label-sr-only="!isLegendVisible">
       <!-- Form component -->
       <component :is="component" v-model="checked" v-bind="{ disabled, name, options, readonly, required, stacked }"
                  class="form-check" :class="validationClass"

@@ -29,10 +29,10 @@ export const BootstrapLink = defineComponent({
                :class="{ 'text-muted': (!hasCorrectTarget || disabled) }"
                :rel="(!isDomainFollowed || withNoFollow ) ? 'nofollow' : null"
                v-bind="(!hasCorrectTarget || disabled) ? {} : { href: target.path ?? target, target: aTarget }">
-    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }} </span>
     <LinkContent v-bind="{ label }">
       <slot />
     </LinkContent>
+    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }}</span>
     </component>
     <!-- END | External link OR broken link target -->
 
