@@ -10,6 +10,7 @@ import { BootstrapCheckProps } from './Check.contracts'
 
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 const meta: Meta = {
   title: 'Ui Core / Bootstrap / Forms / Check',
@@ -53,7 +54,8 @@ const defaultArgs: Partial<BootstrapCheckProps> = {
 export const Single = Template.bind({})
 Single.args = {
   ...defaultArgs,
-  multiple: false
+  multiple: false,
+  isLegendVisible: true
 }
 
 export const SingleWithError = Template.bind({})

@@ -19,10 +19,16 @@ import { BootstrapCheckProps, UseBootstrapCheckProvides } from './Check.contract
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 export const bootstrapCheckProps: ComponentObjectPropsOptions<BootstrapCheckProps> = {
   ...getAbstractCheckListProps<FormControlModelType>(),
 
+  isLegendVisible: {
+    type: Boolean,
+    required: false,
+    default: true
+  },
   stacked: {
     type: Boolean,
     required: false,
