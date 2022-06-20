@@ -2,6 +2,7 @@ import { BootstrapCheckProps } from './Check.contracts';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 export declare const BootstrapCheck: import("vue").ComponentOptions<import("vue").default, import("@vue/composition-api").ShallowUnwrapRef<{
     checked: import("@vue/composition-api").WritableComputedRef<import("../../../..").AbstractCheckControlModelType<import("../../../..").FormControlModelType>>;

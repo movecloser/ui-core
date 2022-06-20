@@ -5,8 +5,17 @@ import { FormControlModelType } from '../../../../contracts';
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 export interface BootstrapCheckProps extends AbstractCheckListProps<FormControlModelType> {
+    /**
+     * Determines whether legend is visible.
+     *
+     * @default true
+     *
+     * @see https://bootstrap-vue.org/docs/components/form-group#form-group
+     */
+    isLegendVisible?: boolean;
     /**
      * Determines whether the options should be stacked.
      *
