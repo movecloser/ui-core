@@ -38,10 +38,10 @@ export const BootstrapLink = defineComponent({
 
     <!-- In-app link -->
     <router-link v-else :to="target" :target="aTarget">
-    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }} </span>
     <LinkContent v-bind="{ label }">
       <slot />
     </LinkContent>
+    <span v-if="hasWcagTitle" class="sr-only"> {{ link.wcagTitle }} </span>
     </router-link>
     <!-- END | In-app link -->
   `
