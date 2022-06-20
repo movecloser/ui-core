@@ -5,6 +5,7 @@ import { BootstrapCheckProps, UseBootstrapCheckProvides } from './Check.contract
 /**
  * @author Stanisław Gregor <stanislaw.gregor@movecloser.pl>
  * @author Łukasz Sitnicki <lukasz.sitnicki@movecloser.pl>
+ * @author Maciej Perzankowski <maciej.perzankowski@movecloser.pl>
  */
 export declare const bootstrapCheckProps: ComponentObjectPropsOptions<BootstrapCheckProps>;
 /**
