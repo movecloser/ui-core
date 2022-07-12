@@ -23,11 +23,11 @@ export declare const DashmixFilters: import("vue").ComponentOptions<import("vue"
     config?: any;
     container?: any;
     query?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     config?: any;
     container?: any;
     query?: any;
-}, import("@vue/composition-api").ShallowUnwrapRef<{
+} & {}, import("@vue/composition-api").ShallowUnwrapRef<{
     icons: typeof DashmixIconName;
     buttonTheme: typeof DashmixTheme;
     canRemoveAll: import("@vue/composition-api").ComputedRef<boolean>;
@@ -42,8 +42,8 @@ export declare const DashmixFilters: import("vue").ComponentOptions<import("vue"
     onFilterApply: (field: string) => void;
     onRemove: (field: string) => void;
     shouldRender: import("@vue/composition-api").ComputedRef<boolean>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, string[], {} & {
     config?: any;
     container?: any;
     query?: any;
-}, {}, true>);
+} & {}, {}, true>);

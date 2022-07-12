@@ -9,13 +9,13 @@ export declare const BootstrapTableCell: import("vue").ComponentOptions<import("
     value?: any;
     item?: any;
     index?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     value?: any;
     item?: any;
     index?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     shouldRenderComponent: import("@vue/composition-api").ComputedRef<boolean>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     value?: any;
     item?: any;
     index?: any;

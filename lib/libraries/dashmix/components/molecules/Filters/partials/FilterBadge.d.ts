@@ -23,16 +23,16 @@ export declare const FilterBadge: import("vue").ComponentOptions<import("vue").d
     toggleEditMode: (open: () => void, close: () => void, isOpen: boolean) => void;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<FilterBadgeProps>, {} & {
     value?: any;
-    loading?: any;
     config?: any;
+    loading?: any;
     container?: any;
     dictionaries?: any;
     field?: any;
     isNew?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     value?: any;
-    loading?: any;
     config?: any;
+    loading?: any;
     container?: any;
     dictionaries?: any;
     field?: any;
@@ -52,10 +52,10 @@ export declare const FilterBadge: import("vue").ComponentOptions<import("vue").d
     setValue: (newValue: import("@movecloser/front-core").Filter) => void;
     toPrint: (filter: import("@movecloser/front-core").FilterParams) => import("@vue/composition-api").ComputedRef<string>;
     toggleEditMode: (open: () => void, close: () => void, isOpen: boolean) => void;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     value?: any;
-    loading?: any;
     config?: any;
+    loading?: any;
     container?: any;
     dictionaries?: any;
     field?: any;

@@ -9,11 +9,11 @@ export declare const DashmixCheck: import("vue").ComponentOptions<import("vue").
     sizeClass: import("../../../../..").UseSizeClassProvides;
     validationClass: import("../../../../..").UseValidMarkerProvides;
     checkType: import("@vue/composition-api").Ref<import("../../../../..").AbstractCheckControlType>;
-    checked: import("@vue/composition-api").WritableComputedRef<import("../../../../..").AbstractCheckControlModelType<import("../../../../..").FormControlModelType>>;
+    checked: import("@vue/composition-api").WritableComputedRef<import("../../../../..").AbstractCheckControlModelType<string | number | boolean>>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixCheckProps>, {} & {
     [x: string]: any;
     [x: number]: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
@@ -22,8 +22,8 @@ export declare const DashmixCheck: import("vue").ComponentOptions<import("vue").
     sizeClass: import("../../../../..").UseSizeClassProvides;
     validationClass: import("../../../../..").UseValidMarkerProvides;
     checkType: import("@vue/composition-api").Ref<import("../../../../..").AbstractCheckControlType>;
-    checked: import("@vue/composition-api").WritableComputedRef<import("../../../../..").AbstractCheckControlModelType<import("../../../../..").FormControlModelType>>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+    checked: import("@vue/composition-api").WritableComputedRef<import("../../../../..").AbstractCheckControlModelType<string | number | boolean>>;
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
 }, {}, true>);

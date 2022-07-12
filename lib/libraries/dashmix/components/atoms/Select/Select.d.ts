@@ -10,11 +10,11 @@ export declare const DashmixSelect: import("vue").ComponentOptions<import("vue")
     _model: import("@vue/composition-api").WritableComputedRef<import("./Select.contracts").DashmixSelectItem | import("./Select.contracts").DashmixSelectItem[] | undefined>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
     isSimpleLabel: import("@vue/composition-api").ComputedRef<boolean>;
-    withPopper: (dropdownList: HTMLUListElement, component: import("vue-select").VueSelectInstance, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
+    withPopper: (dropdownList: HTMLUListElement, component: any, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixSelectProps>, {} & {
     [x: string]: any;
     [x: number]: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
@@ -22,8 +22,8 @@ export declare const DashmixSelect: import("vue").ComponentOptions<import("vue")
     _model: import("@vue/composition-api").WritableComputedRef<import("./Select.contracts").DashmixSelectItem | import("./Select.contracts").DashmixSelectItem[] | undefined>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
     isSimpleLabel: import("@vue/composition-api").ComputedRef<boolean>;
-    withPopper: (dropdownList: HTMLUListElement, component: import("vue-select").VueSelectInstance, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+    withPopper: (dropdownList: HTMLUListElement, component: any, { width }: import("./Select.contracts").CalculatedPosition) => (() => void) | undefined;
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
 }, {}, true>);

@@ -11,7 +11,7 @@ export declare const DashmixDropdownItem: import("vue").ComponentOptions<import(
     onClick: () => void;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<DropdownItemProps>, {} & {
     item?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     item?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     DashmixIconName: typeof DashmixIconName;
@@ -19,6 +19,6 @@ export declare const DashmixDropdownItem: import("vue").ComponentOptions<import(
     isClickable: import("@vue/composition-api").ComputedRef<boolean>;
     isLoading: import("@vue/composition-api").Ref<boolean>;
     onClick: () => void;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     item?: any;
 }, {}, true>);

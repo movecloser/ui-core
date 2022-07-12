@@ -9,13 +9,13 @@ export declare const BootstrapSelect: import("vue").ComponentOptions<import("vue
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../..").ComponentObjectPropsOptions<BootstrapSelectProps>, {} & {
     [x: string]: any;
     [x: number]: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     _model: import("@vue/composition-api").WritableComputedRef<unknown>;
     validationClass: import("@vue/composition-api").ComputedRef<string>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
 }, {}, true>);

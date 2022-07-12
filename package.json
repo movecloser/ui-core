@@ -1,6 +1,6 @@
 {
   "name": "@movecloser/ui-core",
-  "version": "1.0.0-beta.6",
+  "version": "1.0.0-beta.11",
   "description": "Move Closer's UI components library.",
   "repository": {
     "type": "git",
@@ -71,7 +71,7 @@
     "@types/uuid": "^8.3.1",
     "@types/vue-select": "^3.11.2",
     "@types/vue2-datepicker": "^3.3.1",
-    "@vue/composition-api": "1.2.4",
+    "@vue/composition-api": "1.6.1",
     "bootstrap": "^4.6",
     "bootstrap-vue": "^2.21.2",
     "lodash": "^4.17.21",

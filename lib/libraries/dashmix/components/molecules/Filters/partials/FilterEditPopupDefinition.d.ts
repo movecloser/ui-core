@@ -22,22 +22,22 @@ export declare const FilterEditPopupDefinition: import("vue").ComponentOptions<i
     onSelect: (selected: import("../../Typeahead").Hint) => void;
     operatorsOptions: import("@vue/composition-api").ComputedRef<import("../../../atoms").DashmixSelectItem[]>;
     selected: () => import("../../Typeahead").Hint[];
-    value: import("@vue/composition-api").Ref<import("../../../../../..").FormControlModelType>;
+    value: import("@vue/composition-api").Ref<string | number | boolean>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<FilterEditPopupDefinitionProps>, {} & {
+    config?: any;
     index?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
     definition?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+    config?: any;
     index?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
     definition?: any;
-}, import("@vue/composition-api").ShallowUnwrapRef<{
+} & {}, import("@vue/composition-api").ShallowUnwrapRef<{
     icons: typeof DashmixIconName;
     btnTheme: typeof DashmixTheme;
     sizes: typeof SizeMap;
@@ -54,12 +54,12 @@ export declare const FilterEditPopupDefinition: import("vue").ComponentOptions<i
     onSelect: (selected: import("../../Typeahead").Hint) => void;
     operatorsOptions: import("@vue/composition-api").ComputedRef<import("../../../atoms").DashmixSelectItem[]>;
     selected: () => import("../../Typeahead").Hint[];
-    value: import("@vue/composition-api").Ref<import("../../../../../..").FormControlModelType>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+    value: import("@vue/composition-api").Ref<string | number | boolean>;
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, string[], {} & {
+    config?: any;
     index?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
     definition?: any;
-}, {}, true>);
+} & {}, {}, true>);

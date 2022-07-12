@@ -16,7 +16,7 @@ export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixDropdownProps>, {} & {
     [x: string]: any;
     [x: number]: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
@@ -29,7 +29,7 @@ export declare const DashmixDropdown: import("vue").ComponentOptions<import("vue
     open: () => void;
     toggle: () => void;
     trigger: import("@vue/composition-api").Ref<import("vue/types/umd") | null>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
 }, {}, true>);

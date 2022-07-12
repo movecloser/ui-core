@@ -15,7 +15,7 @@ export declare const DashmixAlert: import("vue").ComponentOptions<import("vue").
     dismissible?: any;
     showIcon?: any;
     useDefaultIcon?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     icon?: any;
     theme?: any;
     autoTimeout?: any;
@@ -27,7 +27,7 @@ export declare const DashmixAlert: import("vue").ComponentOptions<import("vue").
     closeIcon: import("..").DashmixIconName;
     iconToDisplay: import("@vue/composition-api").ComputedRef<import("..").DashmixIconName | null>;
     isOpen: import("@vue/composition-api").Ref<boolean>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     icon?: any;
     theme?: any;
     autoTimeout?: any;

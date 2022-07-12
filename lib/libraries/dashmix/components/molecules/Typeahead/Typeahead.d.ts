@@ -17,15 +17,15 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     onInputChange: (newValue: string) => void;
     value: import("@vue/composition-api").Ref<string>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<TypeaheadProps>, {} & {
+    name?: any;
     disabled?: any;
     size?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     showSelection?: any;
     selected?: any;
-    error?: any;
     loading?: any;
+    error?: any;
     clearable?: any;
     taggable?: any;
     isMulti?: any;
@@ -36,16 +36,16 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     newResult?: any;
     noResults?: any;
     useDebounce?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+    name?: any;
     disabled?: any;
     size?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     showSelection?: any;
     selected?: any;
-    error?: any;
     loading?: any;
+    error?: any;
     clearable?: any;
     taggable?: any;
     isMulti?: any;
@@ -67,16 +67,16 @@ export declare const DashmixTypeahead: import("vue").ComponentOptions<import("vu
     onClear: () => void;
     onInputChange: (newValue: string) => void;
     value: import("@vue/composition-api").Ref<string>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
+    name?: any;
     disabled?: any;
     size?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     showSelection?: any;
     selected?: any;
-    error?: any;
     loading?: any;
+    error?: any;
     clearable?: any;
     taggable?: any;
     isMulti?: any;

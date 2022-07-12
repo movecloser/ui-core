@@ -7,16 +7,16 @@ export declare const DashmixSwitch: import("vue").ComponentOptions<import("vue")
     sizeClass: import("../../../../..").UseSizeClassProvides;
     model: import("@vue/composition-api").WritableComputedRef<boolean>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<SwitchesProps>, {} & {
+    name?: any;
     disabled?: any;
     size?: any;
-    name?: any;
     value?: any;
     options?: any;
     theme?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+    name?: any;
     disabled?: any;
     size?: any;
-    name?: any;
     value?: any;
     options?: any;
     theme?: any;
@@ -24,10 +24,10 @@ export declare const DashmixSwitch: import("vue").ComponentOptions<import("vue")
     themeClass: import("@vue/composition-api").ComputedRef<string>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
     model: import("@vue/composition-api").WritableComputedRef<boolean>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
+    name?: any;
     disabled?: any;
     size?: any;
-    name?: any;
     value?: any;
     options?: any;
     theme?: any;

@@ -10,7 +10,7 @@ export declare const DashmixFakeRow: import("vue").ComponentOptions<import("vue"
     showSelection?: any;
     gridColumns?: any;
     rowsCount?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     head?: any;
     isLoading?: any;
     showSelection?: any;
@@ -21,7 +21,7 @@ export declare const DashmixFakeRow: import("vue").ComponentOptions<import("vue"
         selectable: boolean;
         selected: boolean;
     };
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     head?: any;
     isLoading?: any;
     showSelection?: any;

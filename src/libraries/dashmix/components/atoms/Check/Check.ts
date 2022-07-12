@@ -1,6 +1,6 @@
 // Copyright © 2021 Move Closer
 
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, SetupContext } from '@vue/composition-api'
 
 import { DashmixCheckProps } from './Check.contracts'
 import { dashmixCheckProps, useDashmixCheck } from './Check.hooks'
@@ -14,7 +14,7 @@ export const DashmixCheck = defineComponent({
   props: dashmixCheckProps,
   emits: ['update:model'],
 
-  setup (props: DashmixCheckProps, ctx) {
+  setup (props: DashmixCheckProps, ctx: SetupContext) {
     return useDashmixCheck(props, ctx)
   },
 

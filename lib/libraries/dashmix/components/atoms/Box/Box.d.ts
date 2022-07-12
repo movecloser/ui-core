@@ -9,14 +9,14 @@ export declare const DashmixBox: import("vue").ComponentOptions<import("vue").de
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<DashmixBoxProps>, {} & {
     [x: string]: any;
     [x: number]: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     [x: string]: any;
     [x: number]: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     bodyPaddingClass: import("@vue/composition-api").ComputedRef<string>;
     isFooterDivided: import("@vue/composition-api").ComputedRef<boolean>;
     isHeaderDivided: import("@vue/composition-api").ComputedRef<boolean>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     [x: string]: any;
     [x: number]: any;
 }, {}, true>);

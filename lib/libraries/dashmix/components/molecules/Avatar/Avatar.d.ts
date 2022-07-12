@@ -10,7 +10,7 @@ export declare const DashmixAvatar: import("vue").ComponentOptions<import("vue")
     size?: any;
     person?: any;
     source?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     size?: any;
     person?: any;
     source?: any;
@@ -18,7 +18,7 @@ export declare const DashmixAvatar: import("vue").ComponentOptions<import("vue")
     caption: import("@vue/composition-api").ComputedRef<string>;
     color: import("@vue/composition-api").ComputedRef<string>;
     sizeClass: import("../../../../..").UseSizeClassProvides;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     size?: any;
     person?: any;
     source?: any;

@@ -6,10 +6,10 @@ export declare const DashmixInputGroup: import("vue").ComponentOptions<import("v
     sizeClass: import("../../../../../composables").UseSizeClassProvides;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../..").ComponentObjectPropsOptions<HasSize<import("../../../../../composables").SizeMap>>, {} & {
     size?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     size?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     sizeClass: import("../../../../../composables").UseSizeClassProvides;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     size?: any;
 }, {}, true>);

@@ -16,15 +16,15 @@ export declare const FilterEditPopup: import("vue").ComponentOptions<import("vue
     setNewConjunction: (newConjunction: import("@movecloser/front-core").ConjunctionOperator) => void;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<FilterEditPopupProps>, {} & {
     value?: any;
+    config?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
     value?: any;
+    config?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
 }, import("@vue/composition-api").ShallowUnwrapRef<{
     icons: typeof DashmixIconName;
@@ -36,10 +36,10 @@ export declare const FilterEditPopup: import("vue").ComponentOptions<import("vue
     onDefinitionChange: (changed: import("@movecloser/front-core").FilterParams, index: number) => void;
     onDefinitionRemove: (index: number) => void;
     setNewConjunction: (newConjunction: import("@movecloser/front-core").ConjunctionOperator) => void;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
     value?: any;
+    config?: any;
     loading?: any;
     hints?: any;
-    config?: any;
     dictionaries?: any;
 }, {}, true>);

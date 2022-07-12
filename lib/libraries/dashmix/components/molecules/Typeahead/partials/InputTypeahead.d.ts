@@ -9,23 +9,23 @@ export declare const InputTypeahead: import("vue").ComponentOptions<import("vue"
     buttonTheme: typeof DashmixTheme;
     icons: typeof DashmixIconName;
     sizes: typeof SizeMap;
-    value: import("@vue/composition-api").WritableComputedRef<import("../../../../../..").FormControlModelType>;
+    value: import("@vue/composition-api").WritableComputedRef<string | number | boolean>;
 }> & import("@vue/composition-api").Data, {}, {}, import("../../../../../..").ComponentObjectPropsOptions<InputTypeaheadProps>, {} & {
+    model?: any;
+    name?: any;
     disabled?: any;
     size?: any;
-    model?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     loading?: any;
     clearable?: any;
     isMulti?: any;
-}> & import("vue").VueConstructor<import("vue").default> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+}, {}> & Pick<import("vue").VueConstructor<import("vue").default>, "filter" | "extend" | "nextTick" | "set" | "delete" | "directive" | "component" | "use" | "mixin" | "compile" | "observable" | "util" | "config" | "version"> & (new (...args: any[]) => import("@vue/composition-api").ComponentRenderProxy<{} & {
+    model?: any;
+    name?: any;
     disabled?: any;
     size?: any;
-    model?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     loading?: any;
     clearable?: any;
@@ -34,13 +34,13 @@ export declare const InputTypeahead: import("vue").ComponentOptions<import("vue"
     buttonTheme: typeof DashmixTheme;
     icons: typeof DashmixIconName;
     sizes: typeof SizeMap;
-    value: import("@vue/composition-api").WritableComputedRef<import("../../../../../..").FormControlModelType>;
-}>, import("@vue/composition-api").Data, {}, {}, {} & {
+    value: import("@vue/composition-api").WritableComputedRef<string | number | boolean>;
+}>, import("@vue/composition-api").Data, {}, {}, {}, {}, {}, {} & {
+    model?: any;
+    name?: any;
     disabled?: any;
     size?: any;
-    model?: any;
     autofocus?: any;
-    name?: any;
     placeholder?: any;
     loading?: any;
     clearable?: any;
