@@ -25,16 +25,16 @@ export const BootstrapCheck = defineComponent({
   },
 
   template: `
-    <BFormGroup v-bind="{ disabled, label }" v-slot="{ ariaDescribedby }" :label-sr-only="!isLegendVisible">
-      <!-- Form component -->
+    <fieldset v-bind="{ disabled }">
+    <legend :class="{ 'sr-only': !isLegendVisible}">{label}</legend>
       <component :is="component" v-model="checked" v-bind="{ disabled, name, options, readonly, required, stacked }"
                  class="form-check" :class="validationClass"
-                 text-field="label" :id="name" :aria-describedby="ariaDescribedby" />
-  
+                 text-field="label" :id="name" :aria-describedby="ariaDescribedby"/>
+
       <!-- Validation errors -->
       <BootstrapFormError v-for="error in errors" :key="error">
         {{ error }}
       </BootstrapFormError>
-    </BFormGroup>
+    </fieldset>
   `
 })
